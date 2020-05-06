@@ -33,7 +33,7 @@
             android:layout_centerVertical="true"
             android:src="@mipmap/arrow_right" />
 
-        <com.mobi.clearsafe.widget.RoundImageView
+        <com.mobi.overseas.clearsafe.widget.RoundImageView
             android:id="@+id/head_photo"
             android:layout_width="50dp"
             android:layout_height="50dp"

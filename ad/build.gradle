@@ -14,7 +14,7 @@ android {
     buildTypes {
         debug{
             manifestPlaceholders = [
-                    PKG_NAME:"com.mobi.clearsafe",
+                    PKG_NAME:"com.mobi.overseas.clearsafe",
             ]
         }
         release {

@@ -173,18 +173,18 @@
 }
 
 # 保留实体类和成员不被混淆(根据具体情况修改entity的路径)
--keep class com.mobi.clearsafe.eventbean.**{*;}
--keep class com.mobi.clearsafe.main.**{*;}
--keep class com.mobi.clearsafe.me.bean.**{*;}
--keep class com.mobi.clearsafe.moneyactivity.bean.**{*;}
--keep class com.mobi.clearsafe.app.**{*;}
--keep class com.mobi.clearsafe.statistical.errorlog.**{*;}
--keep class com.mobi.clearsafe.statistical.umeng.**{*;}
--keep class com.mobi.clearsafe.net.**{*;}
+-keep class com.mobi.overseas.clearsafe.eventbean.**{*;}
+-keep class com.mobi.overseas.clearsafe.main.**{*;}
+-keep class com.mobi.overseas.clearsafe.me.bean.**{*;}
+-keep class com.mobi.overseas.clearsafe.moneyactivity.bean.**{*;}
+-keep class com.mobi.overseas.clearsafe.app.**{*;}
+-keep class com.mobi.overseas.clearsafe.statistical.errorlog.**{*;}
+-keep class com.mobi.overseas.clearsafe.statistical.umeng.**{*;}
+-keep class com.mobi.overseas.clearsafe.net.**{*;}
 -keep class com.example.adtest.bean.**{*;}
 -keep class com.example.adtest.manager.**{*;}
 -keep class com.example.adtest.statistical.**{*;}
--keep class com.mobi.clearsafe.fragment.**{*;}
+-keep class com.mobi.overseas.clearsafe.fragment.**{*;}
 
 #androidX
 -keep class com.google.android.material.** {*;}
@@ -317,7 +317,7 @@ public static java.lang.String TABLENAME;
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }
--keep public class com.mobi.clearsafe.R$*{
+-keep public class com.mobi.overseas.clearsafe.R$*{
 public static final int *;
 }
 #gson
@@ -328,7 +328,7 @@ public static final int *;
 -keep class com.google.gson.stream.** { *; }
 -keep class com.google.gson.examples.android.model.** { *; }
 
--keep class com.mobi.clearsafe.net.**{*;}
+-keep class com.mobi.overseas.clearsafe.net.**{*;}
 # reactivex
 -keep class io.reactivex.** { *; }
 -keep interface io.reactivex.** { *; }

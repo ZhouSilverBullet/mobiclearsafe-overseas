@@ -8,7 +8,7 @@
         android:layout_height="138dp"
         >
 
-        <com.mobi.clearsafe.widget.RoundImageView
+        <com.mobi.overseas.clearsafe.widget.RoundImageView
             android:id="@+id/image"
             android:layout_width="47dp"
             android:layout_height="47dp"

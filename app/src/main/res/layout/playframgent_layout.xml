@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
 
-    <com.mobi.clearsafe.widget.LoadWebView
+    <com.mobi.overseas.clearsafe.widget.LoadWebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,6 +13,6 @@
         android:scrollbarSize="0dip"
         >
 
-    </com.mobi.clearsafe.widget.LoadWebView>
+    </com.mobi.overseas.clearsafe.widget.LoadWebView>
 
 </RelativeLayout>

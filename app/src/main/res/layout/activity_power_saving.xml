@@ -22,7 +22,7 @@
             android:src="@drawable/power_saving_show_icon" />
     </FrameLayout>
 
-    <com.mobi.clearsafe.widget.NoPaddingTextView
+    <com.mobi.overseas.clearsafe.widget.NoPaddingTextView
         android:id="@+id/tvCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
-    <com.mobi.clearsafe.ui.powersaving.widget.PowerScanLayout
+    <com.mobi.overseas.clearsafe.ui.powersaving.widget.PowerScanLayout
         android:id="@+id/pslLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

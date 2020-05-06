@@ -81,7 +81,7 @@
                             android:textStyle="bold"
                             tools:text="1130期达标总奖池(金币)" />
 
-                        <com.mobi.clearsafe.widget.NoPaddingTextView
+                        <com.mobi.overseas.clearsafe.widget.NoPaddingTextView
                             android:id="@+id/tv_allreward_nper"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

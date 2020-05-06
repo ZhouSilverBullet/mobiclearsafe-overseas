@@ -4,7 +4,7 @@
     android:background="@android:color/transparent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.mobi.clearsafe.ui.clear.widget.dustbinview.DustbinView
+    <com.mobi.overseas.clearsafe.ui.clear.widget.dustbinview.DustbinView
         android:id="@+id/dustbinView"
         android:layout_height="match_parent"
         android:layout_width="match_parent" />

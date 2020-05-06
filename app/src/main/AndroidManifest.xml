@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mobi.clearsafe">
+    package="com.mobi.overseas.clearsafe">
 
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
@@ -68,7 +68,7 @@
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
 
-                <action android:name="com.mobi.clearsafe.RESFRESH" />
+                <action android:name="com.mobi.overseas.clearsafe.RESFRESH" />
             </intent-filter>
 
             <meta-data
@@ -469,7 +469,7 @@
             android:name=".wxapi.WXEntryActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:taskAffinity="com.mobi.clearsafe"
+            android:taskAffinity="com.mobi.overseas.clearsafe"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- 开机自启动 -->
         <receiver
             android:name=".service.TodayStepBootCompleteReceiver"

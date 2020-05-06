@@ -15,20 +15,20 @@
         android:paddingRight="22.0dip"
         android:paddingBottom="26.0dip">
 
-        <com.mobi.clearsafe.ui.powercontrol.widget.BatteryWaveView
+        <com.mobi.overseas.clearsafe.ui.powercontrol.widget.BatteryWaveView
             android:id="@+id/batteryWaveView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" />
     </FrameLayout>
 
-    <com.mobi.clearsafe.ui.powercontrol.widget.CleanHighPoweredAppView
+    <com.mobi.overseas.clearsafe.ui.powercontrol.widget.CleanHighPoweredAppView
         android:id="@+id/chaView"
         android:layout_width="160dp"
         android:layout_height="300dp"
         android:layout_gravity="center"
         android:visibility="invisible" />
 
-    <com.mobi.clearsafe.ui.powercontrol.widget.DropFlashView
+    <com.mobi.overseas.clearsafe.ui.powercontrol.widget.DropFlashView
         android:id="@+id/dfvView"
         android:layout_width="160dp"
         android:layout_height="300dp"

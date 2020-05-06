@@ -207,7 +207,7 @@
 
         </android.support.constraint.ConstraintLayout>
 
-        <com.mobi.clearsafe.widget.CircleAroundView
+        <com.mobi.overseas.clearsafe.widget.CircleAroundView
             android:id="@+id/fl_ad"
             android:layout_width="335dp"
             android:layout_height="wrap_content"
@@ -217,9 +217,9 @@
             android:padding="6dp" />
     </LinearLayout>
 
-    <com.mobi.clearsafe.widget.LoadingTips
+    <com.mobi.overseas.clearsafe.widget.LoadingTips
         android:id="@+id/loadTips"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"></com.mobi.clearsafe.widget.LoadingTips>
+        android:background="@color/black"></com.mobi.overseas.clearsafe.widget.LoadingTips>
 </FrameLayout>

@@ -25,7 +25,7 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
-        <com.mobi.clearsafe.widget.NoPaddingTextView
+        <com.mobi.overseas.clearsafe.widget.NoPaddingTextView
             android:id="@+id/tv_gold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             app:textSize="40dp"
             tools:text="1000" />
 
-        <com.mobi.clearsafe.widget.NoPaddingTextView
+        <com.mobi.overseas.clearsafe.widget.NoPaddingTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"

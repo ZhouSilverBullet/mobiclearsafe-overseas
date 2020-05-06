@@ -12,14 +12,14 @@
         android:background="@drawable/clear_blue_selector"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.mobi.clearsafe.ui.clear.widget.wave.MultiWaveHeader
+    <com.mobi.overseas.clearsafe.ui.clear.widget.wave.MultiWaveHeader
         android:id="@+id/waveHeader"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:visibility="gone"
         app:mwhColorAlpha="0.9" />
 
-    <com.mobi.clearsafe.ui.clear.widget.wave.WaveView
+    <com.mobi.overseas.clearsafe.ui.clear.widget.wave.WaveView
         android:id="@+id/waveView"
         android:layout_width="match_parent"
         android:layout_height="330dp"

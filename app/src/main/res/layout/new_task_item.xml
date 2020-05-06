@@ -11,7 +11,7 @@
     android:paddingTop="15dp"
     >
 
-    <com.mobi.clearsafe.widget.RoundImageView
+    <com.mobi.overseas.clearsafe.widget.RoundImageView
         android:id="@+id/task_icon"
         android:layout_width="44dp"
         android:layout_height="44dp"

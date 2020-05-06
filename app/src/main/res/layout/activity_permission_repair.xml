@@ -24,7 +24,7 @@
 
     </FrameLayout>
 
-    <com.mobi.clearsafe.widget.NoPaddingTextView
+    <com.mobi.overseas.clearsafe.widget.NoPaddingTextView
         android:id="@+id/tvCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

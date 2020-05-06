@@ -18,7 +18,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.mobi.clearsafe.ui.clear.widget.GoodChangeLayout
+        <com.mobi.overseas.clearsafe.ui.clear.widget.GoodChangeLayout
             android:id="@+id/gclLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -51,12 +51,12 @@
 
     <!--    </android.support.v4.widget.NestedScrollView>-->
 
-    <com.mobi.clearsafe.ui.clear.widget.SpeedScanLayout
+    <com.mobi.overseas.clearsafe.ui.clear.widget.SpeedScanLayout
         android:id="@+id/slLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.mobi.clearsafe.ui.clear.widget.wave.WaveView
+    <com.mobi.overseas.clearsafe.ui.clear.widget.wave.WaveView
         android:id="@+id/waveView"
         android:visibility="gone"
         android:layout_width="match_parent"
@@ -73,7 +73,7 @@
         android:fitsSystemWindows="true"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.mobi.clearsafe.ui.clear.ad.ADSplashLayout
+    <com.mobi.overseas.clearsafe.ui.clear.ad.ADSplashLayout
         android:id="@+id/adslContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

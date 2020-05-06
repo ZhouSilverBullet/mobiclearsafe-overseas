@@ -10,7 +10,7 @@
     android:orientation="vertical"
     android:padding="15dp">
 
-    <com.mobi.clearsafe.ui.common.dialog.LoadingSpinView
+    <com.mobi.overseas.clearsafe.ui.common.dialog.LoadingSpinView
         android:layout_width="30dp"
         android:layout_height="30dp" />
 

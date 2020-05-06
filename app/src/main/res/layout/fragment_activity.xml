@@ -33,7 +33,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.mobi.clearsafe.widget.NoPaddingTextView
+                <com.mobi.overseas.clearsafe.widget.NoPaddingTextView
                     android:id="@+id/tv_gold_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                     android:textStyle="bold"
                     app:textSize="21sp" />
 
-                <com.mobi.clearsafe.widget.NoPaddingTextView
+                <com.mobi.overseas.clearsafe.widget.NoPaddingTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -352,7 +352,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp" />
 
-                <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+                <com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="14dp"
@@ -360,7 +360,7 @@
                     app:adrScenario="task_native2"
                     app:isAdrShadow="false" />
 
-                <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+                <com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="14dp"

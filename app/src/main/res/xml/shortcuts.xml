@@ -9,8 +9,8 @@
         android:shortcutShortLabel="@string/tab_speed">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.mobi.clearsafe.ui.clear.SpeedPhoneActivity"
-            android:targetPackage="com.mobi.clearsafe" />
+            android:targetClass="com.mobi.overseas.clearsafe.ui.clear.SpeedPhoneActivity"
+            android:targetPackage="com.mobi.overseas.clearsafe" />
     </shortcut>
 
     <shortcut
@@ -22,8 +22,8 @@
         android:shortcutShortLabel="@string/tab_clean">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.mobi.clearsafe.ui.clear.GarbageActivity"
-            android:targetPackage="com.mobi.clearsafe" />
+            android:targetClass="com.mobi.overseas.clearsafe.ui.clear.GarbageActivity"
+            android:targetPackage="com.mobi.overseas.clearsafe" />
     </shortcut>
     <!--    <shortcut-->
     <!--        android:enabled="true"-->

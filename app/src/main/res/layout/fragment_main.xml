@@ -281,7 +281,7 @@
 
                         </RelativeLayout>
 
-                        <com.mobi.clearsafe.widget.CustomDashboard
+                        <com.mobi.overseas.clearsafe.widget.CustomDashboard
                             android:id="@+id/circle_progress"
                             android:layout_width="260dp"
                             android:layout_height="260dp"

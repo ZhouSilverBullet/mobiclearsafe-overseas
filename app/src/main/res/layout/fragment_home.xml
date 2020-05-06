@@ -185,7 +185,7 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <com.mobi.clearsafe.widget.NoPaddingTextView
+                        <com.mobi.overseas.clearsafe.widget.NoPaddingTextView
                             android:id="@+id/tvPoint"
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
@@ -258,7 +258,7 @@
                 android:orientation="vertical"
                 android:padding="12dp">
 
-                <com.mobi.clearsafe.ui.clear.widget.HomeClearItemView
+                <com.mobi.overseas.clearsafe.ui.clear.widget.HomeClearItemView
                     android:id="@+id/hcivQQ"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -266,7 +266,7 @@
                     app:hcivSrc="@drawable/clean_icon_qq"
                     app:hcivTitle="QQ专清" />
 
-                <com.mobi.clearsafe.ui.clear.widget.HomeClearItemView
+                <com.mobi.overseas.clearsafe.ui.clear.widget.HomeClearItemView
                     android:id="@+id/hcivBigfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -275,7 +275,7 @@
                     app:hcivTitle="大文件清理" />
 
 
-                <com.mobi.clearsafe.ui.clear.widget.HomeClearItemView
+                <com.mobi.overseas.clearsafe.ui.clear.widget.HomeClearItemView
                     android:id="@+id/hcivNotice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

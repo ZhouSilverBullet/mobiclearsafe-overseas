@@ -6,11 +6,11 @@
 
     <include layout="@layout/include_title_layout" />
 
-  <com.mobi.clearsafe.widget.LoadWebView
+  <com.mobi.overseas.clearsafe.widget.LoadWebView
       android:id="@+id/lwv"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
-  </com.mobi.clearsafe.widget.LoadWebView>
+  </com.mobi.overseas.clearsafe.widget.LoadWebView>
 
 </LinearLayout>

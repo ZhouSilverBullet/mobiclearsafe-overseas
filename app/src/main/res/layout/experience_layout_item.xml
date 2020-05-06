@@ -13,7 +13,7 @@
         android:gravity="center"
         android:background="@drawable/white_shape_6"
         >
-        <com.mobi.clearsafe.widget.RoundImageView
+        <com.mobi.overseas.clearsafe.widget.RoundImageView
             android:id="@+id/task_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"

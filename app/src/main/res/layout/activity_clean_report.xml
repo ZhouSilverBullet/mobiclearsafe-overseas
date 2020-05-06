@@ -34,7 +34,7 @@
                 android:background="@drawable/white_cron18_selector"
                 android:orientation="vertical">
 
-                <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+                <com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout
                     android:id="@+id/adRLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
                     android:layout_marginBottom="10dp"
                     android:orientation="vertical">
 
-                    <com.mobi.clearsafe.ui.clear.widget.ClearItemView
+                    <com.mobi.overseas.clearsafe.ui.clear.widget.ClearItemView
                         android:id="@+id/civWechatGarbage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
@@ -64,7 +64,7 @@
                         android:layout_height="1dp"
                         android:background="@color/c_eeeff0" />
 
-                    <com.mobi.clearsafe.ui.clear.widget.ClearItemView
+                    <com.mobi.overseas.clearsafe.ui.clear.widget.ClearItemView
                         android:id="@+id/civAd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
@@ -74,7 +74,7 @@
                         android:layout_height="1dp"
                         android:background="@color/c_eeeff0" />
 
-                    <com.mobi.clearsafe.ui.clear.widget.ClearItemView
+                    <com.mobi.overseas.clearsafe.ui.clear.widget.ClearItemView
                         android:id="@+id/civFriend"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />

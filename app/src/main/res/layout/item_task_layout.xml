@@ -127,7 +127,7 @@
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
-    <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+    <com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout
         android:id="@+id/adRLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

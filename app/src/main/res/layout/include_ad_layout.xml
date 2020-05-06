@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:visibility="gone">
 
-    <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+    <com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout
         android:id="@+id/adRLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
         app:adrScenario="garbage_result1_native"
         app:isGoneView="true" />
 
-    <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+    <com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout
         android:id="@+id/adRLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         app:adrScenario="garbage_result2_native"
         app:isGoneView="true" />
 
-    <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+    <com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout
         android:id="@+id/adRLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
         app:adrScenario="garbage_result3_native"
         app:isGoneView="true" />
 
-    <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+    <com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout
         android:id="@+id/adRLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
