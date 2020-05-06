@@ -105,4 +105,7 @@
     <string name="open_success">开启签到提醒成功</string>
 
     <string name="clear_to_complete">无需清理</string>
+
+    <string name="clean_tool">快清理小工具</string>
+    <string name="hotActivity">热门活动</string>
 </resources>

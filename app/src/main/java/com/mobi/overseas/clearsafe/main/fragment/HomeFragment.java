@@ -12,6 +12,7 @@ import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -470,7 +471,8 @@ public class HomeFragment extends LazyLoadFragment implements Handler.Callback, 
                             }
 
                             clearBean.memoryValue = (int) percent;
-                            clearBean.dec = "已用" + percent + "%内存";
+//                            clearBean.dec = "已用" + percent + "%内存"
+                            clearBean.dec = String.format(getResources().getString(R.string.memoryIsUsed), (int) percent);
 
                             ((MainActivity) mContext).setMemoryValue(clearBean.memoryValue);
 
@@ -574,7 +576,7 @@ public class HomeFragment extends LazyLoadFragment implements Handler.Callback, 
             tvPoint.setText(String.valueOf(point));
             btnSkipClear.setTextColor(getResources().getColor(R.color.c_2B86FF));
             btnSkipClear.setBackgroundResource(R.drawable.btn_home_clear_selector);
-            tvStatus.setText("很健康");
+            tvStatus.setText(getResources().getString(R.string.goodHealthy));
             mToolbarColor = BlueColor;
             handleScrollY(mCurrentScrollY);
             sendWidgetBroadcastNotify(point);
@@ -588,7 +590,7 @@ public class HomeFragment extends LazyLoadFragment implements Handler.Callback, 
             tvPoint.setText(String.valueOf(point));
             btnSkipClear.setTextColor(getResources().getColor(R.color.c_FF4A00));
             btnSkipClear.setBackgroundResource(R.drawable.btn_home_clear_orange_selector);
-            tvStatus.setText("亚健康");
+            tvStatus.setText(getResources().getString(R.string.subHealthy));
             mToolbarColor = OrengeColor;
             handleScrollY(mCurrentScrollY);
 
@@ -640,7 +642,7 @@ public class HomeFragment extends LazyLoadFragment implements Handler.Callback, 
             tvPoint.setText(String.valueOf(point));
             btnSkipClear.setTextColor(getResources().getColor(R.color.c_FF4A00));
             btnSkipClear.setBackgroundResource(R.drawable.btn_home_clear_orange_selector);
-            tvStatus.setText("超负荷");
+            tvStatus.setText(getResources().getString(R.string.overloadHealthy));
 
             sendWidgetBroadcastNotify(point);
 //            mToolbarColor = R.color.c_FF7400;
@@ -817,7 +819,7 @@ public class HomeFragment extends LazyLoadFragment implements Handler.Callback, 
 
     @Override
     public void showRightSkip(boolean permissionAllEnabled) {
-        mIbRightSkip.setVisibility(View.VISIBLE);
+        mIbRightSkip.setVisibility(View.GONE);
         if (permissionAllEnabled) {
             tvRightHint.setVisibility(View.GONE);
             //清除动画和动画的handle

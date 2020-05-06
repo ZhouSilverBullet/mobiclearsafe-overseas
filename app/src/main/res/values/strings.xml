@@ -354,9 +354,33 @@
     <string name="clear_qq_video_title">短视频缓存</string>
     <string name="clear_qq_video_dec">看点视频缓存，放心清理</string>
 
-    <string name="clear_to_complete">无需清理</string>
     <string name="clear_power_cool_format">手机已降温%.1f°</string>
 
     <string name="clean_tool">快清理小工具</string>
+    <string name="hotActivity">热门活动</string>
+    <string name="oneOptimize">一键优化</string>
+    <string name="qqClean">QQ专清</string>
+    <string name="OneKeyFarewellCardSlow">一键告别卡慢</string>
+    <string name="bigFileClean">大文件清理</string>
+    <string name="notificationClean">通知栏清理</string>
+    <string name="guardianCleanAnyDay">快清理已守护您%s天</string>
+    <string name="problemToFix">有问题待修复</string>
+    <string name="memoryIsUsed">已用%d%%内存</string>
+    <string name="goodHealthy">很健康</string>
+    <string name="subHealthy">亚健康</string>
+    <string name="overloadHealthy">超负荷</string>
+    <string name="scanning">正在扫描：%s</string>
+    <string name="cleanUp">清理中...</string>
+    <string name="scan">扫描中...</string>
+    <string name="clear_to_complete">无需清理</string>
+    <string name="cleanUpTheComplete">清理完成</string>
+    <string name="systemGarbageHasBeenCleared">已清理%s系统垃圾</string>
+    <string name="garbageClean">垃圾清理</string>
+    <string name="restAssuredToCleanUp">放心清理（%s）</string>
+    <string name="optimizingSuccess">优化成功</string>
+    <string name="optimizingSuccessStatus">手机速度已达最佳</string>
+
+
+
 
 </resources>

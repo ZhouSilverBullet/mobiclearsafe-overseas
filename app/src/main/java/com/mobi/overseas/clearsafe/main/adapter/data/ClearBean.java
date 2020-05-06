@@ -62,7 +62,7 @@ public class ClearBean implements MultiItemEntity {
     public static List<ClearBean> getRvGridData() {
         List<ClearBean> list = new CopyOnWriteArrayList<>();
         list.add(new ClearBean(1, R.drawable.clean_icon_speed_orange, 1, "手机加速", "一键清理，释放空间", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.clean_icon_home_wechat, 2, "微信专清", "正在获取...", R.color.black_33));
+//        list.add(new ClearBean(1, R.drawable.clean_icon_home_wechat, 2, "微信专清", "正在获取...", R.color.black_33));
         list.add(new ClearBean(1, R.drawable.clean_icon_powercontrol, 3, "电量管理", "正在获取...", R.color.black_33));
         list.add(new ClearBean(1, R.drawable.clean_icon_power, 4, "手机降温", "快来给手机降温", R.color.black_33));
         list.add(new ClearBean(1, R.drawable.clean_icon_bigfile, 5, "安装包管理", "", R.color.black_33));
@@ -94,8 +94,8 @@ public class ClearBean implements MultiItemEntity {
     public static List<ClearBean> getRvGridBoxData2() {
         List<ClearBean> list = new CopyOnWriteArrayList<>();
         list.add(new ClearBean(1, R.drawable.tool_speed, 1, "手机加速", "一键清理，释放空间", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.toolbox_wechat, 2, "微信专清", "正在获取...", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.toolbox_qq, 3, "QQ专清", "正在获取...", R.color.black_33));
+//        list.add(new ClearBean(1, R.drawable.toolbox_wechat, 2, "微信专清", "正在获取...", R.color.black_33));
+//        list.add(new ClearBean(1, R.drawable.toolbox_qq, 3, "QQ专清", "正在获取...", R.color.black_33));
         list.add(new ClearBean(1, R.drawable.toolbox_cool, 4, "手机降温", "快来给手机降温", R.color.black_33));
 
 //        list.add(new ClearBean(1, R.drawable.toolbox_power, 1, "超级省电", "", R.color.black_33));

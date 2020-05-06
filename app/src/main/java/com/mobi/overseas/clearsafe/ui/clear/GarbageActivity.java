@@ -159,7 +159,8 @@ public class GarbageActivity extends BaseActivity implements ClearPresenter.ICle
                 tvUnit.setText("B");
 
                 if (packageNameList.size() > 0 && currentValue % 50 == 0 && !mIsPathScanned) {
-                    tvScan.setText("正在扫描：" + packageNameList.remove(0));
+//                    tvScan.setText("正在扫描：" + packageNameList.remove(0));
+                    tvScan.setText(String.format(getResources().getString(R.string.scanning), packageNameList.remove(0)));
                 }
 
             });
@@ -178,7 +179,7 @@ public class GarbageActivity extends BaseActivity implements ClearPresenter.ICle
             public void onSingleClick(View v) {
 
                 btnClear.setEnabled(false);
-                btnClear.setText("清理中...");
+                btnClear.setText(getResources().getString(R.string.cleanUp));
                 garbagePresenter.calculateClearPercent(garbageAdapter.dataAllSize.get(), allSize.get());
 
                 handleCleanAnim();
@@ -235,7 +236,7 @@ public class GarbageActivity extends BaseActivity implements ClearPresenter.ICle
         }
 
         btnClear.setEnabled(false);
-        btnClear.setText("扫描中...");
+        btnClear.setText(getResources().getString(R.string.scan));
     }
 
     @Override
@@ -265,7 +266,7 @@ public class GarbageActivity extends BaseActivity implements ClearPresenter.ICle
         //不然用假的包名显示扫描
         mIsPathScanned = true;
 
-        tvScan.setText("正在扫描：" + path);
+        tvScan.setText(String.format(getResources().getString(R.string.scanning), path));
     }
 
     @Override
@@ -293,7 +294,7 @@ public class GarbageActivity extends BaseActivity implements ClearPresenter.ICle
 
         if (allSize.get() == 0) {
             tvNum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
-            tvNum.setText("无需清理");
+            tvNum.setText(getResources().getString(R.string.clear_to_complete));
             tvUnit.setVisibility(View.GONE);
         }
 
@@ -422,8 +423,9 @@ public class GarbageActivity extends BaseActivity implements ClearPresenter.ICle
                             showClearGoodLayout(false);
 
                             btnClear.setEnabled(false);
-                            btnClear.setText("清理完成");
-                            tvClearText.setText("已清理" + clearValue + "系统垃圾");
+                            btnClear.setText(getResources().getString(R.string.cleanUpTheComplete));
+//                            tvClearText.setText("已清理" + clearValue + "系统垃圾");
+                            tvClearText.setText(String.format(getResources().getString(R.string.systemGarbageHasBeenCleared), clearValue));
 
 
                         }
@@ -456,7 +458,7 @@ public class GarbageActivity extends BaseActivity implements ClearPresenter.ICle
                 .build();
         dialog.show();
 
-        tvClearText.setText("已清理" + clearValue + "系统垃圾");
+        tvClearText.setText(String.format(getResources().getString(R.string.systemGarbageHasBeenCleared), clearValue));
 
         iOkLayout.setVisibility(View.VISIBLE);
         iTabLayout.setVisibility(View.INVISIBLE);
@@ -465,7 +467,7 @@ public class GarbageActivity extends BaseActivity implements ClearPresenter.ICle
     }
 
     private void initToolBar() {
-        mToolBar.setTitle("垃圾清理");
+        mToolBar.setTitle(getResources().getString(R.string.garbageClean));
         mToolBar.setTitleTextColor(getResources().getColor(R.color.white));
         mToolBar.setNavigationIcon(R.drawable.white_return);
 
@@ -539,7 +541,8 @@ public class GarbageActivity extends BaseActivity implements ClearPresenter.ICle
         }
         //为了选中的时候，产生不能点击的情况
         btnClear.setEnabled(allSize > 0 && iOkLayout.getVisibility() == View.GONE && !isLoading);
-        btnClear.setText("放心清理（" + fileSize0[0] + fileSize0[1] + "）");
+//        btnClear.setText("放心清理（" + fileSize0[0] + fileSize0[1] + "）");
+        btnClear.setText(String.format(getResources().getString(R.string.restAssuredToCleanUp), fileSize0[0] + fileSize0[1]));
     }
 
     @Override
@@ -651,8 +654,8 @@ public class GarbageActivity extends BaseActivity implements ClearPresenter.ICle
         getIntent().putExtra("isFirstGood", isFirstGood);
         getIntent().putExtra("isGarbageGoodShowAd", true);
 
-        getIntent().putExtra("dec", "优化成功");
-        getIntent().putExtra("dec2", "手机速度已达最佳");
+        getIntent().putExtra("dec", getResources().getString(R.string.optimizingSuccess));
+        getIntent().putExtra("dec2", getResources().getString(R.string.optimizingSuccessStatus));
 
         mFragment = ShowGoodFragment.newInstance(isFirstGood);
         mFragment.setFirstGood(isFirstGood);

@@ -138,9 +138,9 @@ android {
 
         }
 
-        com12306 {
-
-        }
+//        com12306 {
+//
+//        }
     }
     productFlavors.all { flavor ->
         flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
