@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="95dp"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/sign_top"
+        android:layout_width="40dp"
+        android:layout_height="21dp"
+        android:orientation="horizontal"
+        android:background="@mipmap/sign_list_bg"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/fb_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+48"
+            android:textColor="@color/c_FDD720"
+            android:textSize="10sp"
+            android:gravity="center_horizontal"
+            android:visibility="visible"
+            android:layout_marginBottom="2dp"
+            />
+        <ImageView
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:src="@mipmap/small_gold"
+            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="1dp"
+            />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/sign_top"
+        android:layout_width="45dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+       >
+        <LinearLayout
+            android:id="@+id/ll_bgs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nums"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/yiling_icon"
+                android:gravity="center"
+                android:text="200"
+                android:textColor="@color/c_C5C5C5"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_isLing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="已领"
+                android:textColor="@color/gray_a7cb"
+                android:textSize="12sp"
+                android:visibility="gone"
+                />
+
+            <LinearLayout
+                android:id="@+id/ll_fanbei"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_fanbei"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/fanbei_icon2" />
+
+                <TextView
+                    android:id="@+id/tv_fb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/double_text"
+                    android:textColor="@color/c_4C99FF"
+                    android:textSize="12sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_red"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/red_nums"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@mipmap/img_pkg"
+                    android:gravity="center|bottom"
+                    android:text="200"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                  />
+
+                <TextView
+                    android:id="@+id/tv_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/double_text"
+                    android:textColor="@color/black_3d5c"
+                    android:textSize="12sp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

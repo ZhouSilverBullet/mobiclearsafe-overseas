@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_0062FF">
+
+    <ImageView
+        android:id="@+id/ivScannerBg"
+        android:layout_width="184dp"
+        android:layout_height="184dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/power_scan_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivScanner"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_gravity="center"
+        android:src="@drawable/power_scan_scaner"
+        app:layout_constraintBottom_toBottomOf="@id/ivScannerBg"
+        app:layout_constraintRight_toRightOf="@id/ivScannerBg" />
+
+    <com.mobi.clearsafe.ui.powersaving.widget.CircleLayout
+        android:id="@+id/clLayout"
+        android:layout_width="183dp"
+        android:layout_height="183dp"
+        android:layout_marginTop="120dp"
+        app:clRadius="64dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivIcon1"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/power_scan_az_new_icon" />
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/power_scan_icon2" />
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/power_scan_az_new_icon" />
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/power_scan_icon1" />
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/power_scan_az_old_icon" />
+
+        <ImageView
+            android:id="@+id/ivIcon6"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/power_scan_az_new_icon" />
+
+    </com.mobi.clearsafe.ui.powersaving.widget.CircleLayout>
+
+    <LinearLayout
+        android:id="@+id/llProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ivScannerBg">
+
+        <com.mobi.clearsafe.widget.NoPaddingTextView
+            android:id="@+id/tvProgressNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="58"
+            android:textColor="@color/white"
+            app:textSize="51sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginLeft="4dp"
+            android:text="%"
+            android:textColor="@color/white"
+            android:textSize="19sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="正在分析耗电信息…"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/llProgress" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="46dp"
+        android:background="@drawable/power_scan_pb_progress_drawable"
+        android:max="100"
+        android:progress="30"
+        app:layout_constraintTop_toBottomOf="@id/tvDec"
+        tools:progress="50" />
+</android.support.constraint.ConstraintLayout>

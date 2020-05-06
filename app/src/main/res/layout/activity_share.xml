@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".moneyactivity.ShareActivity"
+    >
+<!--    @mipmap/share_bg-->
+    <TextView
+        android:id="@+id/tv_btn"
+        android:layout_width="79dp"
+        android:layout_height="31dp"
+        android:background="@mipmap/sync_wechat_bg"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="26dp"
+        android:textSize="14dp"
+        android:textColor="@color/blue_51a5f7"
+        android:gravity="center"
+        android:text="@string/activitygz"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:id="@+id/layout_toobar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:src="@mipmap/back_icon"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="邀请好友"
+            android:textSize="18sp"
+            android:textColor="@color/black_33"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_below="@+id/layout_toobar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/share_yellow"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/share_top_bg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10元"
+            android:textSize="40sp"
+            android:textColor="@color/c_FF630F"
+            android:layout_marginTop="145dp"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最高"
+            android:textSize="13sp"
+            android:textColor="@color/c_FF630F"
+            android:gravity="center"
+            android:background="@drawable/share_tip_shape"
+            android:layout_toRightOf="@+id/tv_money"
+            android:layout_alignTop="@+id/tv_money"
+            android:layout_marginTop="10dp"
+            />
+        <LinearLayout
+            android:id="@+id/layout_copy"
+            android:layout_width="244dp"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_money"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="邀请码"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                />
+            <TextView
+                android:id="@+id/tv_yqm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="43ERF334"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:layout_marginLeft="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/click_copy"
+                android:textColor="@color/yellow_fff"
+                android:textSize="13dp"
+                android:layout_marginLeft="10dp"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_below="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="-10dp"
+        android:background="@color/c_FFA92A"
+        >
+
+
+        <TextView
+            android:id="@+id/invite_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@mipmap/share_btn"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="22dp"
+            android:src="@mipmap/share_bottom"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/invite_layout"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/share_to_weixin_friends"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@mipmap/wechat_session_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/string_invite_tip12"
+                android:textColor="@color/black_33"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/share_to_weixin_timeline"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@mipmap/wechat_timeline_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/string_invite_tip13"
+                android:textColor="@color/black_33"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

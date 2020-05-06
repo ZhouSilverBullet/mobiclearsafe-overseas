@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="18dp"
+        android:background="@color/c_EDEDED" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp">
+
+        <TextView
+            android:id="@+id/tv_time_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black_99"
+            android:textSize="14dp"
+            tools:text="16:44:12" />
+
+        <TextView
+            android:id="@+id/tv_tujing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="28dp"
+            android:layout_toRightOf="@+id/tv_time_hour"
+            android:textColor="@color/black_99"
+            android:textSize="14dp"
+            tools:text="签到奖励" />
+
+        <TextView
+            android:id="@+id/tv_gold_nums"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/black_99"
+            android:textSize="14dp"
+            tools:text="+29金币" />
+    </RelativeLayout>
+</LinearLayout>

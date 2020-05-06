@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="79dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:id="@+id/layout_view"
+    android:background="@color/white"
+    android:paddingRight="2dp"
+    android:paddingLeft="2dp"
+    android:paddingBottom="15dp"
+    android:paddingTop="15dp"
+    >
+
+    <com.mobi.clearsafe.widget.RoundImageView
+        android:id="@+id/task_icon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:src="@mipmap/default_head_icon"
+        />
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="绑定微信"
+        android:layout_marginTop="6dp"
+        android:textSize="12sp"
+        android:textColor="@color/black_66"
+        />
+    <LinearLayout
+        android:id="@+id/layout_btn"
+        android:layout_width="66dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal"
+        android:background="@drawable/finishi_bg_shape"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/btn_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="立即领取"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@color/c_B1B1B1"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/gold_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/act_gold_icon"
+            />
+        <TextView
+            android:id="@+id/tv_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+88"
+            android:textSize="12sp"
+            android:textColor="@color/c_FF492B"
+            android:layout_marginLeft="3dp"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="305dp"
+        android:layout_height="362dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_corner"
+        >
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@mipmap/close_icon"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            />
+        <ImageView
+            android:id="@+id/remind_bg"
+            android:layout_width="151dp"
+            android:layout_height="128dp"
+            android:src="@mipmap/remind_icon"
+            android:layout_below="@+id/iv_close"
+            android:layout_centerHorizontal="true"
+            />
+
+        <LinearLayout
+            android:id="@+id/tv_remind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/remind_bg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/kaiqi"
+                android:textColor="@color/black_3c3d5b"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/qiandao"
+                android:textColor="@color/c_FF9B2B"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tixing"
+                android:textColor="@color/black_3c3d5b"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/qd_content"
+            android:layout_below="@+id/tv_remind"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/gray_7e9c"
+            android:textSize="14dp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/btn_remind"
+            android:layout_width="242dp"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shape_btn_green"
+            android:text="@string/open_remind"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            />
+        
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

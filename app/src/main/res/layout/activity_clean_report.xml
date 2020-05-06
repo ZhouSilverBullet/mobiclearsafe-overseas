@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.clear.CleanReportActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsvScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="70dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/iTabLayout"
+                layout="@layout/clear_tab_layout" />
+
+            <include
+                android:id="@+id/iOkLayout"
+                layout="@layout/clear_tab_ok_layout"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="310dp"
+                android:animateLayoutChanges="true"
+                android:background="@drawable/white_cron18_selector"
+                android:orientation="vertical">
+
+                <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+                    android:id="@+id/adRLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/white_shape_6"
+                    android:gravity="center"
+                    app:adrScenario="me_page_native" />
+
+                <LinearLayout
+                    android:id="@+id/llClear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <com.mobi.clearsafe.ui.clear.widget.ClearItemView
+                        android:id="@+id/civWechatGarbage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/c_eeeff0" />
+
+                    <com.mobi.clearsafe.ui.clear.widget.ClearItemView
+                        android:id="@+id/civAd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/c_eeeff0" />
+
+                    <com.mobi.clearsafe.ui.clear.widget.ClearItemView
+                        android:id="@+id/civFriend"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <include layout="@layout/include_ad_layout" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
+        style="@style/SafeToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:elevation="5dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/btn_corn4_selector"
+            android:text="扫描中..."
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mobi.clearsafe">
+
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- 这两个是日历读写权限 -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.BIND_APPWIDGET" />
+
+    <application
+        android:name=".app.MyApplication"
+        android:allowBackup="true"
+        android:appComponentFactory="mobi"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup,android:appComponentFactory,networkSecurityConfig">
+        <activity android:name=".ui.appwiget.CleanAppWidgetGuideActivity">
+
+        </activity>
+
+        <receiver
+            android:name=".ui.appwiget.CleanAppWidget"
+            android:label="@string/clean_tool">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+
+                <action android:name="com.mobi.clearsafe.RESFRESH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clean_app_widget_info" />
+        </receiver>
+
+        <activity
+            android:name=".ui.powercontrol.BatteryMaintainTipsActivity"
+            android:theme="@style/SafeTheme" />
+        <activity
+            android:name=".ui.powercontrol.PowerControlActivity"
+            android:theme="@style/SafeTheme">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".ui.repair.PermissionRepairActivity"
+            android:theme="@style/SafeTheme" />
+        <activity
+            android:name=".ui.cleannotice.SingleTaskBlankActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/SafeTheme" />
+        <activity
+            android:name=".ui.cleannotice.GuideDialogActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:resizeableActivity="true"
+            android:theme="@style/SafeDialogTheme" />
+        <activity
+            android:name=".ui.cleannotice.CleanNoticeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SafeTheme" />
+        <activity
+            android:name=".ui.powersaving.PowerSavingActivity"
+            android:theme="@style/SafeTheme" />
+        <activity
+            android:name=".ui.clear.CleanApkActivity"
+            android:theme="@style/SafeTheme" />
+        <activity
+            android:name=".ui.clear.CleanBigFileActivity"
+            android:theme="@style/SafeTheme" />
+        <activity
+            android:name=".ui.clear.SpeedPhoneActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SafeTheme">
+            <intent-filter>
+                <action android:name="cleanspeedphone" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.activity.Invite2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SafeTheme">
+            <intent-filter>
+                <action android:name="cleaninvite2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.clear.GarbageActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/SafeTheme">
+            <intent-filter>
+                <action android:name="cleangarbage" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.clear.PowerCoolActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SafeTheme">
+            <intent-filter>
+                <action android:name="cleanpowercool" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.clear.CleanReportActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SafeTheme">
+            <intent-filter>
+                <action android:name="cleancleanreport" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.clear.CleanQReportActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SafeTheme">
+            <intent-filter>
+                <action android:name="cleancleanqreport" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.activity.FriendManagerActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanfriendmanager" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.activity.InviteActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleaninvite" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.activity.SetNumberActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleansetnumber" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="667" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="${umeng_app_key}" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+        <meta-data
+            android:name="BaiduMobAd_APP_ID"
+            android:value="e94da656" />
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="appid=101288607" /> <!-- vivo push参数声明 -->
+        <!-- vivo start -->
+        <meta-data
+            android:name="com.vivo.push.api_key"
+            android:value="c4c0067b-1cc0-4564-8454-45699ea54299" />
+        <meta-data
+            android:name="com.vivo.push.app_id"
+            android:value="17327" /> <!-- VIVO end -->
+        <activity
+            android:name=".WelcomeActivity"
+            android:configChanges="keyboard|orientation|screenLayout|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/SafeTheme">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".me.activity.GoldHistoryActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleangoldhistory" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".me.activity.AboutUsActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanaboutus" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".me.activity.SettingsActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleansettings" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".me.activity.WithdrawalActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanwithdrawal" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".me.activity.WithdrawalHistoryActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanwithdrawalhistory" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".me.activity.StepHistoryActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanstephistory" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".widget.LoadWebViewActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanloadwebview" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".me.activity.NickNameAcitivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleannickname" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".me.activity.UserInfoActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanuserinfo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WeChatLoginActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanwechatlogin" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".moneyactivity.BindPhoneActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanbindphone" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="cleanbindphone" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.activity.StepRaceActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleansteprace" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.activity.StepRaceHistoryActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanstepracehistory" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".moneyactivity.ShareActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanshare" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".moneyactivity.EwmActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanewm" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".moneyactivity.InputInviteCodeActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleaninvitecode" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> <!-- <activity -->
+        <!-- android:name="com.baidu.mobads.AppActivity" -->
+        <!-- android:configChanges="keyboard|keyboardHidden|orientation" -->
+        <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar" /> -->
+        <activity
+            android:name=".push.MipushTestActivity"
+            android:exported="true"
+            android:launchMode="singleTask" />
+
+        <service android:name=".service.StepService">
+
+            <!--            <intent-filter>-->
+            <!--                &lt;!&ndash; 系统启动完成后会调用 &ndash;&gt;-->
+            <!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+            <!--                <action android:name="android.intent.action.DATE_CHANGED" />-->
+            <!--                <action android:name="android.intent.action.MEDIA_MOUNTED" />-->
+            <!--                <action android:name="android.intent.action.USER_PRESENT" />-->
+            <!--                <action android:name="android.intent.action.ACTION_TIME_TICK" />-->
+            <!--                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />-->
+            <!--                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />-->
+            <!--            </intent-filter>-->
+        </service>
+        <service
+            android:name=".ui.cleannotice.control.NotificationListener"
+            android:label="@string/tab_clean"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+        <service android:name=".ui.appwiget.CleanSpeedService" />
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.mobi.clearsafe"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- 开机自启动 -->
+        <receiver
+            android:name=".service.TodayStepBootCompleteReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver> <!-- 关机广播 -->
+        <receiver android:name=".service.TodayStepShutdownReceiver">
+            <intent-filter>
+
+                <!-- 关机广播 -->
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver> <!-- 0点分隔alertmanager -->
+        <receiver
+            android:name=".service.TodayStepAlertReceive"
+            android:enabled="true"
+            android:exported="false" />
+        <receiver
+            android:name=".push.UmPushReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="umpush" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name=".manager.MobiFileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/rc_file_path" />
+        </provider> <!-- <provider -->
+        <!-- android:name="com.baidu.mobads.openad.FileProvider" -->
+        <!-- android:authorities="${applicationId}.bd.provider" -->
+        <!-- android:exported="false" -->
+        <!-- android:grantUriPermissions="true"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.FILE_PROVIDER_PATHS" -->
+        <!-- android:resource="@xml/bd_file_paths" /> -->
+        <!-- </provider> -->
+        <receiver android:name=".download.DownLoadCompleteReceiver" />
+
+        <activity
+            android:name=".main.activity.IntegralWallActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="cleanintegrallwall" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> <!-- <provider -->
+        <!-- android:name="android.support.v4.content.FileProvider" -->
+        <!-- android:authorities="${applicationId}.fileprovider" -->
+        <!-- android:exported="false" -->
+        <!-- tools:replace="android:resource" -->
+        <!-- android:grantUriPermissions="true" -->
+        <!-- tools:ignore="WrongManifestParent"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.support.FILE_PROVIDER_PATHS" -->
+        <!-- android:resource="@xml/gdt_file_path1" /> -->
+        <!-- </provider> -->
+        <activity android:name=".me.activity.MyWalletActivity">
+            <intent-filter>
+                <action android:name="cleanmywallet" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".me.activity.MyCardActivity">
+            <intent-filter>
+                <action android:name="cleanmycard" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

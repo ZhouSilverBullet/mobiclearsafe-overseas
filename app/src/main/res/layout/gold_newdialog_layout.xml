@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="43dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="347dp"
+            android:layout_height="wrap_content"
+            android:minHeight="236dp">
+
+
+            <ImageView
+                android:id="@+id/bg_light"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@mipmap/dialog_light_bg"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="100dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivBg" />
+
+
+            <ImageView
+                android:id="@+id/ivBg"
+                android:layout_width="327dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/gold_newdialog_bg_icon"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:src="@mipmap/dialog_right_top_close_icon"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:gravity="center_horizontal"
+                android:minHeight="157dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="恭喜获得金币奖励" />
+
+
+                <LinearLayout
+                    android:id="@+id/layout_gold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/gold_icon3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:textColor="@color/c_FF8200"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:id="@+id/tv_gold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="88"
+                        android:textColor="@color/c_FF8200"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_btns"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_gold">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_double"
+                            android:layout_width="238dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/new_signdialog_btn_selector"
+                            android:gravity="center"
+                            android:text="@string/gold_double"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            tools:text="金币翻倍" />
+
+                        <TextView
+                            android:id="@+id/tv_continue"
+                            android:layout_width="238dp"
+                            android:layout_height="45dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/new_signdialog_btn_selector"
+                            android:gravity="center"
+                            android:text="@string/tv_continue"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:text="继续赚钱" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_agin"
+                        android:layout_width="238dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/new_signdialog_btn_selector"
+                        android:gravity="center"
+                        android:text="@string/turn_again"
+                        android:textColor="@color/c_FFA32B"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_continues"
+                        android:layout_width="238dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="17dp"
+                        android:text="@string/tv_continue"
+                        android:textColor="@color/black_99"
+                        android:textSize="14sp"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/lable"
+                    android:layout_width="82dp"
+                    android:layout_height="26dp"
+                    android:layout_marginTop="130dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@mipmap/lable_icon"
+                    android:visibility="gone"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <!--            <ImageView-->
+            <!--                android:layout_width="88dp"-->
+            <!--                android:layout_height="88dp"-->
+            <!--                android:layout_marginTop="50dp"-->
+            <!--                android:background="@mipmap/dialog_top_img_new"-->
+            <!--                app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--                app:layout_constraintRight_toRightOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <com.mobi.clearsafe.widget.CircleAroundView
+            android:id="@+id/fl_ad"
+            android:layout_width="303dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"
+            android:minHeight="150dp"
+            android:padding="6dp" />
+    </LinearLayout>
+
+</FrameLayout>

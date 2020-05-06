@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_title_layout" />
+
+    <LinearLayout
+        android:id="@+id/ll_lin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="112dp"
+            android:layout_marginTop="80dp"
+            android:layout_height="112dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:textColor="@color/c_3D3F5C"
+            android:textSize="14sp"
+            tools:text="全民走路v1.0.0" />
+
+        <TextView
+            android:id="@+id/tv_qq"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:padding="10dp"
+            android:textColor="@color/c_7E809C"
+            android:textSize="14sp"
+            tools:text="用户交流QQ群：12345677" />
+    </LinearLayout>
+
+</LinearLayout>

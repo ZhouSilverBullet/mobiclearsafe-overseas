@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    >
+
+    <RelativeLayout
+        android:layout_width="331dp"
+        android:layout_height="142dp"
+        android:layout_gravity="center"
+        android:background="@drawable/white_radius15"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@mipmap/close_icon"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="19dp"
+            />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="冻结金额"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:textSize="14sp"
+            android:textColor="@color/black_33"
+            android:textStyle="bold"
+            />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="13dp"
+            android:background="#EEEEEE"
+            />
+
+
+    <TextView
+        android:id="@+id/tv_cash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_block"
+        android:textColor="@color/black_33"
+        android:textSize="14sp"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="25dp"
+        />
+
+        <TextView
+            android:id="@+id/tv_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看详情"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/c_FF3737"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:background="@drawable/block_shape"
+            android:layout_below="@+id/line"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="21dp"
+            />
+
+
+
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

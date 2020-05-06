@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="92dp">
+
+    <ImageView
+        android:id="@+id/iv_vxicon"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="20dp"
+        android:background="@mipmap/weixin_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/c_3D3F5C"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@+id/iv_vxicon"
+        app:layout_constraintTop_toTopOf="@+id/iv_vxicon"
+        tools:text="微信零钱" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_a7cb"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_vxicon"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_title"
+        tools:text="2019/10/12 10:21" />
+
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/c_3D3F5C"
+        android:textSize="20sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title"
+        tools:text="+1.00" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/c_FF4F2B"
+        android:textSize="14sp"
+        app:layout_constraintRight_toRightOf="@+id/tv_money"
+        app:layout_constraintTop_toBottomOf="@+id/tv_money"
+        tools:text="提现成功" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/c_F9F9F9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</android.support.constraint.ConstraintLayout>

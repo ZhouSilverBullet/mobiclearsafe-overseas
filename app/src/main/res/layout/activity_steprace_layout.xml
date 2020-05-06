@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_topbg"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/three_thousand_topbg" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_main_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-75dp"
+                    android:background="@mipmap/steprace_bg"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_content_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_countdown_time"
+                            android:layout_width="178dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:background="@mipmap/steprace_countdown_bg"
+                            android:gravity="center"
+                            android:textColor="@color/c_A94601"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            tools:text="距离开赛还有12:56:58" />
+
+                        <TextView
+                            android:id="@+id/tv_countdown_time_8000"
+                            android:layout_width="178dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:background="@mipmap/steprace_countdown_bg"
+                            android:gravity="center"
+                            android:textColor="@color/c_A94601"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:text="距离开赛还有12:56:58" />
+
+                        <TextView
+                            android:id="@+id/tv_allreward"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            tools:text="1130期达标总奖池(金币)" />
+
+                        <com.mobi.clearsafe.widget.NoPaddingTextView
+                            android:id="@+id/tv_allreward_nper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:textSize="38dp"
+                            tools:text="888888888" />
+                        <!--比赛未开始时 报名人数-->
+                        <LinearLayout
+                            android:id="@+id/ll_racenobegin_sign"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+                            <!--比赛未开始时显示报名状态-->
+                            <TextView
+                                android:id="@+id/tv_issign"
+                                android:layout_width="70dp"
+                                android:layout_height="26dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/shape_stepbaoming_bg"
+                                android:gravity="center"
+                                android:text="@string/is_baoming"
+                                android:textColor="@color/c_A94601"
+                                android:textSize="14dp"
+                                android:visibility="gone"
+                                tools:text="已报名" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="14dp"
+                                android:src="@mipmap/steprace_user_icon" />
+
+                            <TextView
+                                android:id="@+id/tv_signnum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:textColor="@color/white"
+                                android:textSize="14dp"
+                                tools:text="已有2000人报名" />
+                        </LinearLayout>
+                        <!--比赛进行中显示达标人数和总奖池-->
+                        <LinearLayout
+                            android:id="@+id/ll_raceing_sign_jiangchi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tv_dabiao_num"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="13dp"
+                                android:layout_weight="1"
+                                android:gravity="right|center_vertical"
+                                android:textColor="@color/white"
+                                android:textSize="14dp"
+                                tools:text="达标人数:688" />
+
+                            <TextView
+                                android:id="@+id/tv_all_jiangchi"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="13dp"
+                                android:layout_weight="1"
+                                android:gravity="left|center_vertical"
+                                android:textColor="@color/white"
+                                android:textSize="14dp"
+                                tools:text="总奖池:688544" />
+                        </LinearLayout>
+                        <!--比赛进行中步数情况-->
+                        <LinearLayout
+                            android:id="@+id/ll_raceing_step"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/shape_stepraceing_btn"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="24dp"
+                            android:paddingRight="24dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tv_isdabiao"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="14dp"
+                                tools:text="进行中" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="12dp"
+                                android:layout_marginLeft="11dp"
+                                android:background="@color/white" />
+
+                            <TextView
+                                android:id="@+id/tv_targetstep_nowstep"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:textColor="@color/white"
+                                android:textSize="14dp"
+                                tools:text="6000/5000步" />
+                        </LinearLayout>
+                        <!--观看视频免费报名-->
+                        <LinearLayout
+                            android:id="@+id/ll_sign_btn"
+                            android:layout_width="296dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="6dp"
+                            android:background="@mipmap/steprace_btn"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/sign_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/c_A94601"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                tools:text="观看视频免费报名" />
+
+                            <TextView
+                                android:id="@+id/tv_sign_type_tips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/c_C2753F"
+                                android:textSize="12dp"
+                                tools:text="观看视频免费报名，奖励+20金币" />
+                        </LinearLayout>
+                        <!--报名成功比赛未开始时 显示分享按钮-->
+                        <LinearLayout
+                            android:id="@+id/ll_share"
+                            android:layout_width="296dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:background="@mipmap/steprace_btn"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/share_friend"
+                                android:textColor="@color/c_A94601"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                tools:text="分享给好友" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/share_friend_tips"
+                                android:textColor="@color/c_C2753F"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                        <!--比赛进行中报名下一期按钮-->
+                        <TextView
+                            android:id="@+id/tv_sign_next"
+                            android:layout_width="256dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="14dp"
+                            android:background="@mipmap/steprace_btn"
+                            android:gravity="center"
+                            android:text="@string/sign_next_race"
+                            android:textColor="@color/c_A94601"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:text="报名下一期" />
+                        <!--下一期活动情况-->
+                        <TextView
+                            android:id="@+id/tv_nextrace_title"
+                            android:layout_width="278dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/shape_steptop_bg"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:text="下期(1130) 12345人健步赛报名" />
+                        <!--下期比赛报名人数和奖金池-->
+                        <LinearLayout
+                            android:id="@+id/ll_nextrace_content"
+                            android:layout_width="278dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-4dp"
+                            android:background="@drawable/shape_stepbottom_bg"
+                            android:orientation="horizontal"
+                            android:paddingTop="14dp"
+                            android:paddingBottom="16dp"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_next_all_gold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/c_FFDF3F"
+                                    android:textSize="24dp"
+                                    android:textStyle="bold"
+                                    tools:text="3234345" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/reward_all_gold"
+                                    android:textColor="@color/c_FFEEBC"
+                                    android:textSize="14dp"
+                                    tools:text="奖励总额(金币)" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_next_all_people"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/c_FFDF3F"
+                                    android:textSize="24dp"
+                                    android:textStyle="bold"
+                                    tools:text="3234345" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/sign_num_people"
+                                    android:textColor="@color/c_FFEEBC"
+                                    android:textSize="14dp"
+                                    tools:text="报名人数(人)" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <RelativeLayout
+                            android:id="@+id/fl_ad"
+                            android:gravity="center"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="14dp"
+                            android:layout_marginLeft="14dp"
+                            android:background="@drawable/white_shape_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </RelativeLayout>
+
+                        <!--步骤-使用规则-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="14dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/shape_steptop_bg"
+                            android:gravity="center"
+                            android:text="@string/three_step_reward"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            tools:text="三步赚取运动奖金" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="14dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="-4dp"
+                            android:background="@drawable/shape_stepbottom_bg"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="23dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="44dp"
+                                        android:layout_height="68dp"
+                                        android:background="@mipmap/step_today_icon" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="44dp"
+                                        android:layout_height="68dp"
+                                        android:src="@mipmap/step_mingtian_icon" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="44dp"
+                                        android:layout_height="68dp"
+                                        android:src="@mipmap/step_houtian_icon" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="8dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="72dp"
+                                    android:layout_height="36dp"
+                                    android:background="@mipmap/steprace_threestep_btn"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_step1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:textColor="@color/c_FFEEBC"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        tools:text="观看视频" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="@string/signin_race"
+                                        android:textColor="@color/c_FFEEBC"
+                                        android:textSize="10dp"
+                                        tools:text="报名比赛" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="2dp"
+                                    android:background="@color/c_FF8E3E" />
+
+                                <LinearLayout
+                                    android:layout_width="79dp"
+                                    android:layout_height="36dp"
+                                    android:background="@mipmap/steprace_threestep_btn"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_step2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:textColor="@color/c_FFEEBC"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        tools:text="完成5000步" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="@string/get_reward_zige"
+                                        android:textColor="@color/c_FFEEBC"
+                                        android:textSize="10dp"
+                                        tools:text="获得奖励资格" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="20dp"
+                                    android:layout_height="2dp"
+                                    android:background="@color/c_FF8E3E" />
+
+                                <LinearLayout
+                                    android:layout_width="72dp"
+                                    android:layout_height="36dp"
+                                    android:background="@mipmap/steprace_threestep_btn"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="@string/race_jiesuan"
+                                        android:textColor="@color/c_FFEEBC"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold"
+                                        tools:text="比赛结算" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="@string/dabiao_fenjiangjin"
+                                        android:textColor="@color/c_FFEEBC"
+                                        android:textSize="10dp"
+                                        tools:text="达标分奖金" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_hdgz"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="12dp"
+                                android:text="@string/check_activity_gz"
+                                android:textColor="@color/c_FFEEBC"
+                                android:textSize="12dp"
+                                tools:text="查看活动规则>" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+            <!--返回键-->
+            <LinearLayout
+                android:id="@+id/ll_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="23.5dp"
+                    android:background="@mipmap/steprace_history_back_icon" />
+            </LinearLayout>
+            <!--tab栏-->
+            <RelativeLayout
+                android:layout_width="188dp"
+                android:layout_height="33dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="26dp"
+                android:background="@drawable/shape_corner_18dp">
+
+                <TextView
+                    android:id="@+id/tv_leftbtn"
+                    android:layout_width="94dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/shape_corner_18dp_ff7900"
+                    android:gravity="center"
+                    android:text="3000步"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    tools:text="5000步" />
+
+                <TextView
+                    android:id="@+id/tv_rightbtn"
+                    android:layout_width="94dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/shape_corner_18dp_tr"
+                    android:gravity="center"
+                    android:text="8000步"
+                    android:textColor="@color/c_FF7900"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    tools:text="8000步" />
+
+                <View
+                    android:id="@+id/v_redpoint"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="11dp"
+                    android:background="@drawable/shape_corner_8dp_red"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="26dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@mipmap/steprace_history_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entry_record"
+                    android:textColor="@color/c_FF7900"
+                    android:textSize="12dp"
+                    tools:text="参赛记录" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_guize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_history"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@mipmap/steprace_guize_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activitygz"
+                    android:textColor="@color/c_FF7900"
+                    android:textSize="12dp"
+                    tools:text="活动规则" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_stepracecard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_guize"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="24dp">
+
+                <ImageView
+                    android:id="@+id/iv_card_icon"
+                    android:layout_width="31dp"
+                    android:layout_height="36dp"
+                    android:background="@mipmap/step_race_card_icon" />
+
+                <TextView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_below="@+id/iv_card_icon"
+                    android:layout_marginLeft="-7dp"
+                    android:layout_marginTop="-7dp"
+                    android:background="@drawable/shape_corner_8dp_red"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/white"
+                    android:textSize="10dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tv_card_num"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_below="@+id/iv_card_icon"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginTop="-12dp"
+                    android:visibility="invisible"
+                    android:layout_toRightOf="@+id/iv_card_icon"
+                    android:background="@drawable/shape_corner_8dp_red"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_card_icon"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:text="@string/step_card_str"
+                    android:textColor="@color/c_4595FF"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/step_persion_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="110dp"
+                />
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

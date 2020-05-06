@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/clear_blue_selector"
+    tools:context=".ui.clear.SpeedPhoneActivity">
+
+    <!--    <android.support.v4.widget.NestedScrollView-->
+    <!--        android:id="@+id/nsvScroll"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.mobi.clearsafe.ui.clear.widget.GoodChangeLayout
+            android:id="@+id/gclLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--        <android.support.v7.widget.RecyclerView-->
+        <!--            android:id="@+id/rv"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:background="@drawable/white_top_cron18_selector"-->
+        <!--            android:padding="18dp" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/white_top_cron18_selector"
+            android:orientation="vertical"
+            android:paddingTop="18dp">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include layout="@layout/include_ad_layout" />
+            </android.support.v4.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--    </android.support.v4.widget.NestedScrollView>-->
+
+    <com.mobi.clearsafe.ui.clear.widget.SpeedScanLayout
+        android:id="@+id/slLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.mobi.clearsafe.ui.clear.widget.wave.WaveView
+        android:id="@+id/waveView"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:showWave="true"
+        app:waveShape="square" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
+        style="@style/SafeToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mobi.clearsafe.ui.clear.ad.ADSplashLayout
+        android:id="@+id/adslContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@mipmap/mywallet_top_bg" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_titlebar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15.5dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10.5dp"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="13dp"
+                            android:layout_height="23.5dp"
+                            android:background="@mipmap/steprace_history_back_icon" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/string_my_card"
+                        android:textColor="@color/white"
+                        android:textSize="17dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_below="@+id/rl_titlebar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="14dp"
+                    android:background="@mipmap/mywall_top_gold_bg">
+
+                    <TextView
+                        android:id="@+id/tv_t"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/gold_yue"
+                        android:textColor="@color/black_99"
+                        android:textSize="12dp"
+                        tools:text="金币余额" />
+
+                    <TextView
+                        android:id="@+id/tv_gold_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_t"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/black_33"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        tools:text="8888" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_gold_num"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/ll_today_gold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/today_jinbi"
+                                android:textColor="@color/black_99"
+                                android:textSize="12dp"
+                                tools:text="今日金币" />
+
+                            <TextView
+                                android:id="@+id/tv_today_gold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:textColor="@color/black_33"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                tools:text="5555" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="70dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_jinbi"
+                                android:textColor="@color/black_99"
+                                android:textSize="12dp"
+                                tools:text="累计收益（即使收益）" />
+
+                            <TextView
+                                android:id="@+id/tv_all_gold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:textColor="@color/black_33"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                tools:text="5555" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_huilv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginBottom="18dp"
+                        android:textColor="@color/black_99"
+                        android:textSize="14dp"
+                        tools:text="10000金币=1元" />
+
+                    <TextView
+                        android:id="@+id/tv_tixian"
+                        android:layout_width="82dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginRight="14dp"
+                        android:background="@mipmap/mywallet_tixian_btn"
+                        android:gravity="center"
+                        android:text="@string/withdrawal"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        tools:text="提现" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_mingxi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_top"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="17dp"
+                    android:text="@string/gold_mingxi_str"
+                    android:textColor="@color/black_33"
+                    android:textSize="14dp"
+                    tools:text="- 金币明细 -" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_mingxi"
+                    android:layout_marginTop="30dp">
+
+                </android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</RelativeLayout>

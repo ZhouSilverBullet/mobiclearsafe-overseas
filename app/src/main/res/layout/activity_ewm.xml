@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".moneyactivity.EwmActivity"
+    android:background="@color/c_FF393A"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/invite_bg"
+        android:scaleType="fitXY"
+        />
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:src="@mipmap/steprace_history_back_icon"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="22dp"
+        />
+
+    <ImageView
+        android:id="@+id/sm_icon"
+        android:layout_width="230dp"
+        android:layout_height="52dp"
+        android:src="@mipmap/sm_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="446dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_below="@+id/sm_icon"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/white_shape_6"
+        >
+        <ImageView
+            android:id="@+id/iv_ewm"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp"
+            />
+        <TextView
+            android:id="@+id/sm_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black_66"
+            android:textSize="12sp"
+            android:layout_below="@+id/iv_ewm"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            />
+
+        <ImageView
+            android:layout_below="@+id/sm_tip"
+            android:layout_marginTop="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/sm_bg"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

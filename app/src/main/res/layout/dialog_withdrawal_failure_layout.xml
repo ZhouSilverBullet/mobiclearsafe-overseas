@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_corner">
+
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="183dp"
+            android:layout_height="138dp"
+            android:background="@mipmap/withdrawfailure_top"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_top"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="26dp"
+            android:gravity="center"
+            android:textColor="@color/c_7E809C"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/btn_invite"
+            android:layout_below="@+id/tv_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_withdraw_btn"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:background="@drawable/withdrawfailure_btn_shape"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="3dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@mipmap/dialog_right_top_close_icon" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

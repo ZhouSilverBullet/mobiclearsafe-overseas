@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.repair.PermissionRepairActivity">
+
+    <FrameLayout
+        android:id="@+id/flTop"
+        android:layout_width="match_parent"
+        android:layout_height="286dp"
+        android:background="@drawable/permission_repair_top_bg"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivTop"
+            android:layout_width="199dp"
+            android:layout_height="155dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="100dp"
+            android:visibility="gone"
+            android:src="@drawable/permission_repair_bg" />
+
+    </FrameLayout>
+
+    <com.mobi.clearsafe.widget.NoPaddingTextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="109dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:textSize="67sp" />
+
+    <TextView
+        android:id="@+id/tvUnit"
+        android:layout_width="86dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginBottom="8dp"
+        android:text="项风险"
+        android:textColor="#ffffffff"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvCount"
+        app:layout_constraintLeft_toRightOf="@id/tvCount" />
+
+    <TextView
+        android:id="@+id/tvCleanDec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="清立即修复"
+        tools:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvUnit" />
+
+    <TextView
+        android:id="@+id/tvDec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/repair_dec_18dp_selector"
+        android:gravity="center"
+        android:paddingLeft="14dp"
+        android:paddingTop="5dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="5dp"
+        android:singleLine="true"
+        tools:visibility="gone"
+        android:text="否则手机将出现空间不足、发烫、卡顿等问题"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCleanDec" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flTop" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
+        style="@style/SafeToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:elevation="5dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/white_return"
+        app:title="手机失去保护"
+        app:titleTextColor="@color/white" />
+</android.support.constraint.ConstraintLayout>

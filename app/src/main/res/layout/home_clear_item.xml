@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp">
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="40dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:src="@drawable/clean_icon_bigfile"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="大文件清理"
+        android:textColor="@color/black_33"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/ivIcon"
+        app:layout_constraintTop_toTopOf="@id/ivIcon" />
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="一键告别卡慢"
+        android:textColor="@color/black_99"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivIcon"
+        app:layout_constraintLeft_toRightOf="@id/ivIcon" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/gray_return"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+        app:layout_constraintRight_toRightOf="parent" />
+</android.support.constraint.ConstraintLayout>

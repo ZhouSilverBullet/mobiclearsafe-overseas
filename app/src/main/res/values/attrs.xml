@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- round imageview  add  by  ysq-->
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension" />
+        <attr name="border_inside_color" format="color" />
+        <attr name="border_outside_color" format="color"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="NoPaddingTextView">
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+
+    <!--圆形进度条-->
+    <declare-styleable name="CircularProgressView">
+        <attr name="backWidth" format="dimension" />    <!--背景圆环宽度-->
+        <attr name="progWidth" format="dimension" />    <!--进度圆环宽度-->
+        <attr name="backColor" format="color" />        <!--背景圆环颜色-->
+        <attr name="progColor" format="color" />        <!--进度圆环颜色-->
+        <attr name="progStartColor" format="color" />   <!--进度圆环开始颜色-->
+        <attr name="progFirstColor" format="color" />   <!--进度圆环结束颜色-->
+        <attr name="progress" format="integer" />       <!--圆环进度-->
+    </declare-styleable>
+    <attr name="around_unit" format="dimension" />
+
+
+    <declare-styleable name="MobiTabStrip">
+        <attr name="tdts_color" format="color" />
+        <attr name="tdts_bg_color" format="color" />
+        <attr name="tdts_size" format="dimension" />
+        <attr name="tdts_weight" format="dimension" />
+        <attr name="tdts_strip_height" format="dimension" />
+        <attr name="tdts_factor" format="float" />
+        <attr name="tdts_titles" format="reference" />
+        <attr name="tdts_typeface" format="string" />
+        <attr name="tdts_corners_radius" format="dimension" />
+        <attr name="tdts_animation_duration" format="integer" />
+        <attr name="tdts_inactive_color" format="color" />
+        <attr name="tdts_active_color" format="color" />
+        <attr name="tdts_active_text_bold" format="boolean" />
+        <attr name="tdts_size_increment" format="dimension" />
+        <attr name="tdts_strip_vertical_offset" format="dimension" />
+    </declare-styleable>
+
+    <!-- 水波纹  wave attr -->
+    <attr name="mwhWaves" format="string|enum">
+        <enum name="MultiWave" value="-1" />
+        <enum name="PairWave" value="-2" />
+    </attr>
+    <attr name="mwhShape" format="enum">
+        <enum name="Rect" value="0" />
+        <enum name="RoundRect" value="1" />
+        <enum name="Oval" value="2" />
+    </attr>
+    <declare-styleable name="MultiWaveHeader">
+        <attr name="mwhWaveHeight" format="dimension" />
+        <attr name="mwhStartColor" format="color" />
+        <attr name="mwhCloseColor" format="color" />
+        <attr name="mwhIsRunning" format="boolean" />
+        <attr name="mwhEnableFullScreen" format="boolean" />
+        <attr name="mwhColorAlpha" format="fraction|float" />
+        <attr name="mwhProgress" format="fraction|float" />
+        <attr name="mwhVelocity" format="fraction|float" />
+        <attr name="mwhGradientAngle" format="integer" />
+        <attr name="mwhCornerRadius" format="dimension" />
+        <attr name="mwhWaves" />
+        <attr name="mwhShape" />
+    </declare-styleable>
+
+    <declare-styleable name="WaveView">
+        <attr name="waveWaterLevel" format="float" />
+        <attr name="amplitudeRatio" format="float" />
+        <attr name="waveLengthRatio" format="float" />
+        <attr name="waveShiftRatio" format="float" />
+        <attr name="frontWaveColor" format="color" />
+        <attr name="behindWaveColor" format="color" />
+        <attr name="waveShape" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="square" value="1" />
+        </attr>
+        <attr name="showWave" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingSpinView">
+        <attr name="lsv_loadSrc" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="HomeClearItemView">
+        <attr name="hcivSrc" format="reference" />
+        <attr name="hcivTitle" format="string"/>
+        <attr name="hcivContent" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleLayout">
+        <attr name="clRadius" format="dimension" />
+        <attr name="clOffset" format="integer" />
+    </declare-styleable>
+</resources>

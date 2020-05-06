@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_item"
+        android:layout_width="105dp"
+        android:layout_height="53dp">
+
+        <ImageView
+            android:id="@+id/iv_new_icon"
+            android:layout_width="48dp"
+            android:visibility="gone"
+            android:layout_height="37dp"
+            android:background="@mipmap/withdrawal_left_top_icon" />
+        <ImageView
+            android:id="@+id/iv_fl_icon"
+            android:layout_width="48dp"
+            android:visibility="gone"
+            android:layout_height="37dp"
+            android:background="@mipmap/fl_icon" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_3D3F5C"
+                android:textSize="14sp"
+                tools:text="5元" />
+
+            <TextView
+                android:id="@+id/tv_real_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_66"
+                android:textSize="10sp"
+                tools:text="到账31元" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

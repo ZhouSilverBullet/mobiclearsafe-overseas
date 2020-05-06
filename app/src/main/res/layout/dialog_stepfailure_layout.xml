@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="335dp"
+        android:layout_height="375dp"
+        android:background="@drawable/shape_corner">
+
+        <ImageView
+            android:id="@+id/iv_topicon"
+            android:layout_width="153dp"
+            android:layout_height="130dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:background="@mipmap/stepfailure_icon" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_topicon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/c_3D3F5C"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            tools:text="1130期未达标" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/c_7E809C"
+            android:textSize="14dp"
+            android:text="@string/failure_dialog_content"
+            tools:text="你与大奖擦肩而过啦，继续努力吧" />
+
+        <TextView
+            android:id="@+id/tv_signNext"
+            android:layout_width="294dp"
+            android:layout_height="61dp"
+            android:layout_below="@+id/tv_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:background="@mipmap/stepreward_btn"
+            android:gravity="center"
+            android:text="@string/sign_next_race"
+            android:textColor="@color/c_A94601"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:text="报名下一期" />
+
+        <LinearLayout
+            android:id="@+id/ll_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@mipmap/stepfailure_close_icon" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_corner_16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:textColor="@color/c_3D3F5C"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        tools:text="是否支付报名达标赛契约金-1130期" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.mobi.clearsafe.widget.NoPaddingTextView
+            android:id="@+id/tv_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/c_FF9B2B"
+            android:textStyle="bold"
+            app:textSize="40dp"
+            tools:text="1000" />
+
+        <com.mobi.clearsafe.widget.NoPaddingTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/gold"
+            android:textColor="@color/c_FF9B2B"
+            app:textSize="14dp"
+            tools:text="金币" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_btn"
+        android:layout_width="321dp"
+        android:layout_height="61dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="@mipmap/stepreward_btn"
+        android:gravity="center"
+        android:textColor="@color/c_A94601"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:text="@string/pay_now"
+        tools:text="立即支付" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="21dp"
+        android:background="@color/white" />
+</LinearLayout>

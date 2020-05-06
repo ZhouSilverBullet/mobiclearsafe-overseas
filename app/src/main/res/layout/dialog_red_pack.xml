@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layout_red_pack"
+        android:layout_width="314dp"
+        android:layout_height="409dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/red_pack_bg"
+            />
+        <ImageView
+            android:id="@+id/open_red"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@mipmap/red_pack_open"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="32dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:gravity="center_horizontal"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:id="@+id/red_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="收到新人红包"
+                    android:textSize="21dp"
+                    android:textColor="@color/c_fff400"
+                    android:textStyle="bold"
+                    />
+                <ImageView
+                    android:id="@+id/iv_days"
+                    android:layout_width="31dp"
+                    android:layout_height="31dp"
+                    android:src="@mipmap/red_tip"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="恭喜发财 大吉大利"
+                android:textSize="16dp"
+                android:textColor="@color/c_fff400"
+
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

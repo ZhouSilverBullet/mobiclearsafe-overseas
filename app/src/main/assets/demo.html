@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+
+    <script>
+            alert("进入")
+         function showRewardDialog(){
+            step.showRewardDialog("20");
+         }
+
+         function showAd(){
+            step.showRewardVideo("js调用了android中的showAd方法");
+         }
+
+         function openNewWebview(){
+            step.openNewWebview("http://www.baidu.com");
+         }
+        function closeThisActivity(){
+            step.closeThisActivity();
+        }
+        function addStep(){
+            step.addStep(100);
+        }
+        function addGold(){
+            step.addGold(200);
+        }
+        function setTitle(){
+            step.setTitle("大转盘");
+        }
+        function openOtherApp(){
+            step.openOtherApp("com.qsmy.walkmonkey");
+        }
+
+        function setAppTitle(title){
+           step.setTitle(title);
+        }
+
+        function reloadThis(){
+            step.reloadThis();
+        }
+        function setAllGold(){
+            step.setAllGold(4580);
+        }
+
+        function setAllStep(){
+            step.setAllStep(3490);
+        }
+
+    </script>
+</head>
+<body>
+
+<h2>JS交互Demo</h2>
+
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="显示领取奖励" onclick="showRewardDialog()">
+<br>
+<br>
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="显示广告" onclick="showAd()">
+<br>
+<br>
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="打开新的Webview界面" onclick="openNewWebview()">
+<br>
+<br>
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="关闭当前页面" onclick="closeThisActivity()">
+<br>
+<br>
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="增加步数" onclick="addStep()">
+<br>
+<br>
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="增加金币" onclick="addGold()">
+<br>
+<br>
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="设置标题" onclick="setTitle()">
+<br>
+<br>
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="打开其他APP" onclick="openOtherApp()">
+<br>
+<br>
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="刷新当前页" onclick="reloadThis()">
+<br>
+<br>
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="全量更新金币数量" onclick="setAllGold()">
+<br>
+<br>
+<input type="button" style="width:200px;height:60px;font-size:24px;" value="全量更新步数" onclick="setAllStep()">
+<br>
+<br>
+</body>
+</html>

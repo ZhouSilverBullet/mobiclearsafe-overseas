@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/vLine"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:background="@drawable/clear_blue_selector"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mobi.clearsafe.ui.clear.widget.wave.MultiWaveHeader
+        android:id="@+id/waveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="gone"
+        app:mwhColorAlpha="0.9" />
+
+    <com.mobi.clearsafe.ui.clear.widget.wave.WaveView
+        android:id="@+id/waveView"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        app:showWave="true"
+        app:waveShape="square"
+        app:waveWaterLevel="0.3" />
+
+    <LinearLayout
+        android:id="@+id/llTop"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="90sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:textColor="@color/red_593b3b" />
+
+        <TextView
+            android:id="@+id/tvUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KB"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@id/tvNum"
+            app:layout_constraintTop_toTopOf="@id/tvNum"
+            tools:textColor="@color/red_593b3b" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp"
+        android:ellipsize="middle"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        tools:text="扫描中:asfasfasdf" />
+</FrameLayout>

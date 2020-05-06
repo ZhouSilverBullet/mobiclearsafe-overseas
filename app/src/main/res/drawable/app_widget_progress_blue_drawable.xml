@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="18.0dip" />
+            <solid android:color="@color/gray_d7d7" />
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="18.0dip" />
+                <solid android:color="@color/c_2C9DFF" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

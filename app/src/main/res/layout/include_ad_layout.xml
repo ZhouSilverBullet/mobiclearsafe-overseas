@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llAd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+        android:id="@+id/adRLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="9dp"
+        android:background="@drawable/white_shape_6"
+        android:gravity="center"
+        app:adrScenario="garbage_result1_native"
+        app:isGoneView="true" />
+
+    <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+        android:id="@+id/adRLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:background="@drawable/white_shape_6"
+        android:gravity="center"
+        app:adrScenario="garbage_result2_native"
+        app:isGoneView="true" />
+
+    <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+        android:id="@+id/adRLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:background="@drawable/white_shape_6"
+        android:gravity="center"
+        app:adrScenario="garbage_result3_native"
+        app:isGoneView="true" />
+
+    <com.mobi.clearsafe.ui.clear.ad.ADRelativeLayout
+        android:id="@+id/adRLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:background="@drawable/white_shape_6"
+        android:gravity="center"
+        app:adrScenario="garbage_result4_native"
+        app:isGoneView="true" />
+</LinearLayout>

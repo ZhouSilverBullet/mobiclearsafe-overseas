@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rv_bg"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/integral_item_unselect">
+
+            <ImageView
+                android:id="@+id/iv_app_icon"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/black_66"
+            android:textSize="15dp"
+            tools:text="酷狗直播" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_corner_17dp_ffede5"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <ImageView
+                android:layout_width="17.5dp"
+                android:layout_height="17.5dp"
+                android:background="@mipmap/act_gold_icon" />
+
+            <TextView
+                android:id="@+id/tv_gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3.5dp"
+                android:textColor="@color/c_FF9B2B"
+                android:textSize="12dp"
+                tools:text="1000金币" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

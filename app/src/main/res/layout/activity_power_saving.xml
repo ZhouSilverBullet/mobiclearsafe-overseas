@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.powersaving.PowerSavingActivity">
+
+    <FrameLayout
+        android:id="@+id/flTop"
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        android:background="@color/c_0062FF"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="6dp"
+            android:src="@drawable/power_saving_show_icon" />
+    </FrameLayout>
+
+    <com.mobi.clearsafe.widget.NoPaddingTextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="109dp"
+        android:text="34"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:textSize="67sp" />
+
+    <TextView
+        android:id="@+id/tvSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:text="建议休眠应用"
+        android:textColor="#ffffffff"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@id/tvCount"
+        app:layout_constraintTop_toTopOf="@id/tvCount" />
+
+    <TextView
+        android:id="@+id/tvUnit"
+        android:layout_width="86dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginBottom="4dp"
+        android:text="款"
+        android:textColor="#ffffffff"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvCount"
+        app:layout_constraintLeft_toRightOf="@id/tvCount" />
+
+    <TextView
+        android:id="@+id/tvPowerDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="优化后延长待机4小时29分钟"
+        android:textColor="@color/c_afff99"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tvUnit" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flTop" />
+
+    <LinearLayout
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/btn_corn4_selector"
+            android:text="立即省电"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <com.mobi.clearsafe.ui.powersaving.widget.PowerScanLayout
+        android:id="@+id/pslLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="5dp"
+        tools:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
+        style="@style/SafeToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:elevation="5dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/white_return"
+        app:title="超强省电"
+        app:titleTextColor="@color/white" />
+
+</android.support.constraint.ConstraintLayout>

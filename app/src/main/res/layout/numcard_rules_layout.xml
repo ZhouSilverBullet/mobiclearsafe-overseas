@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:layout_gravity="center"
+    >
+
+    <RelativeLayout
+        android:layout_width="331dp"
+        android:layout_height="395dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/white_radius15"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@mipmap/close_icon"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="19dp"
+            />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="活动规则"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:textSize="14dp"
+            android:textColor="@color/black_33"
+            android:textStyle="bold"
+            />
+        <android.support.v4.widget.NestedScrollView
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_66"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="1.每日平台将会更新中奖数字，集齐中奖数字的用户自动参与瓜分1千万金币"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_66"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="2.次日0点平台将对集齐幸运数字的用户进行结算，同时将更换新的开奖数字。次日用户进入“集数字分奖金”活动即可获得当期奖励
+计算规则：10000000金币÷当期集齐幸运数字人数=发放金币"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_66"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="3.幸运数字获得方式："
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_66"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="（1）幸运大转盘有概率转出幸运数字"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_66"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="（2）刮刮卡有概率刮出幸运数字"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_66"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="（3）每日运动、喝水打卡均有可能在获取奖励时随机弹出幸运数字"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_66"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="（4）完成集数字页面体验活动任务，也可获得幸运数字"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_66"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="4.若用户通过非正常手段恶意获取金币，快清理有权对用户金币收回、清空以及封禁账户处罚"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_66"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="5.本活动最终解释权归快清理所有"
+                    />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

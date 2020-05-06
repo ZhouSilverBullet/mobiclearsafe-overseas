@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="SplashTheme" parent="SafeTheme">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/c_1BA1FF</item>
+        <item name="android:windowAnimationStyle">@style/Animation_Activity</item>
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+
+</resources>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeChatLoginActivity"
+    android:background="@color/white"
+    >
+
+    <include
+        android:id="@+id/tab_bar"
+        layout="@layout/include_title_layout"/>
+    
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_below="@+id/tab_bar"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_below="@+id/iv_logo"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:textColor="@color/black_3d5c"
+        android:layout_marginTop="15dp"
+        />
+    <LinearLayout
+        android:id="@+id/btn_login"
+        android:layout_width="203dp"
+        android:layout_height="44dp"
+        android:background="@drawable/wechat_login_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="135dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/wechat_icon"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wechat_login"
+            android:textSize="16sp"
+            android:textColor="@color/c_F9F9F9"
+            android:layout_marginLeft="10dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="69dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/layout_check"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+            <ImageView
+                android:id="@+id/ck_ischeck"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/check_bg"
+                android:button="@null" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/agreed"
+            android:textColor="@color/gray_7e9c"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_service_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/service_agreement"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/green_5a39"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/and"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/gray_7e9c"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_privacy_policy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/privacy_policy"
+            android:textColor="@color/green_5a39"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

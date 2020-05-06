@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="319dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="319dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/clean_corn6_selector"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/black_66"
+            android:textSize="17sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="停止扫描" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:textColor="@color/black_99"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            tools:text="正在扫描中，确认要停止吗？" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnQuit"
+                android:layout_width="127dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_corn2_selector"
+                android:text="停止扫描"
+                android:textColor="#ff328aff"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btnConfirm"
+                android:layout_width="127dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_corn2_blue_selector"
+                android:text="继续扫描"
+                android:textColor="#ffffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

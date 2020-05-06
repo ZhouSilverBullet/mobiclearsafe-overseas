@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_integrallwall_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15.5dp">
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.5dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="23.5dp"
+                android:background="@mipmap/steprace_history_back_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="高额试玩"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="34dp"
+                android:text="@string/integral_tip"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="边玩边赚" />
+
+            <TextView
+                android:id="@+id/tv_tip1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_tip"
+                android:layout_marginTop="8dp"
+                android:text="@string/integral_tip1"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_tip"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tip"
+                tools:text="试玩应用赚巨额金币" />
+
+            <ImageView
+                android:layout_width="156dp"
+                android:layout_height="135dp"
+                android:layout_marginRight="20dp"
+                android:background="@mipmap/integrall_wall_bg_icon"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ll_install"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_corner_12dp_ffffff"
+                android:minHeight="200dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tip1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/integral_download_tip"
+                    android:textColor="@color/c_7E809C"
+                    android:textSize="14dp"
+                    tools:text="下载打开即可获取高额奖励" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_install"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="18dp"></android.support.v7.widget.RecyclerView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/shape_corner_6dp_f0f0f0">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="34dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="41dp"
+                            android:layout_height="41dp"
+                            android:background="@mipmap/integrall_step_one" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9.5dp"
+                            android:text="@string/download_install"
+                            android:textColor="@color/c_7E809C"
+                            android:textSize="15dp"
+                            tools:text="下载并安装" />
+
+                        <TextView
+                            android:id="@+id/tv_step_one"
+                            android:layout_width="82dp"
+                            android:layout_height="28dp"
+                            android:layout_marginTop="32dp"
+                            android:background="@drawable/shape_corner_14dp_4595ff"
+                            android:gravity="center"
+                            android:text="@string/download_string"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            tools:text="下载" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="34dp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="41dp"
+                            android:layout_height="41dp"
+                            android:background="@mipmap/integrall_step_two" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9.5dp"
+                            android:text="@string/start_there"
+                            android:textColor="@color/c_7E809C"
+                            android:textSize="15dp"
+                            tools:text="在此打开即得" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_jiangli"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="17.5dp"
+                                android:layout_height="17.5dp"
+                                android:background="@mipmap/act_gold_icon" />
+
+                            <TextView
+                                android:id="@+id/tv_gold_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/c_FF9B2B"
+                                android:textSize="12dp"
+                                tools:text="1000金币" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_step_two"
+                            android:layout_width="82dp"
+                            android:layout_height="28dp"
+                            android:layout_marginTop="8.5dp"
+                            android:background="@drawable/shape_corner_14dp_d3d3d3"
+                            android:gravity="center"
+                            android:text="@string/open_here"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            tools:text="打开" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="29dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="61dp"
+                        android:background="@mipmap/integrall_step_next" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_corner_12dp_ffffff"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_install">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="25dp"
+                    android:text="@string/integral_open_tip"
+                    android:textColor="@color/c_7E809C"
+                    android:textSize="14dp"
+                    tools:text="打开软件即可获取高额奖励" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginBottom="16.5dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:background="@color/transparent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_test" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

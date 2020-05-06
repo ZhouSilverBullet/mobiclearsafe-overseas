@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="94dp"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:background="@drawable/white_shape_6"
+        android:layout_height="84dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="150dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="这里是标题"
+                android:textColor="@color/black_33"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                >
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="67dp"
+                    android:layout_height="8dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/task_progressbar_states"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_tips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2/2"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/black_99"
+                    android:textSize="12sp"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="14dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/receive_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+100"
+                    android:textSize="16sp"
+                    android:textColor="@color/c_FF9E2B"
+                    />
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="2dp"
+                    android:src="@mipmap/act_gold_icon"
+                    />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_btn"
+                android:layout_width="86dp"
+                android:layout_height="28dp"
+                android:text="已领取"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/welfare_btn_gray_shape"
+                />
+
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/c_2C9DFF"
+        android:visibility="visible"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>

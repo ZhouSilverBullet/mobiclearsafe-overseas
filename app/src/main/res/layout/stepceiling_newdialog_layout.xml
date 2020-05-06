@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="202dp"
+            android:minHeight="202dp"
+            android:orientation="vertical"
+            android:background="@drawable/white_radius15"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            >
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@mipmap/close_icon"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="202dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black_33"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:text="当前步数兑换完毕" />
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:textColor="@color/black_66"
+                    android:textSize="14sp"
+                    android:text="今日可兑换步数达到上限，\n去试试更多赚钱任务～" />
+
+
+
+                <LinearLayout
+                    android:id="@+id/tv_double"
+                    android:layout_width="238dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="22dp"
+                    android:background="@drawable/new_btn_bg_shape"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    >
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@mipmap/btn_video_icon"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/watch_continue"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="10dp"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/more_task"
+                    android:layout_width="238dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="22dp"
+                    android:background="@drawable/new_btn_bg_shape"
+                    android:gravity="center"
+                    android:text="@string/more_task"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="119dp"
+    android:layout_height="141dp"
+    android:id="@+id/layout_view"
+    android:background="@color/c_EDF0F5"
+    >
+
+    <LinearLayout
+        android:layout_width="111dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/white_shape_6"
+        >
+        <com.mobi.clearsafe.widget.RoundImageView
+            android:id="@+id/task_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/default_head_icon"
+            />
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绑定微信"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textColor="@color/black_33"
+            />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4/4"
+            android:textSize="13sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black_33"
+            />
+        <TextView
+            android:id="@+id/btn_content"
+            android:layout_width="76dp"
+            android:layout_height="24dp"
+            android:text="立即领取"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_ff3b_17_shape"
+            />
+    </LinearLayout>
+    <View
+        android:id="@+id/line_view"
+        android:layout_width="8dp"
+        android:layout_height="match_parent"
+        android:background="@color/c_EDF0F5"
+        />
+
+</LinearLayout>

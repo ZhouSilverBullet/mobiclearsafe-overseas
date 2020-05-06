@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/mycard_item_bg"
+        android:minHeight="120dp">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="65dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="23dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_title_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_33"
+                android:textSize="16dp"
+                tools:text="大转盘翻倍卡" />
+
+            <TextView
+                android:id="@+id/tv_cardnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/shape_corner_8dp_eaf5ff"
+                android:gravity="center"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:textColor="@color/c_2C9DFF"
+                android:textSize="12dp"
+                tools:text="3张" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_endtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_title_num"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:textColor="@color/black_99"
+            android:textSize="12dp"
+            tools:text="截止2019年2月1日" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_endtime"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="21dp"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:textColor="@color/black_66"
+            android:textSize="12dp"
+            tools:text="用于幸运大转盘，金币翻倍奖励" />
+
+        <TextView
+            android:id="@+id/tv_neirong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="24dp"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:paddingBottom="27dp"
+            android:textColor="@color/black_99"
+            android:textSize="12dp"
+            android:visibility="gone"
+            tools:text="邀请好友奖励，填写邀请码，翻倍赚金币活动不参与此活动" />
+
+        <TextView
+            android:id="@+id/tv_use"
+            android:layout_width="81dp"
+            android:layout_height="26dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="21dp"
+            android:background="@drawable/shape_corner_13dp_2c9dff"
+            android:gravity="center"
+            android:text="@string/string_once_use"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            tools:text="立即使用" />
+
+        <LinearLayout
+            android:id="@+id/ll_jianrou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_use"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="18dp"
+            android:padding="6dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_jiantou"
+                android:layout_width="14dp"
+                android:layout_height="8dp"
+                android:src="@mipmap/car_item_bottom_jiantou" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

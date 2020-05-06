@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.2"
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        multiDexEnabled true
+    }
+    buildTypes {
+        debug{
+            manifestPlaceholders = [
+                    PKG_NAME:"com.mobi.clearsafe",
+            ]
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //JDK 须为1.8
+    compileOptions {
+        targetCompatibility = 1.8
+        sourceCompatibility = 1.8
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation(name: 'open_ad_sdk', ext: 'aar')
+    implementation (name:'mobi_sdk', ext:'aar')
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation (name:'GDTSDK.unionNormal.4.176.1046', ext:'aar')
+   // implementation (name:'valpubsdk-1.1.4-healthtree-20200312', ext:'aar')
+    implementation (name:'windAd-2.15.4', ext:'aar')
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation 'com.alibaba:fastjson:1.1.71.android'
+    implementation fileTree('libs/android-query-full.0.26.7.jar')
+    // 以下为流量分配功能所使用依赖，流量分配功能详情请咨询商务
+    // Mintegral SDK
+//    implementation 'com.mintegral.msdk:videojs:10.1.31'
+//    implementation 'com.mintegral.msdk:mtgjscommon:10.1.31'
+//    implementation 'com.mintegral.msdk:playercommon:10.1.31'
+//    implementation 'com.mintegral.msdk:reward:10.1.31'
+//    implementation 'com.mintegral.msdk:videocommon:10.1.31'
+//    implementation 'com.mintegral.msdk:optimizedata:10.1.31'
+//    implementation 'com.mintegral.msdk:common:10.1.31'
+}

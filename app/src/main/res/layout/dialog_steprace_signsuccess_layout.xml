@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="335dp"
+        android:layout_height="534dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="215dp"
+            android:background="@mipmap/steprace_signsuccess_top">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:textColor="@color/c_FFE021"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                tools:text="成功报名1130期达标赛！" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_bg_bottom">
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="131dp"
+                android:layout_marginLeft="36.5dp"
+                android:layout_marginTop="47.5dp"
+                android:background="@color/c_FF9B2B" />
+
+            <LinearLayout
+                android:id="@+id/ll_today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginLeft="21dp"
+                    android:background="@mipmap/steprace_signsuccess_today_icon" />
+
+                <TextView
+                    android:id="@+id/tv_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7.5dp"
+                    android:textColor="@color/gray_a7aa"
+                    android:textSize="14dp"
+                    tools:text="11月11日(今天)" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20.5dp"
+                    android:textColor="@color/c_3D3F5C"
+                    android:textSize="13dp"
+                    android:text="@string/success_sign_mingtian"
+                    android:textStyle="bold"
+                    tools:text="成功报名明日比赛" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_mingtian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_today"
+                android:layout_marginTop="21dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginLeft="21dp"
+                    android:background="@mipmap/steprace_signsuccess_mt_icon" />
+
+                <TextView
+                    android:id="@+id/tv_beginrace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7.5dp"
+                    android:textColor="@color/gray_a7aa"
+                    android:textSize="14dp"
+                    tools:text="11月12日(00:00)" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.5dp"
+                    android:textColor="@color/c_3D3F5C"
+                    android:textSize="13dp"
+                    android:text="@string/success_racebegin_tips"
+                    tools:text="比赛开始，开始记步" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_bisaiing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_mingtian"
+                android:layout_marginTop="21dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginLeft="21dp"
+                    android:background="@mipmap/steprace_signsuccess_bs_icon" />
+
+                <TextView
+                    android:id="@+id/tv_endrace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7.5dp"
+                    android:textColor="@color/gray_a7aa"
+                    android:textSize="14dp"
+                    tools:text="11月12日(23:59)" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9.5dp"
+                    android:layout_marginRight="21dp"
+                    android:textColor="@color/c_3D3F5C"
+                    android:textSize="13dp"
+                    android:text="@string/success_endrace_tips"
+                    tools:text="比赛结束，停止同步步数预期同步的步数无效" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_jieshu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_bisaiing"
+                android:layout_marginTop="21dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginLeft="21dp"
+                    android:background="@mipmap/steprace_signsuccess_js_icon" />
+
+                <TextView
+                    android:id="@+id/tv_kaijiang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7.5dp"
+                    android:textColor="@color/gray_a7aa"
+                    android:textSize="14dp"
+                    tools:text="11月13日(00:00)" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.5dp"
+                    android:textColor="@color/c_3D3F5C"
+                    android:textSize="13dp"
+                    android:text="@string/success_kaijiang_tips"
+                    tools:text="结算收益，派发奖励金" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_jieshu"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/success_dialog_tips"
+                android:textColor="@color/c_FC6240"
+                android:textSize="12dp"
+                tools:text="注：请在每天24点前进入达标赛页面同步最终步数" />
+
+            <TextView
+                android:id="@+id/tv_btn"
+                android:layout_width="294dp"
+                android:layout_height="61dp"
+                android:layout_below="@+id/tv_tips"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:background="@mipmap/stepreward_btn"
+                android:gravity="center"
+                android:textColor="@color/c_A94601"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="我知道了"
+               />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:background="@drawable/shape_corner_9dp_2c9dff" />
+
+        <TextView
+            android:id="@+id/tv_date_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2020-01-28"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black_33"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

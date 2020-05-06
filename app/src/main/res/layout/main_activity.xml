@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mobi.clearsafe.widget.NoScrollViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view_divid" />
+
+    <View
+        android:id="@+id/view_divid"
+        style="@style/dividing_line_normal"
+        android:layout_above="@+id/tabs_rg" />
+
+    <RadioGroup
+        android:id="@+id/tabs_rg"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tabbar_activity"
+            style="@style/Custom.TabRadioButton"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_activity_selector"
+            android:text="@string/tab_clean" />
+
+        <RadioButton
+            android:id="@+id/tabbar_toolbox"
+            style="@style/Custom.TabRadioButton"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_bd_selecter"
+            android:text="@string/tab_tool" />
+
+        <RadioButton
+            android:id="@+id/tabbar_main"
+            style="@style/Custom.TabRadioButton"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_dong_selector"
+            android:text="@string/tab_task" />
+
+
+        <!--        <RadioButton-->
+        <!--            android:id="@+id/tabbar_bd"-->
+        <!--            style="@style/Custom.TabRadioButton"-->
+        <!--            android:background="@android:color/transparent"-->
+        <!--            android:button="@null"-->
+        <!--            android:drawableTop="@drawable/tab_main_selector"-->
+        <!--            android:text="@string/scratch_name"-->
+        <!--            />-->
+
+
+        <RadioButton
+            android:id="@+id/tabbar_me"
+            style="@style/Custom.TabRadioButton"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_me_selector"
+            android:text="@string/tab_me" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btn_msg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+
+</RelativeLayout>

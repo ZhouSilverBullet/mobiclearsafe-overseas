@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/recycler_item_selector"
+    android:orientation="vertical"
+    tools:context=".ui.clear.CleanBigFileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolBar"
+            style="@style/SafeToolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="5dp"
+            android:fitsSystemWindows="true"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@color/c_FCFAFA"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tvFileCount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:paddingLeft="20dp"
+                        android:singleLine="true"
+                        android:text="共13个文件"
+                        android:textColor="#ff666666"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvFileSize"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:paddingRight="20dp"
+                        android:singleLine="true"
+                        android:text="占用1.66GB空间"
+                        android:textColor="#ff666666"
+                        android:textSize="14sp" />
+
+                    <!--        <TextView-->
+                    <!--            android:id="@+id/tvContent"-->
+                    <!--            android:layout_width="0dp"-->
+                    <!--            android:layout_height="match_parent"-->
+                    <!--            android:layout_weight="1"-->
+                    <!--            android:gravity="left|center_vertical"-->
+                    <!--            android:paddingLeft="20dp"-->
+                    <!--            android:textColor="@color/black_33"-->
+                    <!--            android:textSize="14sp"-->
+                    <!--            tools:text="6个安装包占用454MB空间" />-->
+
+                    <!--        <TextView-->
+                    <!--            android:layout_width="wrap_content"-->
+                    <!--            android:layout_height="match_parent"-->
+                    <!--            android:gravity="center"-->
+                    <!--            android:paddingLeft="20dp"-->
+                    <!--            android:paddingRight="20dp"-->
+                    <!--            android:text="全选"-->
+                    <!--            android:textColor="@color/c_328AFF"-->
+                    <!--            android:textSize="14sp" />-->
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/pb"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:max="100"
+                    android:progressDrawable="@drawable/clean_pb_progress_drawable"
+                    tools:progress="80" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/white" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/llBottom"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:elevation="10dp">
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/btn_corn4_selector"
+                android:enabled="false"
+                android:text="加载中..."
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.mobi.clearsafe.ui.clear.widget.FileScanLayout
+        android:id="@+id/fsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tvPath"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="80dp"
+        android:ellipsize="middle"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+</FrameLayout>

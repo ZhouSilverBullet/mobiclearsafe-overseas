@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="98dp"
+    android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="88dp">
+
+            <ImageView
+                android:id="@+id/image_icon"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:src="@mipmap/default_head_icon"
+                android:layout_centerVertical="true"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:orientation="vertical"
+                android:layout_marginRight="105dp"
+                android:layout_toRightOf="@+id/image_icon"
+                android:layout_centerVertical="true"
+                >
+
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="这里是标题"
+                    android:textColor="@color/black_33"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_tips"
+                    android:layout_marginTop="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="看广告领奖励"
+                    android:textColor="@color/black_66"
+                    android:textSize="13sp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_next"
+                android:layout_width="86dp"
+                android:layout_height="29dp"
+                android:text="@string/string_gf"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginRight="17dp"
+                android:background="@mipmap/activity_btn_bg"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/white"
+            android:visibility="visible"
+            android:layout_alignParentBottom="true"
+            />
+</RelativeLayout>

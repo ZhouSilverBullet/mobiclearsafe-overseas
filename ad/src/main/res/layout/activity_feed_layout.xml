@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qq.e.ads.nativ.widget.NativeAdContainer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/native_ad_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020001"
+    android:orientation="vertical"
+    tools:ignore="InvalidId">
+
+
+    <!--<com.qq.e.ads.nativ.widget.NativeAdContainer-->
+        <!--android:id="@+id/native_ad_container"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <RelativeLayout
+            android:id="@+id/rl_ad_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="75dp" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:textColor="#666666"
+                android:textSize="15dp"
+                tools:text="优酷视屏" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="38dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp"
+                tools:text="独家播出这就是街舞，震撼来袭" />
+
+            <ImageView
+                android:id="@+id/iv_big"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_content"
+                android:layout_marginLeft="20dp"
+                android:scaleType="fitXY"
+                android:layout_marginTop="14.5dp"
+                android:layout_marginRight="20dp" />
+
+            <TextView
+                android:id="@+id/tv_download"
+                android:layout_width="335dp"
+                android:layout_height="54dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="36dp"
+                android:background="@drawable/since_btn_shape"
+                android:gravity="center"
+                android:text="立即下载"
+                android:textColor="#A15B2E"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+    <!--</com.qq.e.ads.nativ.widget.NativeAdContainer>-->
+
+
+</com.qq.e.ads.nativ.widget.NativeAdContainer>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="295dp"
+        android:layout_height="256.5dp"
+        android:background="@drawable/shape_corner"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="62.5dp"
+            android:background="@mipmap/withdrawal_dialog_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21.5dp"
+            android:text="@string/withdrawal_success"
+            android:textColor="@color/black_3c3d5b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8.5dp"
+            android:text="@string/withdrawal_dialog_tips"
+            android:textColor="@color/c_7E809C"
+            android:textSize="14sp" />
+        
+        <Button
+            android:id="@+id/btn_click"
+            android:layout_width="242dp"
+            android:text="@string/i_know"
+            android:textSize="14sp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@mipmap/green_btn_bg"
+            android:layout_height="38dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

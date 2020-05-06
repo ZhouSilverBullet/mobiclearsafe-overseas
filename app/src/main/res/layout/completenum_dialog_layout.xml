@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/c_D9000000"
+    >
+
+    <RelativeLayout
+        android:layout_width="306dp"
+        android:layout_height="303dp"
+        android:layout_centerInParent="true"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@mipmap/close_icon"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="19dp"
+            />
+
+
+        <TextView
+            android:layout_below="@+id/iv_close"
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:text="@string/string_complete_title"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/des"
+            android:layout_below="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_complete_des"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+
+
+        <ImageView
+            android:layout_width="142dp"
+            android:layout_height="142dp"
+            android:layout_below="@+id/des"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/dialog_light_bg"
+            />
+        <ImageView
+            android:id="@+id/tv_number"
+            android:layout_below="@+id/des"
+            android:layout_width="142dp"
+            android:layout_height="142dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/hammer_big_icon"
+            />
+
+
+
+        <TextView
+            android:id="@+id/btn_content"
+            android:layout_width="193dp"
+            android:layout_height="45dp"
+            android:text="@string/string_complete_btn"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:background="@mipmap/complete_btn_dialog"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

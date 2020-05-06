@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="306dp"
+        android:layout_height="317dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/white_radius15">
+
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="19dp"
+            android:src="@mipmap/close_icon" />
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="37dp"
+            android:text="@string/string_numdialog_title"
+            android:textColor="@color/black_33"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:text="@string/string_numdialog_des"
+            android:textColor="@color/c_4595FF"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_below="@+id/des"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:background="@mipmap/num_bg"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/c_CA7A03"
+            android:textSize="37dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_needNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="14.5dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:textColor="@color/black_33"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_look"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_needNum"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6.5dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="@string/numberCard_look"
+            android:textColor="@color/black_33"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/btn_content"
+            android:layout_width="238dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="23.5dp"
+            android:background="@drawable/exit_dialog_btn_confirm"
+            android:gravity="center"
+            android:text="@string/string_numdialog_btn"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

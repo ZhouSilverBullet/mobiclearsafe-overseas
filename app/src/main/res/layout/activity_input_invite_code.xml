@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".moneyactivity.InputInviteCodeActivity">
+
+    <include layout="@layout/include_title_layout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_3D3F5C"
+        android:textSize="29dp"
+        android:text="@string/input_invite_code"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_a7aa"
+        android:textSize="14dp"
+        android:text="@string/invite_code_tip"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="30dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="40dp"
+        >
+
+        <EditText
+            android:id="@+id/invite_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/black_3d5c"
+            android:textCursorDrawable="@drawable/shape_cursor_color"
+            android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/icon_miss"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/miss_icon"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/gray_f9f9"
+        />
+    
+    <TextView
+        android:id="@+id/bt_submit"
+        android:layout_width="355dp"
+        android:layout_height="50dp"
+        android:text="@string/once_submit"
+        android:background="@mipmap/green_btn_bg"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+
+</LinearLayout>

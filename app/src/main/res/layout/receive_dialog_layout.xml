@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:layout_gravity="center"
+    >
+
+    <RelativeLayout
+        android:layout_width="331dp"
+        android:layout_height="269dp"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/dialog_num_bg"
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@mipmap/close_icon"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="19dp"
+            android:visibility="gone"
+            />
+
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="14sp"
+            android:layout_marginTop="9dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/des"
+            android:layout_below="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/des"
+            android:layout_marginTop="28dp">
+            <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+55"
+                android:gravity="center"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="@color/c_FFE700"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gold"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/c_FFE700"
+                />
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/btn_content"
+            android:layout_marginLeft="7dp"
+            android:layout_width="238dp"
+            android:layout_height="45dp"
+            android:text="@string/string_numdialog_btn"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="31dp"
+            android:textColor="@color/c_4595FF"
+            android:background="@mipmap/receive_dialog_btn"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
