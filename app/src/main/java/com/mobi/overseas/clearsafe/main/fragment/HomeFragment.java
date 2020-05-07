@@ -677,7 +677,7 @@ public class HomeFragment extends LazyLoadFragment implements Handler.Callback, 
                 clearBean.color = R.color.black_33;
                 //是微信
                 if (index == 1) {
-                    clearBean.icon = R.drawable.clean_icon_home_wechat;
+//                    clearBean.icon = R.drawable.clean_icon_home_wechat;
                 }
                 clearBean.isClear = true;
                 homeAdapter.notifyDataSetChanged();
@@ -688,7 +688,7 @@ public class HomeFragment extends LazyLoadFragment implements Handler.Callback, 
                 }
                 //是微信
                 if (index == 1) {//orenge
-                    clearBean.icon = R.drawable.clean_icon_home_wechat;
+//                    clearBean.icon = R.drawable.clean_icon_home_wechat;
                 }
                 clearBean.isClear = false;
 
@@ -794,7 +794,7 @@ public class HomeFragment extends LazyLoadFragment implements Handler.Callback, 
 
         if (envelope != null) {
             if (!TextUtils.isEmpty(envelope.url) && !TextUtils.isEmpty(envelope.jump_url)) {
-                ivFloat.setVisibility(View.VISIBLE);
+                ivFloat.setVisibility(View.GONE);
                 com.mobi.overseas.clearsafe.utils.imageloader.ImageLoader.loadImage(getContext(), ivFloat, envelope.url);
                 ivFloat.setOnClickListener(v -> {
                     int jump_type = envelope.judge_type;

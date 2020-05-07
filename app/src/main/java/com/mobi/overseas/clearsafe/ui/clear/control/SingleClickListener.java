@@ -2,6 +2,8 @@ package com.mobi.overseas.clearsafe.ui.clear.control;
 
 import android.view.View;
 
+import com.mobi.overseas.clearsafe.R;
+import com.mobi.overseas.clearsafe.app.MyApplication;
 import com.mobi.overseas.clearsafe.utils.ToastUtils;
 
 
@@ -41,6 +43,6 @@ public abstract class SingleClickListener implements View.OnClickListener {
     public abstract void onSingleClick(View v);
 
     public void onFastClick() {
-        ToastUtils.showShort("请不要操作太快~~");
+        ToastUtils.showShort(MyApplication.getResString(R.string.clickTooFast2));
     }
 }

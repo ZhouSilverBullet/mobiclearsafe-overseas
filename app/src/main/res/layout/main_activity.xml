@@ -45,7 +45,8 @@
             android:background="@android:color/transparent"
             android:button="@null"
             android:drawableTop="@drawable/tab_dong_selector"
-            android:text="@string/tab_task" />
+            android:text="@string/tab_task"
+            android:visibility="gone" />
 
 
         <!--        <RadioButton-->
@@ -64,7 +65,8 @@
             android:background="@android:color/transparent"
             android:button="@null"
             android:drawableTop="@drawable/tab_me_selector"
-            android:text="@string/tab_me" />
+            android:text="@string/tab_me"
+            android:visibility="gone" />
 
     </RadioGroup>
 

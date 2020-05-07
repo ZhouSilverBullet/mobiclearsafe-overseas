@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="快捷设置"
+                android:text="@string/cleanShortcut"
                 android:textColor="@color/black_33"
                 android:textSize="17sp" />
 
@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="59dp"
                     android:layout_marginTop="25dp"
-                    android:text="清理小工具"
+                    android:text="@string/cleanTools"
                     android:textColor="#ff277aff"
                     android:textSize="16sp" />
 
@@ -66,7 +66,7 @@
                     android:layout_below="@id/tvBg1Title"
                     android:layout_marginLeft="59dp"
                     android:layout_marginTop="7dp"
-                    android:text="便捷清理手机一键优化"
+                    android:text="@string/cleanShortcutOneKeyClean"
                     android:textColor="#ff3582ff"
                     android:textSize="14sp" />
 
@@ -78,7 +78,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="35dp"
                     android:background="@drawable/app_widget_btn_selector"
-                    android:text="立即添加"
+                    android:text="@string/cleanImmediatelyAdd"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </RelativeLayout>
@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="22dp"
-                android:text="手动设置"
+                android:text="@string/cleanManually"
                 android:textColor="@color/black_33"
                 android:textSize="17sp" />
 
@@ -108,7 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:text="1.在手机桌面上长按或双指捏合，选择小工具"
+                    android:text="@string/cleanShortcutStep1"
                     android:textColor="@color/black_66"
                     android:textSize="14sp" />
 
@@ -123,7 +123,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:text="2.在小工具中，找到快清理清理小工具，按住不放，然后拖动到桌面的某一位置，松开手即可具" />
+                    android:text="@string/cleanShortcutStep2" />
 
                 <ImageView
                     android:layout_width="match_parent"

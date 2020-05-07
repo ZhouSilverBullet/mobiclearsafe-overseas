@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 
 import com.mobi.overseas.clearsafe.R;
 import com.mobi.overseas.clearsafe.app.Const;
+import com.mobi.overseas.clearsafe.app.MyApplication;
 import com.mobi.overseas.clearsafe.base.BaseAppCompatActivity;
 import com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout;
 import com.mobi.overseas.clearsafe.ui.clear.control.ClearPresenter;
@@ -117,8 +118,8 @@ public class SpeedPhoneActivity extends BaseAppCompatActivity implements ClearPr
 
         slLayout.setSpeedChangeListener((percent) -> {
             if (percent == 1) {
-                gclLayout.setTvDec("已成功加速");
-                gclLayout.setTvDec2("手机速度优化成功");
+                gclLayout.setTvDec(MyApplication.getResString(R.string.acceleratedSuccessfully));
+                gclLayout.setTvDec2(MyApplication.getResString(R.string.acceleratedSuccessfullyStatus));
                 slLayout.postDelayed(new Runnable() {
                     @Override
                     public void run() {

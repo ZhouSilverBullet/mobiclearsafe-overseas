@@ -9,9 +9,10 @@
     tools:context=".ui.clear.CleanApkActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolBar"
             style="@style/SafeToolbarStyle"
@@ -49,7 +50,7 @@
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="全选"
+                android:text="@string/checkAll"
                 android:textColor="@color/c_328AFF"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -88,7 +89,7 @@
                 android:layout_marginRight="25dp"
                 android:background="@drawable/btn_corn4_selector"
                 android:enabled="false"
-                android:text="加载中..."
+                android:text="@string/loading"
                 android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>

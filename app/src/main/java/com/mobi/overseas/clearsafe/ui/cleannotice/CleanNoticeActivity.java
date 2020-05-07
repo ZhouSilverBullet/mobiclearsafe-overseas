@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mobi.overseas.clearsafe.R;
+import com.mobi.overseas.clearsafe.app.MyApplication;
 import com.mobi.overseas.clearsafe.ui.cleannotice.adapter.CleanNoticeAdapter;
 import com.mobi.overseas.clearsafe.ui.cleannotice.control.CleanNoticeManager;
 import com.mobi.overseas.clearsafe.ui.cleannotice.data.CleanNoticeBean;
@@ -112,7 +113,7 @@ public class CleanNoticeActivity extends BaseActivity implements CleanNoticeMana
 
         //小于19的api不支持
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-            ToastUtils.showShort("您的手机暂时不支持该功能");
+            ToastUtils.showShort(R.string.phoneNotSupportFeature);
         }
 
         if (!notificationListenerEnable()) {
@@ -212,10 +213,10 @@ public class CleanNoticeActivity extends BaseActivity implements CleanNoticeMana
     private void showConfirmDialog() {
         new CleanDialogWarp
                 .Builder(this)
-                .setTitle("权限提示")
-                .setLeftButton("取消")
-                .setRightButton("去开启")
-                .setContent("通知整理功能需要您在系统设置里开启“通知使用权”权限")
+                .setTitle(MyApplication.getResString(R.string.permissionsPrompt))
+                .setLeftButton(MyApplication.getResString(R.string.cancel))
+                .setRightButton(MyApplication.getResString(R.string.toOpen))
+                .setContent(MyApplication.getResString(R.string.toOpenDec))
                 .setRightListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -291,8 +292,8 @@ public class CleanNoticeActivity extends BaseActivity implements CleanNoticeMana
 
     private void showGoodFragment() {
         flContainer.setVisibility(View.VISIBLE);
-        getIntent().putExtra("dec", "已成功清理" + mItemCount + "条通知");
-        getIntent().putExtra("dec2", "手机通知栏非常整洁");
+        getIntent().putExtra("dec", String.format(MyApplication.getResString(R.string.cleanSuccessNotice), mItemCount));
+        getIntent().putExtra("dec2",MyApplication.getResString(R.string.cleanSuccessNoticeStatus));
         ShowGoodFragment fragment = ShowGoodFragment.newInstance(false);
         fragment.setFirstGood(false);
         getSupportFragmentManager()

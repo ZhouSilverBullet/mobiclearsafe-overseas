@@ -98,7 +98,7 @@ public class CleanApkActivity extends BaseActivity implements IScanCallback<Scan
         super.initView();
         setDarkStatusIcon(getWindow(), true);
 
-        mToolBar.setTitle("安装包管理");
+        mToolBar.setTitle(getResources().getString(R.string.installationPackageManagement));
         mToolBar.setTitleTextColor(getResources().getColor(R.color.black_33));
         mToolBar.setNavigationIcon(R.drawable.return_black_left);
         setSupportActionBar(mToolBar);
@@ -112,7 +112,7 @@ public class CleanApkActivity extends BaseActivity implements IScanCallback<Scan
 
         mTvEmpty = mApkFileAdapter.getEmptyView().findViewById(R.id.tvEmpty);
 
-        fsLayout.setShowText("正在扫描安装包");
+        fsLayout.setShowText(getResources().getString(R.string.scanningInstallationPackage));
     }
 
     @Override
@@ -131,7 +131,7 @@ public class CleanApkActivity extends BaseActivity implements IScanCallback<Scan
 
             @Override
             public void onFastClick() {
-                ToastUtils.showShort("点击过快");
+                ToastUtils.showShort(getResources().getString(R.string.clickTooFast));
             }
         });
 
@@ -145,10 +145,10 @@ public class CleanApkActivity extends BaseActivity implements IScanCallback<Scan
 
     private void showClearDialog() {
         new CleanDialogWarp.Builder(this)
-                .setTitle("是否删除")
-                .setContent("是否删除选中项")
-                .setRightButton("删除")
-                .setLeftButton("取消")
+                .setTitle(getResources().getString(R.string.dialogIsDelete))
+                .setContent(getResources().getString(R.string.dialogIsDeleteSelected))
+                .setRightButton(getResources().getString(R.string.dialogDelete))
+                .setLeftButton(getResources().getString(R.string.dialogCancel))
                 .setRightListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -162,10 +162,10 @@ public class CleanApkActivity extends BaseActivity implements IScanCallback<Scan
     private void clearFile() {
         ButtonStatistical.pKGClearButtonClick();
 
-        mTvEmpty.setText("安装包清理完毕");
+        mTvEmpty.setText(getResources().getString(R.string.installationPackageCleaned));
 
         List<File> pathList = mApkFileAdapter.findClearFile();
-        showProgressDialog(false, "清理中...");
+        showProgressDialog(false, getResources().getString(R.string.cleanUp));
 
 
         AppGlobalConfig.APP_THREAD_POOL_EXECUTOR.execute(() -> {
@@ -202,7 +202,7 @@ public class CleanApkActivity extends BaseActivity implements IScanCallback<Scan
 
 //                    mApkFileAdapter.replaceData(newDataList);
 
-                    ToastUtils.showLong("删除成功");
+                    ToastUtils.showLong(getResources().getString(R.string.delSuccess));
                     closeProgressDialog();
 
                     requestClearGarbage();
@@ -271,7 +271,7 @@ public class CleanApkActivity extends BaseActivity implements IScanCallback<Scan
      */
     private <T extends MultiItemEntity> void refreshUIStatus(Collection<T> garbageList) {
         String[] fileSize0 = FileUtil.getFileSize0(mAllSize);
-        tvContent.setText(SpannableStringBuilderUtil.getRedStr(garbageList.size() + "个安装包占用", "空间", fileSize0[0] + fileSize0[1]));
+        tvContent.setText(SpannableStringBuilderUtil.getRedStr(String.format(getResources().getString(R.string.installationPackagesTakeUp), garbageList.size()), getResources().getString(R.string.space), fileSize0[0] + fileSize0[1]));
         mApkFileAdapter.setSize(mAllSize);
         mApkFileAdapter.setSelectedSize(mSelectedSize);
         //大文件默认是0
@@ -298,10 +298,10 @@ public class CleanApkActivity extends BaseActivity implements IScanCallback<Scan
         if (clearSize > 0) {
             btnClear.setEnabled(true);
             String[] fileSize0 = FileUtil.getFileSize0(clearSize);
-            btnClear.setText("立即清理（" + fileSize0[0] + fileSize0[1] + "）");
+            btnClear.setText(String.format(getResources().getString(R.string.immediatelyCleanUpFormat), fileSize0[0] + fileSize0[1]));
         } else {
             btnClear.setEnabled(false);
-            btnClear.setText("立即清理");
+            btnClear.setText(getResources().getString(R.string.immediatelyCleanUp));
         }
 
     }

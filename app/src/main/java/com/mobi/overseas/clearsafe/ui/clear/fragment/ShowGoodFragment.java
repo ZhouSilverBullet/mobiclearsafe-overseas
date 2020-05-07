@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.mobi.overseas.clearsafe.R;
+import com.mobi.overseas.clearsafe.app.MyApplication;
 import com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout;
 import com.mobi.overseas.clearsafe.ui.clear.control.ClearPresenter;
 import com.mobi.overseas.clearsafe.ui.clear.entity.CleanEvent;
@@ -83,8 +84,8 @@ public class ShowGoodFragment extends BaseFragment implements ClearPresenter.ICl
     @Override
     protected void initView() {
         if (TextUtils.isEmpty(dec) && TextUtils.isEmpty(dec2)) {
-            gclLayout.setTvDec("已清理");
-            gclLayout.setTvDec2("磁盘性能良好");
+            gclLayout.setTvDec(MyApplication.getResString(R.string.isCleaned));
+            gclLayout.setTvDec2(MyApplication.getResString(R.string.isCleanedStatus));
         } else {
             gclLayout.setTvDec(dec);
             gclLayout.setTvDec2(dec2);

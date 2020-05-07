@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="102dp"
-                android:text="预计可用 13 小时 30 分"
+                tools:text="预计可用 13 小时 30 分"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -114,7 +114,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="耗电量统计"
+                        android:text="@string/powerConsumptionStatistics"
                         android:textColor="#ff666666"
                         android:textSize="17sp" />
 
@@ -143,7 +143,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="手机电池保养小知识"
+                        android:text="@string/batteryMaintenanceTips"
                         android:textColor="#ff666666"
                         android:textSize="17sp" />
 
@@ -179,7 +179,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/btn_corn4_selector"
-            android:text="一键优化（+14分钟）"
+            tools:text="一键优化（+14分钟）"
             android:textColor="@color/white" />
 
     </LinearLayout>
@@ -201,7 +201,7 @@
         android:fitsSystemWindows="true"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/white_return"
-        app:title="电量管理"
+        app:title="@string/powerManagement"
         app:titleTextColor="@color/white" />
 
 </FrameLayout>

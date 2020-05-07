@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.mobi.overseas.clearsafe.R;
+import com.mobi.overseas.clearsafe.app.MyApplication;
 import com.mobi.overseas.clearsafe.ui.common.base.BaseActivity;
 
 import butterknife.BindView;
@@ -50,7 +51,7 @@ public class CleanAppWidgetGuideActivity extends BaseActivity {
     @Override
     public void initView() {
         super.initView();
-        toolBar.setTitle("清理小工具设置攻略");
+        toolBar.setTitle(MyApplication.getResString(R.string.cleanToolMethod));
         toolBar.setTitleTextColor(getResources().getColor(R.color.black_33));
         toolBar.setNavigationIcon(R.drawable.return_black_left);
         setSupportActionBar(toolBar);

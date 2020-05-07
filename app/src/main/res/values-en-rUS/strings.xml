@@ -99,10 +99,67 @@
     <string name="open_remind">开启提醒</string>
     <string name="open_success">开启签到提醒成功</string>
 
-    <string name="clear_to_complete">clean complete</string>
-
-
-    <string name="clean_tool">Clean up the gadgets</string>
+    <string name="clean_tool">快清理小工具</string>
     <string name="hotActivity">热门活动</string>
+    <string name="oneOptimize">一键优化</string>
+    <string name="qqClean">QQ专清</string>
+    <string name="OneKeyFarewellCardSlow">一键告别卡慢</string>
+    <string name="bigFileClean">大文件清理</string>
+    <string name="notificationClean">通知栏清理</string>
+    <string name="guardianCleanAnyDay">快清理已守护您%s天</string>
+    <string name="problemToFix">有问题待修复</string>
+    <string name="memoryIsUsed">已用%d%%内存</string>
+    <string name="goodHealthy">很健康</string>
+    <string name="subHealthy">亚健康</string>
+    <string name="overloadHealthy">超负荷</string>
+    <string name="scanning">正在扫描：%s</string>
+    <string name="cleanUp">清理中...</string>
+    <string name="scan">扫描中...</string>
+    <string name="clear_to_complete">无需清理</string>
+    <string name="cleanUpTheComplete">清理完成</string>
+    <string name="systemGarbageHasBeenCleared">已清理%s系统垃圾</string>
+    <string name="garbageClean">垃圾清理</string>
+    <string name="restAssuredToCleanUp">放心清理（%s）</string>
+    <string name="optimizingSuccess">优化成功</string>
+    <string name="optimizingSuccessStatus">手机速度已达最佳</string>
+
+    <string name="phoneSpeed">手机加速</string>
+    <string name="powerManagement">电量管理</string>
+    <string name="phoneCool">手机降温</string>
+    <string name="installationPackageManagement">安装包管理</string>
+    <string name="superPower">超强省电</string>
+    <string name="cleanTools">清理小工具</string>
+
+    <string name="memoryOverrun">内存占用超过</string>
+    <string name="speedScanning">正在扫描</string>
+    <string name="acceleratedSuccessfully">已成功加速</string>
+    <string name="acceleratedSuccessfullyStatus">手机速度优化成功</string>
+
+    <string name="expectedUseTimes">预计可用 13 小时 30 分</string>
+    <string name="batteryFull">电池充满</string>
+    <string name="startQuickCharging">开启快速充电</string>
+    <string name="beCharging">正在充电...</string>
+    <string name="powerIsPoor">电量欠佳，一键优化延长待机时间</string>
+    <string name="optimizePowerMinutes">一键优化（+%d分钟）</string>
+    <string name="batteryStatus">电池状态</string>
+    <string name="batteryVoltage">电池电压</string>
+    <string name="batteryTemperature">电池温度</string>
+    <string name="currentCapacity">当前容量</string>
+    <string name="totalCapacity">总容量</string>
+    <string name="batteryTechnology">电池技术</string>
+    <string name="stillNeed">充满还需&#160;</string>
+    <string name="stillNeedHour">&#160;小时&#160;</string>
+    <string name="stillNeedMinutes">&#160;分</string>
+    <string name="availableUse">预计可用&#160;</string>
+
+    <string name="quickChargingStarted">已开始快速充电模式</string>
+    <string name="quickChargingStartedStatus">极速充电中</string>
+    <string name="quickChargingSpeed">已成功加速%d分钟</string>
+    <string name="quickChargingSpeedStatus">电池已达最佳状态</string>
+
+    <string name="powerConsumptionStatistics">耗电量统计</string>
+    <string name="batteryMaintenanceTips">手机电池保养小知识</string>
+
+    
 
 </resources>

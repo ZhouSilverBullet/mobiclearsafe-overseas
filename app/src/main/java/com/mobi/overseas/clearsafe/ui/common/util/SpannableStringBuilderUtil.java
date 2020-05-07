@@ -9,6 +9,9 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.widget.TextView;
 
+import com.mobi.overseas.clearsafe.R;
+import com.mobi.overseas.clearsafe.app.MyApplication;
+
 /**
  * @author zhousaito
  * @version 1.0
@@ -79,42 +82,42 @@ public class SpannableStringBuilderUtil {
 
     public static void handlePowerLast(TextView textView, int m) {
         int n = m / 60;
-        SpannableStringBuilder stringBuilder = new SpannableStringBuilder("充满还需 ");
+        SpannableStringBuilder stringBuilder = new SpannableStringBuilder(MyApplication.getResString(R.string.stillNeed));
         int i2 = ((SpannableStringBuilder) stringBuilder).length();
         ((SpannableStringBuilder) stringBuilder).setSpan(new ForegroundColorSpan(Color.parseColor("#CCffffff")), 0, i2, 33);
         ((SpannableStringBuilder) stringBuilder).append(String.valueOf(n));
         ((SpannableStringBuilder) stringBuilder).setSpan(new StyleSpan(1), i2, ((SpannableStringBuilder) stringBuilder).length(), 33);
         ((SpannableStringBuilder) stringBuilder).setSpan(new AbsoluteSizeSpan(18, true), i2, ((SpannableStringBuilder) stringBuilder).length(), 33);
         n = ((SpannableStringBuilder) stringBuilder).length();
-        ((SpannableStringBuilder) stringBuilder).append(" 小时 ");
+        ((SpannableStringBuilder) stringBuilder).append(MyApplication.getResString(R.string.stillNeedHour));
         ((SpannableStringBuilder) stringBuilder).setSpan(new ForegroundColorSpan(Color.parseColor("#CCffffff")), n, ((SpannableStringBuilder) stringBuilder).length(), 33);
         n = ((SpannableStringBuilder) stringBuilder).length();
         ((SpannableStringBuilder) stringBuilder).append(String.valueOf(m % 60));
         ((SpannableStringBuilder) stringBuilder).setSpan(new StyleSpan(1), n, ((SpannableStringBuilder) stringBuilder).length(), 33);
         ((SpannableStringBuilder) stringBuilder).setSpan(new AbsoluteSizeSpan(18, true), n, ((SpannableStringBuilder) stringBuilder).length(), 33);
         m = ((SpannableStringBuilder) stringBuilder).length();
-        ((SpannableStringBuilder) stringBuilder).append(" 分");
+        ((SpannableStringBuilder) stringBuilder).append(MyApplication.getResString(R.string.stillNeedMinutes));
         ((SpannableStringBuilder) stringBuilder).setSpan(new ForegroundColorSpan(Color.parseColor("#CCffffff")), m, ((SpannableStringBuilder) stringBuilder).length(), 33);
         textView.setText(stringBuilder);
     }
 
     public static void handlePowerUse(TextView textView, int m) {
         int n = m / 60;
-        SpannableStringBuilder localObject1 = new SpannableStringBuilder("预计可用 ");
+        SpannableStringBuilder localObject1 = new SpannableStringBuilder(MyApplication.getResString(R.string.availableUse));
         int i2 = ((SpannableStringBuilder) localObject1).length();
         ((SpannableStringBuilder) localObject1).setSpan(new ForegroundColorSpan(Color.parseColor("#CCffffff")), 0, i2, 33);
         ((SpannableStringBuilder) localObject1).append(String.valueOf(n));
         ((SpannableStringBuilder) localObject1).setSpan(new StyleSpan(1), i2, ((SpannableStringBuilder) localObject1).length(), 33);
         ((SpannableStringBuilder) localObject1).setSpan(new AbsoluteSizeSpan(18, true), i2, ((SpannableStringBuilder) localObject1).length(), 33);
         n = ((SpannableStringBuilder) localObject1).length();
-        ((SpannableStringBuilder) localObject1).append(" 小时 ");
+        ((SpannableStringBuilder) localObject1).append(MyApplication.getResString(R.string.stillNeedHour));
         ((SpannableStringBuilder) localObject1).setSpan(new ForegroundColorSpan(Color.parseColor("#CCffffff")), n, ((SpannableStringBuilder) localObject1).length(), 33);
         n = ((SpannableStringBuilder) localObject1).length();
         ((SpannableStringBuilder) localObject1).append(String.valueOf(m % 60));
         ((SpannableStringBuilder) localObject1).setSpan(new StyleSpan(1), n, ((SpannableStringBuilder) localObject1).length(), 33);
         ((SpannableStringBuilder) localObject1).setSpan(new AbsoluteSizeSpan(18, true), n, ((SpannableStringBuilder) localObject1).length(), 33);
         m = ((SpannableStringBuilder) localObject1).length();
-        ((SpannableStringBuilder) localObject1).append(" 分");
+        ((SpannableStringBuilder) localObject1).append(MyApplication.getResString(R.string.stillNeedMinutes));
         ((SpannableStringBuilder) localObject1).setSpan(new ForegroundColorSpan(Color.parseColor("#CCffffff")), m, ((SpannableStringBuilder) localObject1).length(), 33);
         textView.setText(localObject1);
     }

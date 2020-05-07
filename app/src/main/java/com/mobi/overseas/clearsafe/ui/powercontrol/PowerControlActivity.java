@@ -160,11 +160,11 @@ public class PowerControlActivity extends BaseActivity implements BatteryBroadca
 
                     //充电状态
                     if (isPowering) {
-                        getIntent().putExtra("dec", "已开始快速充电模式");
-                        getIntent().putExtra("dec2", "极速充电中");
+                        getIntent().putExtra("dec", getResources().getString(R.string.quickChargingStarted));
+                        getIntent().putExtra("dec2", getResources().getString(R.string.quickChargingStartedStatus));
                     } else {
-                        getIntent().putExtra("dec", "已成功加速" + youHuaPower + "分钟");
-                        getIntent().putExtra("dec2", "电池已达最佳状态");
+                        getIntent().putExtra("dec", getResources().getString(R.string.quickChargingSpeed));
+                        getIntent().putExtra("dec2", getResources().getString(R.string.quickChargingSpeedStatus));
                     }
 
                     ShowGoodFragment fragment = ShowGoodFragment.newInstance(false);
@@ -260,9 +260,9 @@ public class PowerControlActivity extends BaseActivity implements BatteryBroadca
         batteryView.setChargeState(2);
 
         if (BATTERY_STATUS_FULL == status) {
-            tvTime.setText("电池充满");
+            tvTime.setText(getResources().getString(R.string.batteryFull));
             batteryView.setChargeState(0);
-            btnClear.setText("开启快速充电");
+            btnClear.setText(getResources().getString(R.string.startQuickCharging));
             tvPowerDec.setText("");
 
         } else if (BATTERY_STATUS_CHARGING == status) {
@@ -276,14 +276,14 @@ public class PowerControlActivity extends BaseActivity implements BatteryBroadca
             //充满
             int m = (int) (info.getBatteryCapacityInt() * (info.getScale() - level) / chargingPower / 100.0 + 1);
             if (m < 0) {
-                tvTime.setText("电池充满");
+                tvTime.setText(getResources().getString(R.string.batteryFull));
             } else {
                 SpannableStringBuilderUtil.handlePowerLast(tvTime, m);
             }
             batteryView.setChargeState(0);
 
-            btnClear.setText("开启快速充电");
-            tvPowerDec.setText("正在充电...");
+            btnClear.setText(getResources().getString(R.string.startQuickCharging));
+            tvPowerDec.setText(getResources().getString(R.string.beCharging));
         } else {
             //放电
             if (jianShaoPower == 0) {
@@ -293,8 +293,8 @@ public class PowerControlActivity extends BaseActivity implements BatteryBroadca
             m = (int) (m / jianShaoPower + 1.0F);
             SpannableStringBuilderUtil.handlePowerUse(tvTime, m);
 
-            btnClear.setText("一键优化（+" + youHuaPower + "分钟）");
-            tvPowerDec.setText("电量欠佳，一键优化延长待机时间");
+            btnClear.setText(String.format(getResources().getString(R.string.optimizePowerMinutes) , youHuaPower));
+            tvPowerDec.setText(getResources().getString(R.string.powerIsPoor));
         }
 
         //设置颜色的状态
@@ -302,12 +302,12 @@ public class PowerControlActivity extends BaseActivity implements BatteryBroadca
 
 
         ArrayList<BatteryPropertyBean> list = new ArrayList<>();
-        list.add(new BatteryPropertyBean("电池状态", info.getHealth()));
-        list.add(new BatteryPropertyBean("电池电压", info.getVoltage()));
-        list.add(new BatteryPropertyBean("电池温度", info.getTemperature()));
-        list.add(new BatteryPropertyBean("当前容量", info.getLevelPercent()));
-        list.add(new BatteryPropertyBean("总容量", info.getBatteryCapacity()));
-        list.add(new BatteryPropertyBean("电池技术", info.getTechnology()));
+        list.add(new BatteryPropertyBean(getResources().getString(R.string.batteryStatus), info.getHealth()));
+        list.add(new BatteryPropertyBean(getResources().getString(R.string.batteryVoltage), info.getVoltage()));
+        list.add(new BatteryPropertyBean(getResources().getString(R.string.batteryTemperature), info.getTemperature()));
+        list.add(new BatteryPropertyBean(getResources().getString(R.string.currentCapacity), info.getLevelPercent()));
+        list.add(new BatteryPropertyBean(getResources().getString(R.string.totalCapacity), info.getBatteryCapacity()));
+        list.add(new BatteryPropertyBean(getResources().getString(R.string.batteryTechnology), info.getTechnology()));
         mPropertyAdapter.replaceData(list);
 
 

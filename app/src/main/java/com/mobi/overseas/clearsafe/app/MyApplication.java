@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
@@ -148,6 +149,10 @@ public class MyApplication extends MultiDexApplication {
         filter.addAction(Intent.ACTION_POWER_DISCONNECTED);
         registerReceiver(receiver, filter);
 
+    }
+
+    public static String getResString(@StringRes int id) {
+        return mContext.getResources().getString(id);
     }
 
     @Override

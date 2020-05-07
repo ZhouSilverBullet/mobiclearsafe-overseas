@@ -2,6 +2,8 @@ package com.mobi.overseas.clearsafe.ui.clear.data;
 
 import com.chad.library.adapter.base.entity.AbstractExpandableItem;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
+import com.mobi.overseas.clearsafe.R;
+import com.mobi.overseas.clearsafe.app.MyApplication;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,11 +57,11 @@ public class GarbageHeaderBean extends AbstractExpandableItem<GarbageBean> imple
     public static List<MultiItemEntity> createGarbageHeaders() {
         List<MultiItemEntity> list = new ArrayList<>();
 
-        list.add(GarbageHeaderBean.createGarbageHeader("缓存垃圾", TYPE_CACHE_GARBAGE));
-        list.add(GarbageHeaderBean.createGarbageHeader("系统垃圾", TYPE_SYSTEM_GARBAGE));
-        list.add(GarbageHeaderBean.createGarbageHeader("广告垃圾", TYPE_AD_GARBAGE));
+        list.add(GarbageHeaderBean.createGarbageHeader(MyApplication.getResString(R.string.cacheGarbage), TYPE_CACHE_GARBAGE));
+        list.add(GarbageHeaderBean.createGarbageHeader(MyApplication.getResString(R.string.systemGarbage), TYPE_SYSTEM_GARBAGE));
+        list.add(GarbageHeaderBean.createGarbageHeader(MyApplication.getResString(R.string.advertisingGarbage), TYPE_AD_GARBAGE));
 //        list.add(createGarbageHeader("卸载残留", TYPE_UNINSTALL_GARBAGE));
-        list.add(GarbageHeaderBean.createGarbageHeader("无用安装包", TYPE_INVALID_PACKAGE));
+        list.add(GarbageHeaderBean.createGarbageHeader(MyApplication.getResString(R.string.uselessInstallationPackage), TYPE_INVALID_PACKAGE));
 
         return list;
     }

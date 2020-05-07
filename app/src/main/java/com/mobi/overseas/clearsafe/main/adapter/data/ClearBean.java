@@ -5,6 +5,7 @@ import android.support.annotation.ColorRes;
 
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import com.mobi.overseas.clearsafe.R;
+import com.mobi.overseas.clearsafe.app.MyApplication;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -61,12 +62,12 @@ public class ClearBean implements MultiItemEntity {
 
     public static List<ClearBean> getRvGridData() {
         List<ClearBean> list = new CopyOnWriteArrayList<>();
-        list.add(new ClearBean(1, R.drawable.clean_icon_speed_orange, 1, "手机加速", "一键清理，释放空间", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.clean_icon_speed_orange, 1, MyApplication.getResString(R.string.phoneSpeed), "一键清理，释放空间", R.color.black_33));
 //        list.add(new ClearBean(1, R.drawable.clean_icon_home_wechat, 2, "微信专清", "正在获取...", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.clean_icon_powercontrol, 3, "电量管理", "正在获取...", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.clean_icon_power, 4, "手机降温", "快来给手机降温", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.clean_icon_bigfile, 5, "安装包管理", "", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.clean_icon_notice, 6, "通知栏清理", "", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.clean_icon_powercontrol, 3, MyApplication.getResString(R.string.powerManagement), "正在获取...", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.clean_icon_power, 4, MyApplication.getResString(R.string.phoneCool), "快来给手机降温", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.clean_icon_bigfile, 5, MyApplication.getResString(R.string.installationPackageManagement), "", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.clean_icon_notice, 6, MyApplication.getResString(R.string.notificationClean), "", R.color.black_33));
         return list;
     }
 
@@ -77,12 +78,12 @@ public class ClearBean implements MultiItemEntity {
      */
     public static List<ClearBean> getRvGridBoxData() {
         List<ClearBean> list = new CopyOnWriteArrayList<>();
-        list.add(new ClearBean(1, R.drawable.toolbox_apk, 1, "安装包管理", "", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.toolbox_file, 2, "大文件清理", "", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.toolbox_safe_power, 3, "超强省电", "", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.toolbox_notice, 4, "通知栏清理", "", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.toolbox_powering, 5, "电量管理", "", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.toolbox_appwidget, 6, "清理小工具", "", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.toolbox_apk, 1, MyApplication.getResString(R.string.installationPackageManagement), "", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.toolbox_file, 2, MyApplication.getResString(R.string.bigFileClean), "", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.toolbox_safe_power, 3, MyApplication.getResString(R.string.superPower), "", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.toolbox_notice, 4, MyApplication.getResString(R.string.notificationClean), "", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.toolbox_powering, 5, MyApplication.getResString(R.string.powerManagement), "", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.toolbox_appwidget, 6, MyApplication.getResString(R.string.cleanTools), "", R.color.black_33));
         return list;
     }
 
@@ -93,10 +94,10 @@ public class ClearBean implements MultiItemEntity {
      */
     public static List<ClearBean> getRvGridBoxData2() {
         List<ClearBean> list = new CopyOnWriteArrayList<>();
-        list.add(new ClearBean(1, R.drawable.tool_speed, 1, "手机加速", "一键清理，释放空间", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.tool_speed, 1,  MyApplication.getResString(R.string.phoneSpeed), "一键清理，释放空间", R.color.black_33));
 //        list.add(new ClearBean(1, R.drawable.toolbox_wechat, 2, "微信专清", "正在获取...", R.color.black_33));
 //        list.add(new ClearBean(1, R.drawable.toolbox_qq, 3, "QQ专清", "正在获取...", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.toolbox_cool, 4, "手机降温", "快来给手机降温", R.color.black_33));
+        list.add(new ClearBean(1, R.drawable.toolbox_cool, 4, MyApplication.getResString(R.string.phoneCool), "快来给手机降温", R.color.black_33));
 
 //        list.add(new ClearBean(1, R.drawable.toolbox_power, 1, "超级省电", "", R.color.black_33));
 //        list.add(new ClearBean(1, R.drawable.toolbox_cool, 2, "手机降温", "", R.color.black_33));

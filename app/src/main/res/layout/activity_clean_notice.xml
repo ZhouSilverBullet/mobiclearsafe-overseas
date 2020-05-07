@@ -41,7 +41,7 @@
         android:layout_height="20dp"
         android:layout_marginLeft="3dp"
         android:layout_marginBottom="4dp"
-        android:text="条"
+        android:text="@string/item"
         android:textColor="#ffffffff"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/tvCount"
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:gravity="center"
-        android:text="通知待清理"
+        android:text="@string/noticeIdleClean"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:visibility="gone"
@@ -88,7 +88,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/btn_corn4_selector"
-            android:text="全部清理"
+            android:text="@string/cleanAll"
             android:textColor="@color/white" />
     </LinearLayout>
 
@@ -98,7 +98,7 @@
         android:layout_height="70dp"
         android:background="@color/white"
         android:gravity="center"
-        android:text="如您已开启通知整理，有通知会显示在此"
+        android:text="@string/openNoticePermissionShowNotice"
         android:textColor="#ff999999"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,6 +121,6 @@
         android:fitsSystemWindows="true"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/white_return"
-        app:title="通知整理"
+        app:title="@string/noticeFinishing"
         app:titleTextColor="@color/white" />
 </android.support.constraint.ConstraintLayout>

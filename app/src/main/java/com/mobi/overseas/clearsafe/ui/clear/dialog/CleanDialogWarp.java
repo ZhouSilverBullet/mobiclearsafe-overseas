@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.mobi.overseas.clearsafe.R;
+import com.mobi.overseas.clearsafe.app.MyApplication;
 import com.mobi.overseas.clearsafe.ui.common.dialog.BaseDialogContainer;
 
 import butterknife.BindView;
@@ -97,10 +98,10 @@ public class CleanDialogWarp extends BaseDialogContainer {
     public static class Builder {
         private Activity mActivity;
 
-        private String title = "停止扫描";
-        private String content = "正在扫描中，确认要停止吗？";
-        private String leftButton = "停止扫描";
-        private String rightButton = "继续扫描";
+        private String title = MyApplication.getResString(R.string.stopScan);
+        private String content = MyApplication.getResString(R.string.continueScaning);;
+        private String leftButton = MyApplication.getResString(R.string.stopScan);
+        private String rightButton = MyApplication.getResString(R.string.continueScan);
 
         boolean isOutSide = true;
         boolean isCancelable = true;

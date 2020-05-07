@@ -100,7 +100,7 @@ public class PowerCoolActivity extends BaseAppCompatActivity implements ClearPre
             if (percent == 1) {
                 String formatStr = getResources().getString(R.string.clear_power_cool_format);
                 gclLayout.setTvDec(String.format(formatStr, pclLayout.currentCelsius));
-                gclLayout.setTvDec2("降温30s后达到最佳效果哦");
+                gclLayout.setTvDec2(getResources().getString(R.string.clear_power_cool_status));
                 pclLayout.setVisibility(View.GONE);
                 gclLayout.startAnim();
             }

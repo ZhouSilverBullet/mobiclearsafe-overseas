@@ -90,7 +90,7 @@
             android:layout_marginRight="25dp"
             android:background="@drawable/btn_corn4_selector"
             android:enabled="false"
-            android:text="加载中..."
+            android:text="@string/loading"
             android:textColor="@color/white" />
     </LinearLayout>
 

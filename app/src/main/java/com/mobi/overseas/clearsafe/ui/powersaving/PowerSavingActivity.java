@@ -221,7 +221,7 @@ public class PowerSavingActivity extends BaseActivity implements CountDownTimerW
 
             long time = list.size() * 60 * 1000;
 
-            SimpleDateFormat sdf = new SimpleDateFormat("优化后延长待机hh小时mm分钟", Locale.CHINA);
+            SimpleDateFormat sdf = new SimpleDateFormat(getResources().getString(R.string.powerSavingOptimizationTime), Locale.CHINA);
             String format = sdf.format(time);
             tvPowerDuration.setText(format);
             mPowerSavingAdapter.replaceData(list);
@@ -305,8 +305,8 @@ public class PowerSavingActivity extends BaseActivity implements CountDownTimerW
 
     private void showGoodFragment() {
         flContainer.setVisibility(View.VISIBLE);
-        getIntent().putExtra("dec", "已成功休眠" + mItemCount + "款应用");
-        getIntent().putExtra("dec2", "电量已达最佳状态");
+        getIntent().putExtra("dec", String.format(getResources().getString(R.string.powerSavingSleepApp), mItemCount));
+        getIntent().putExtra("dec2", getResources().getString(R.string.powerSavingSleepAppStatus));
         ShowGoodFragment fragment = ShowGoodFragment.newInstance(false);
         fragment.setFirstGood(false);
         getSupportFragmentManager()

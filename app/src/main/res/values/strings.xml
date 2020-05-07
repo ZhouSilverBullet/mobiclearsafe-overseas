@@ -106,7 +106,7 @@
     <string name="net_error">网络走丢了...</string>
     <string name="empty">暂无数据...</string>
     <string name="reload">重新尝试</string>
-    <string name="loading">加载中...</string>
+
     <string name="updating">正在更新</string>
     <string name="exit_content">确定要退出登录吗</string>
     <string name="cancel">取消</string>
@@ -354,7 +354,7 @@
     <string name="clear_qq_video_title">短视频缓存</string>
     <string name="clear_qq_video_dec">看点视频缓存，放心清理</string>
 
-    <string name="clear_power_cool_format">手机已降温%.1f°</string>
+
 
     <string name="clean_tool">快清理小工具</string>
     <string name="hotActivity">热门活动</string>
@@ -379,6 +379,114 @@
     <string name="restAssuredToCleanUp">放心清理（%s）</string>
     <string name="optimizingSuccess">优化成功</string>
     <string name="optimizingSuccessStatus">手机速度已达最佳</string>
+
+    <string name="phoneSpeed">手机加速</string>
+    <string name="powerManagement">电量管理</string>
+    <string name="phoneCool">手机降温</string>
+    <string name="installationPackageManagement">安装包管理</string>
+    <string name="superPower">超强省电</string>
+    <string name="cleanTools">清理小工具</string>
+
+    <string name="memoryOverrun">内存占用超过</string>
+    <string name="speedScanning">正在扫描</string>
+    <string name="acceleratedSuccessfully">已成功加速</string>
+    <string name="acceleratedSuccessfullyStatus">手机速度优化成功</string>
+
+    <string name="expectedUseTimes">预计可用 13 小时 30 分</string>
+    <string name="batteryFull">电池充满</string>
+    <string name="startQuickCharging">开启快速充电</string>
+    <string name="beCharging">正在充电...</string>
+    <string name="powerIsPoor">电量欠佳，一键优化延长待机时间</string>
+    <string name="optimizePowerMinutes">一键优化（+%d分钟）</string>
+    <string name="batteryStatus">电池状态</string>
+    <string name="batteryVoltage">电池电压</string>
+    <string name="batteryTemperature">电池温度</string>
+    <string name="currentCapacity">当前容量</string>
+    <string name="totalCapacity">总容量</string>
+    <string name="batteryTechnology">电池技术</string>
+    <string name="stillNeed">充满还需&#160;</string>
+    <string name="stillNeedHour">&#160;小时&#160;</string>
+    <string name="stillNeedMinutes">&#160;分</string>
+    <string name="availableUse">预计可用&#160;</string>
+
+    <string name="quickChargingStarted">已开始快速充电模式</string>
+    <string name="quickChargingStartedStatus">极速充电中</string>
+    <string name="quickChargingSpeed">已成功加速%d分钟</string>
+    <string name="quickChargingSpeedStatus">电池已达最佳状态</string>
+
+    <string name="powerConsumptionStatistics">耗电量统计</string>
+    <string name="batteryMaintenanceTips">手机电池保养小知识</string>
+
+
+    <string name="clear_power_cool_format">手机已降温%.1f°</string>
+    <string name="clear_power_cool_status">降温30s后达到最佳效果哦</string>
+
+    <string name="checkAll">全选</string>
+    <string name="loading">加载中...</string>
+    <string name="installationPackagesTakeUp">%d个安装包占用</string>
+    <string name="space">空间</string>
+    <string name="scanningInstallationPackage">正在扫描安装包</string>
+    <string name="installationPackageCleaned">安装包清理完毕</string>
+    <string name="clickTooFast">点击过快</string>
+    <string name="clickTooFast2">请不要操作太快~~</string>
+
+    <string name="dialogIsDelete">是否删除</string>
+    <string name="dialogIsDeleteSelected">是否删除选中项</string>
+    <string name="dialogDelete">删除</string>
+    <string name="dialogCancel">取消</string>
+    <string name="delSuccess">删除成功</string>
+
+    <string name="immediatelyCleanUp">立即清理</string>
+    <string name="immediatelyCleanUpFormat">立即清理（%s）</string>
+
+    <string name="stopScan">停止扫描</string>
+    <string name="continueScan">继续扫描</string>
+    <string name="continueScaning">正在扫描中，确认要停止吗？</string>
+
+    <string name="scanningBigFile">正在扫描大文件</string>
+    <string name="canDelete">可以删除</string>
+    <string name="bigFileGon">共</string>
+    <string name="aFile">个文件</string>
+    <string name="takeUp">占用</string>
+    <string name="isCleaned">已清理</string>
+    <string name="isCleanedStatus">磁盘性能良好</string>
+
+    <string name="permissionsPrompt">权限提示</string>
+    <string name="toOpen">去开启</string>
+    <string name="toOpenDec">通知整理功能需要您在系统设置里开启“通知使用权”权限</string>
+    <string name="cleanSuccessNotice">已成功清理%d条通知</string>
+    <string name="cleanSuccessNoticeStatus">手机通知栏非常整洁</string>
+    <string name="phoneNotSupportFeature">您的手机暂时不支持该功能</string>
+    <string name="item">条</string>
+    <string name="noticeIdleClean">通知待清理</string>
+    <string name="cleanAll">全部清理</string>
+    <string name="openNoticePermissionShowNotice">如您已开启通知整理，有通知会显示在此</string>
+    <string name="noticeFinishing">通知整理</string>
+    <string name="recommendedCleaning">建议清理</string>
+
+    <string name="cacheGarbage">缓存垃圾</string>
+    <string name="systemGarbage">系统垃圾</string>
+    <string name="advertisingGarbage">广告垃圾</string>
+    <string name="uselessInstallationPackage">无用安装包</string>
+
+
+    <string name="cleanToolMethod">清理小工具设置攻略</string>
+    <string name="cleanShortcut">快捷设置</string>
+    <string name="cleanShortcutOneKeyClean">便捷清理手机一键优化</string>
+    <string name="cleanImmediatelyAdd">立即添加</string>
+    <string name="cleanManually">手动设置</string>
+    <string name="cleanShortcutStep1">1.在手机桌面上长按或双指捏合，选择小工具</string>
+    <string name="cleanShortcutStep2">2.在小工具中，找到快清理清理小工具，按住不放，然后拖动到桌面的某一位置，松开手即可具</string>
+
+    <string name="powerSavingOptimizationTime">优化后延长待机hh小时mm分钟</string>
+    <string name="powerSavingSleepApp">已成功休眠%d款应用</string>
+    <string name="powerSavingSleepAppStatus">电量已达最佳状态%d款应用</string>
+    <string name="powerSavingSleepAppSuggest">建议休眠应用</string>
+    <string name="paragraph">款</string>
+    <string name="immediatelySaveElectricity">立即省电</string>
+
+    <string name="analyzingPowerConsumptionInformation">正在分析耗电信息…</string>
+
 
 
 

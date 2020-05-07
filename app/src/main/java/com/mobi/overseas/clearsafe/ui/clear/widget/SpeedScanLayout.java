@@ -127,8 +127,8 @@ public class SpeedScanLayout extends View {
     private void drawShowText(Canvas canvas) {
 
         canvas.drawText(mChangeMemoryValue + "%", (getWidth()) / 2.0f, dp350 + baseline + dp15, mMemoryPaint);
-        canvas.drawText("内存占用超过", (getWidth()) / 2.0f, dp350, mMemoryPaint2);
-        canvas.drawText("正在扫描", (getWidth()) / 2.0f, getHeight() / 2.0f, mMemoryPaint3);
+        canvas.drawText(MyApplication.getResString(R.string.memoryOverrun), (getWidth()) / 2.0f, dp350, mMemoryPaint2);
+        canvas.drawText(MyApplication.getResString(R.string.speedScanning), (getWidth()) / 2.0f, getHeight() / 2.0f, mMemoryPaint3);
 
     }
 

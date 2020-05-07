@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="3dp"
-        android:text="建议休眠应用"
+        android:text="@string/powerSavingSleepAppSuggest"
         android:textColor="#ffffffff"
         android:textSize="14sp"
         app:layout_constraintLeft_toRightOf="@id/tvCount"
@@ -51,7 +51,7 @@
         android:layout_height="20dp"
         android:layout_marginLeft="3dp"
         android:layout_marginBottom="4dp"
-        android:text="款"
+        android:text="@string/paragraph"
         android:textColor="#ffffffff"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/tvCount"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:gravity="center"
-        android:text="优化后延长待机4小时29分钟"
+        tools:text="优化后延长待机4小时29分钟"
         android:textColor="@color/c_afff99"
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/tvUnit" />
@@ -94,7 +94,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/btn_corn4_selector"
-            android:text="立即省电"
+            android:text="@string/immediatelySaveElectricity"
             android:textColor="@color/white" />
     </LinearLayout>
 
@@ -122,7 +122,7 @@
         android:fitsSystemWindows="true"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/white_return"
-        app:title="超强省电"
+        app:title="@string/superPower"
         app:titleTextColor="@color/white" />
 
 </android.support.constraint.ConstraintLayout>

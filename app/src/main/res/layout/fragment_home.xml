@@ -255,7 +255,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/home_recyclerview_bg"
+                android:background="@drawable/home_active_scond_bg"
                 android:orientation="vertical"
                 android:padding="12dp">
 
@@ -306,7 +306,7 @@
         android:layout_height="102dp"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="90dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 

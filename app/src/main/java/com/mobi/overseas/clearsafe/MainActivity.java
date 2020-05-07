@@ -881,10 +881,10 @@ public class MainActivity extends FragmentStateLossActivity {
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new HomeFragment());
         mFragmentList.add(new ToolBoxFragment());
-        mFragmentList.add(new activityFragment());
+//        mFragmentList.add(new activityFragment());
 //       mFragmentList.add(new AggregationFragment());
         // mFragmentList.add(new PlayFragment());
-        mFragmentList.add(new meFragment());
+//        mFragmentList.add(new meFragment());
         mAdapter = new MyFragmentPageAdapter(getSupportFragmentManager(), mFragmentList);
         mViewpager.setAdapter(mAdapter);
         mViewpager.addOnPageChangeListener(mChangeListener);

@@ -11,6 +11,7 @@ import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import com.mobi.overseas.clearsafe.R;
+import com.mobi.overseas.clearsafe.app.MyApplication;
 import com.mobi.overseas.clearsafe.ui.clear.ad.ADRelativeLayout;
 import com.mobi.overseas.clearsafe.ui.clear.data.GarbageBean;
 import com.mobi.overseas.clearsafe.ui.clear.data.GarbageHeaderBean;
@@ -241,7 +242,7 @@ public class BaseGarbageAdapter extends BaseMultiItemQuickAdapter<MultiItemEntit
                         garbageRemoveBean.itemType = 3;
                         garbageRemoveBean.name = subItem.name;
                         garbageRemoveBean.imageDrawable = subItem.imageDrawable;
-                        garbageRemoveBean.dec = "建议清理";
+                        garbageRemoveBean.dec = MyApplication.getResString(R.string.recommendedCleaning);
                         beanList.add(garbageRemoveBean);
 
                         pathList.addAll(subItem.fileList);
