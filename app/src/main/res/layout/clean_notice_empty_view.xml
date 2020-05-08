@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
         android:gravity="center"
-        android:text="暂时无可拦截通知"
+        android:text="@string/noInterceptionNotification"
         android:textColor="#ff999999"
         android:textSize="16sp" />
 </LinearLayout>

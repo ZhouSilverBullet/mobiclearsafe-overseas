@@ -83,7 +83,7 @@ public class ClearBean implements MultiItemEntity {
         list.add(new ClearBean(1, R.drawable.toolbox_safe_power, 3, MyApplication.getResString(R.string.superPower), "", R.color.black_33));
         list.add(new ClearBean(1, R.drawable.toolbox_notice, 4, MyApplication.getResString(R.string.notificationClean), "", R.color.black_33));
         list.add(new ClearBean(1, R.drawable.toolbox_powering, 5, MyApplication.getResString(R.string.powerManagement), "", R.color.black_33));
-        list.add(new ClearBean(1, R.drawable.toolbox_appwidget, 6, MyApplication.getResString(R.string.cleanTools), "", R.color.black_33));
+//        list.add(new ClearBean(1, R.drawable.toolbox_appwidget, 6, MyApplication.getResString(R.string.cleanTools), "", R.color.black_33));
         return list;
     }
 

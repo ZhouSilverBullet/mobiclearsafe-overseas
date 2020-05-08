@@ -84,28 +84,28 @@ public class BatteryBean {
         //wifi
         boolean wifiState = SystemUtil.getWifiState();
         if (wifiState) {
-            list.add(new BatteryBean(0, R.drawable.power_control_wifi_selector, "WiFi",
+            list.add(new BatteryBean(0, R.drawable.power_control_wifi_selector, MyApplication.getResString(R.string.WiFi),
                     R.color.c_2C86FF, true));
         } else {
-            list.add(new BatteryBean(0, R.drawable.power_control_wifi_selector, "WiFi",
+            list.add(new BatteryBean(0, R.drawable.power_control_wifi_selector, MyApplication.getResString(R.string.WiFi),
                     R.color.black_99, false));
         }
 
         boolean isMobile = SystemUtil.gprsIsOpenMethod(MyApplication.getContext());
         if (isMobile) {
-            list.add(new BatteryBean(1, R.drawable.power_control_data_selector, "移动数据",
+            list.add(new BatteryBean(1, R.drawable.power_control_data_selector, MyApplication.getResString(R.string.mobileData),
                     R.color.c_2C86FF, true));
         } else {
-            list.add(new BatteryBean(1, R.drawable.power_control_data_selector, "移动数据",
+            list.add(new BatteryBean(1, R.drawable.power_control_data_selector,  MyApplication.getResString(R.string.mobileData),
                     R.color.black_99, false));
         }
 
         boolean bluetooth = SystemUtil.isBluetooth();
         if (bluetooth) {
-            list.add(new BatteryBean(2, R.drawable.power_control_bluetooth_selector, "蓝牙",
+            list.add(new BatteryBean(2, R.drawable.power_control_bluetooth_selector,  MyApplication.getResString(R.string.Bluetooth),
                     R.color.c_2C86FF, true));
         } else {
-            list.add(new BatteryBean(2, R.drawable.power_control_bluetooth_selector, "蓝牙",
+            list.add(new BatteryBean(2, R.drawable.power_control_bluetooth_selector, MyApplication.getResString(R.string.Bluetooth),
                     R.color.black_99, false));
         }
 
@@ -122,12 +122,12 @@ public class BatteryBean {
                 level = 2;
             }
 
-            BatteryBean screenBean = new BatteryBean(3, R.drawable.power_control_lock_selector, "息屏",
+            BatteryBean screenBean = new BatteryBean(3, R.drawable.power_control_lock_selector, MyApplication.getResString(R.string.interestRatesScreen),
                     R.color.c_2C86FF, true);
             screenBean.setLevel(level);
             list.add(screenBean);
         } else {
-            BatteryBean screenBean = new BatteryBean(3, R.drawable.power_control_lock_selector, "息屏",
+            BatteryBean screenBean = new BatteryBean(3, R.drawable.power_control_lock_selector,  MyApplication.getResString(R.string.interestRatesScreen),
                     R.color.black_99, false);
             screenBean.setLevel(3);
             list.add(screenBean);
@@ -135,7 +135,7 @@ public class BatteryBean {
 
         //情景模式
         int audioMode = SystemUtil.getAudioMode();
-        BatteryBean audioBean = new BatteryBean(4, R.drawable.power_control_status_all_selector, "铃声",
+        BatteryBean audioBean = new BatteryBean(4, R.drawable.power_control_status_all_selector, MyApplication.getResString(R.string.Sound),
                 R.color.c_2C86FF, true);
         audioBean.setLevel(audioMode);
         list.add(audioBean);
@@ -143,28 +143,28 @@ public class BatteryBean {
 
         boolean autoBrightness = SystemUtil.getAutoBrightness(MyApplication.getContext());
         if (autoBrightness) {
-            list.add(new BatteryBean(5, R.drawable.power_control_sun_selector, "亮度",
+            list.add(new BatteryBean(5, R.drawable.power_control_sun_selector, MyApplication.getResString(R.string.Brightness),
                     R.color.c_2C86FF, true));
         } else {
-            list.add(new BatteryBean(5, R.drawable.power_control_sun_selector, "亮度",
+            list.add(new BatteryBean(5, R.drawable.power_control_sun_selector, MyApplication.getResString(R.string.Brightness),
                     R.color.black_99, false));
         }
 
         boolean accelerometerRotation = SystemUtil.getAccelerometerRotation(MyApplication.getContext());
         if (accelerometerRotation) {
-            list.add(new BatteryBean(6, R.drawable.power_control_rotation_selector, "屏幕旋转",
+            list.add(new BatteryBean(6, R.drawable.power_control_rotation_selector, MyApplication.getResString(R.string.screenRotate),
                     R.color.c_2C86FF, true));
         } else {
-            list.add(new BatteryBean(6, R.drawable.power_control_rotation_selector, "屏幕旋转",
+            list.add(new BatteryBean(6, R.drawable.power_control_rotation_selector, MyApplication.getResString(R.string.screenRotate),
                     R.color.black_99, false));
         }
 
         boolean isGps = SystemUtil.isGpsOPen(MyApplication.getContext());
         if (isGps) {
-            list.add(new BatteryBean(7, R.drawable.power_control_location_selector, "定位",
+            list.add(new BatteryBean(7, R.drawable.power_control_location_selector, MyApplication.getResString(R.string.Location),
                     R.color.c_2C86FF, true));
         } else {
-            list.add(new BatteryBean(7, R.drawable.power_control_location_selector, "定位",
+            list.add(new BatteryBean(7, R.drawable.power_control_location_selector, MyApplication.getResString(R.string.Location),
                     R.color.black_99, false));
         }
 

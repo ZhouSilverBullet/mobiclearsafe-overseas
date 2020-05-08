@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FirstClean</string>
+    <string name="app_name">Fast Cleaner</string>
     <string name="tab_task">welfare</string>
     <string name="tab_clean">Clean</string>
     <string name="tab_tool">Tool</string>
@@ -67,8 +67,8 @@
     <string name="once_update">立即更新</string>
     <string name="updating">正在更新</string>
     <string name="exit_content">确定要退出登录吗</string>
-    <string name="cancel">取消</string>
-    <string name="confirm">确定</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
     <string name="tv_agreed">同意</string>
     <string name="view_the_full_version">查看完整版</string>
     <string name="text1">用户条款及隐私协议</string>
@@ -99,67 +99,148 @@
     <string name="open_remind">开启提醒</string>
     <string name="open_success">开启签到提醒成功</string>
 
-    <string name="clean_tool">快清理小工具</string>
-    <string name="hotActivity">热门活动</string>
-    <string name="oneOptimize">一键优化</string>
-    <string name="qqClean">QQ专清</string>
-    <string name="OneKeyFarewellCardSlow">一键告别卡慢</string>
-    <string name="bigFileClean">大文件清理</string>
-    <string name="notificationClean">通知栏清理</string>
-    <string name="guardianCleanAnyDay">快清理已守护您%s天</string>
-    <string name="problemToFix">有问题待修复</string>
-    <string name="memoryIsUsed">已用%d%%内存</string>
-    <string name="goodHealthy">很健康</string>
-    <string name="subHealthy">亚健康</string>
-    <string name="overloadHealthy">超负荷</string>
-    <string name="scanning">正在扫描：%s</string>
-    <string name="cleanUp">清理中...</string>
-    <string name="scan">扫描中...</string>
-    <string name="clear_to_complete">无需清理</string>
-    <string name="cleanUpTheComplete">清理完成</string>
-    <string name="systemGarbageHasBeenCleared">已清理%s系统垃圾</string>
-    <string name="garbageClean">垃圾清理</string>
-    <string name="restAssuredToCleanUp">放心清理（%s）</string>
-    <string name="optimizingSuccess">优化成功</string>
-    <string name="optimizingSuccessStatus">手机速度已达最佳</string>
+    <string name="clean_tool">Fast Cleaner Tools</string>
+    <string name="hotActivity">Hot Events</string>
+    <string name="oneOptimize">Tap to Optimize</string>
+    <string name="qqClean">QQCleaner</string>
+    <string name="OneKeyFarewellCardSlow">One tap to get away from freeze and lag </string>
+    <string name="bigFileClean">Clean Large Files</string>
+    <string name="notificationClean">Notify Clean</string>
+    <string name="guardianCleanAnyDay">Fast Cleaner has protected you for %s days</string>
+    <string name="problemToFix">Some Problem Need to be Fixed</string>
+    <string name="memoryIsUsed">Used %d%% RAM</string>
+    <string name="goodHealthy">Perfect</string>
+    <string name="subHealthy">sub-health</string>
+    <string name="overloadHealthy">Over-loaded</string>
+    <string name="scanning">Scanning：%s</string>
+    <string name="cleanUp">Cleaning...</string>
+    <string name="scan">Scanning...</string>
+    <string name="clear_to_complete">Excellent</string>
+    <string name="cleanUpTheComplete">Finished</string>
+    <string name="systemGarbageHasBeenCleared">Cleaned %s System </string>
+    <string name="garbageClean">Clean Junks</string>
+    <string name="restAssuredToCleanUp">Safe Clean（%s）</string>
+    <string name="optimizingSuccess">Optimized</string>
+    <string name="optimizingSuccessStatus">Phone is at optimal speed</string>
 
-    <string name="phoneSpeed">手机加速</string>
-    <string name="powerManagement">电量管理</string>
-    <string name="phoneCool">手机降温</string>
-    <string name="installationPackageManagement">安装包管理</string>
-    <string name="superPower">超强省电</string>
-    <string name="cleanTools">清理小工具</string>
+    <string name="phoneSpeed">Speed Up</string>
+    <string name="powerManagement">Power Saving</string>
+    <string name="phoneCool">CPU Cooler</string>
+    <string name="installationPackageManagement">Installation File</string>
+    <string name="superPower">Power Safe</string>
+    <string name="cleanTools">Clean Tools </string>
 
-    <string name="memoryOverrun">内存占用超过</string>
-    <string name="speedScanning">正在扫描</string>
-    <string name="acceleratedSuccessfully">已成功加速</string>
-    <string name="acceleratedSuccessfullyStatus">手机速度优化成功</string>
+    <string name="memoryOverrun">RAM Used</string>
+    <string name="speedScanning">Scanning</string>
+    <string name="acceleratedSuccessfully">Successfully Speed-up</string>
+    <string name="acceleratedSuccessfullyStatus">RAM freed up and Phone Optimized</string>
 
-    <string name="expectedUseTimes">预计可用 13 小时 30 分</string>
-    <string name="batteryFull">电池充满</string>
-    <string name="startQuickCharging">开启快速充电</string>
-    <string name="beCharging">正在充电...</string>
-    <string name="powerIsPoor">电量欠佳，一键优化延长待机时间</string>
-    <string name="optimizePowerMinutes">一键优化（+%d分钟）</string>
-    <string name="batteryStatus">电池状态</string>
-    <string name="batteryVoltage">电池电压</string>
-    <string name="batteryTemperature">电池温度</string>
-    <string name="currentCapacity">当前容量</string>
-    <string name="totalCapacity">总容量</string>
-    <string name="batteryTechnology">电池技术</string>
-    <string name="stillNeed">充满还需&#160;</string>
-    <string name="stillNeedHour">&#160;小时&#160;</string>
-    <string name="stillNeedMinutes">&#160;分</string>
-    <string name="availableUse">预计可用&#160;</string>
+    <string name="expectedUseTimes">Battery Capacity % hrs % mins</string>
+    <string name="batteryFull">Fully Charged</string>
+    <string name="startQuickCharging">Swith to high speed charging</string>
+    <string name="beCharging">Charging...</string>
+    <string name="powerIsPoor">Capacity low, One-Tap to Optimize </string>
+    <string name="optimizePowerMinutes">OneTap Optimize（+%d mins）</string>
+    <string name="batteryStatus">Battery Status</string>
+    <string name="batteryVoltage">Battery Voltage</string>
+    <string name="batteryTemperature">Battery Temperature</string>
+    <string name="currentCapacity">Current Capacity</string>
+    <string name="totalCapacity">Maximum Capacity</string>
+    <string name="batteryTechnology">Battery Tech</string>
+    <string name="stillNeed">Still need &#160; hrs to charge-up</string>
+    <string name="stillNeedHour">&#160;hour&#160;</string>
+    <string name="stillNeedMinutes">&#160;minutes</string>
+    <string name="availableUse">Estimate usage &#160;</string>
 
-    <string name="quickChargingStarted">已开始快速充电模式</string>
-    <string name="quickChargingStartedStatus">极速充电中</string>
-    <string name="quickChargingSpeed">已成功加速%d分钟</string>
-    <string name="quickChargingSpeedStatus">电池已达最佳状态</string>
+    <string name="quickChargingStarted">Fast Charge Mode Initiated</string>
+    <string name="quickChargingStartedStatus">Speed Charging</string>
+    <string name="quickChargingSpeed">Successfully Speed-up %d mins</string>
+    <string name="quickChargingSpeedStatus">Battery is in best condition</string>
 
-    <string name="powerConsumptionStatistics">耗电量统计</string>
-    <string name="batteryMaintenanceTips">手机电池保养小知识</string>
+    <string name="powerConsumptionStatistics">Battery Usage</string>
+    <string name="batteryMaintenanceTips">Tips</string>
 
-    
+
+    <string name="clear_power_cool_format">Phone Cool-off %.1f°</string>
+    <string name="clear_power_cool_status">Will reach best performance 30 seconds after cooling off</string>
+
+    <string name="checkAll">Pick All</string>
+    <string name="loading">Loading...</string>
+    <string name="installationPackagesTakeUp">%d APK packages </string>
+    <string name="space">Space </string>
+    <string name="scanningInstallationPackage">Scanning APK files</string>
+    <string name="installationPackageCleaned">Finished Cleaning</string>
+    <string name="clickTooFast">Tapping too fast</string>
+    <string name="clickTooFast2">Please don`t tap too frequently ~~</string>
+
+    <string name="dialogIsDelete">Delete?</string>
+    <string name="dialogIsDeleteSelected">Delete selected files</string>
+    <string name="dialogDelete">Delete</string>
+    <string name="dialogCancel">Cancel</string>
+    <string name="delSuccess">Successfully Deleted</string>
+
+    <string name="immediatelyCleanUp">Clean Now</string>
+    <string name="immediatelyCleanUpFormat">Clean Now（%s）</string>
+
+    <string name="stopScan">Cancel</string>
+    <string name="continueScan">Keep Scanning</string>
+    <string name="continueScaning">Scanning, confirm to cancel？</string>
+
+    <string name="scanningBigFile">Scanning Large Files</string>
+    <string name="canDelete">can be deleted</string>
+    <string name="bigFileGon">Total</string>
+    <string name="aFile">files</string>
+    <string name="takeUp">take up</string>
+    <string name="isCleaned">Cleaned</string>
+    <string name="isCleanedStatus">Storage is good condition</string>
+
+    <string name="permissionsPrompt">Permissions</string>
+    <string name="toOpen">Enable now</string>
+    <string name="toOpenDec">Enable Fast Cleaner to use “Notification Access “permission to use this function </string>
+    <string name="cleanSuccessNotice">Cleaned %dnotifications</string>
+    <string name="cleanSuccessNoticeStatus">Your notification bar is very clean</string>
+    <string name="phoneNotSupportFeature">Your phone does not support this function</string>
+    <string name="item"> </string>
+    <string name="noticeIdleClean">Notifications waiting for clean</string>
+    <string name="cleanAll">Clean All</string>
+    <string name="openNoticePermissionShowNotice">If you opened notification management, your notifications will be shown here</string>
+    <string name="noticeFinishing">Notification Management</string>
+    <string name="recommendedCleaning">Suggest you to cleanup</string>
+
+    <string name="cacheGarbage">Cache files</string>
+    <string name="systemGarbage">Residential files </string>
+    <string name="advertisingGarbage">Advertisement junks</string>
+    <string name="uselessInstallationPackage"> Installation junks </string>
+
+
+    <string name="cleanToolMethod">How to use</string>
+    <string name="cleanShortcut">ShortCuts</string>
+    <string name="cleanShortcutOneKeyClean">Fast Clean </string>
+    <string name="cleanImmediatelyAdd">Add Widget</string>
+    <string name="cleanManually">Manually Setting</string>
+    <string name="cleanShortcutStep1">1.Long press on home screen，select our widget</string>
+    <string name="cleanShortcutStep2">2.Find our widget，press hold，drag it to the place on home screen，and release it</string>
+
+    <string name="powerSavingOptimizationTime">Subtended hhhrs mm mins standby time </string>
+    <string name="powerSavingSleepApp">Suggest you put %d Apps to dormant</string>
+    <string name="powerSavingSleepAppStatus">Battery reached best status</string>
+    <string name="powerSavingSleepAppSuggest"> Suggest you put </string>
+    <string name="paragraph">Apps to dormant </string>
+    <string name="immediatelySaveElectricity">Safe Battery Now</string>
+
+    <string name="analyzingPowerConsumptionInformation">Analysing Battery Usage…</string>
+
+    <string name="cleanProtectedYouFor">Protected you for</string>
+    <string name="days">days</string>
+    <string name="noInterceptionNotification">No interception notification is currently available</string>
+
+    <string name="WiFi">WiFi</string>
+    <string name="mobileData">Mobile Data</string>
+    <string name="Bluetooth">Bluetooth</string>
+    <string name="Brightness">Brightness</string>
+    <string name="Sound">Sound</string>
+    <string name="interestRatesScreen">Lock Screen</string>
+    <string name="screenRotate">Rotate</string>
+    <string name="Location">Location</string>
 
 </resources>

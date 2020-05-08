@@ -480,14 +480,25 @@
 
     <string name="powerSavingOptimizationTime">优化后延长待机hh小时mm分钟</string>
     <string name="powerSavingSleepApp">已成功休眠%d款应用</string>
-    <string name="powerSavingSleepAppStatus">电量已达最佳状态%d款应用</string>
+    <string name="powerSavingSleepAppStatus">电量已达最佳状态</string>
     <string name="powerSavingSleepAppSuggest">建议休眠应用</string>
     <string name="paragraph">款</string>
     <string name="immediatelySaveElectricity">立即省电</string>
 
     <string name="analyzingPowerConsumptionInformation">正在分析耗电信息…</string>
+    <string name="cleanProtectedYouFor">快清理已守护您</string>
+    <string name="days">天</string>
+    <string name="noInterceptionNotification">暂时无可拦截通知</string>
 
 
+    <string name="WiFi">WiFi</string>
+    <string name="mobileData">移动数据</string>
+    <string name="Bluetooth">蓝牙</string>
+    <string name="Brightness">亮度</string>
+    <string name="Sound">铃声</string>
+    <string name="interestRatesScreen">息屏</string>
+    <string name="screenRotate">屏幕旋转</string>
+    <string name="Location">定位</string>
 
 
 

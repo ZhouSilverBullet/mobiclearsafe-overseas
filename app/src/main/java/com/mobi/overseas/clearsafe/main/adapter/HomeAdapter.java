@@ -112,7 +112,7 @@ public class HomeAdapter extends BaseMultiItemQuickAdapter<ClearBean, BaseViewHo
     }
 
     public int getSkipId(int position) {
-        if (position < 0 || position > getData().size()) {
+        if (position < 0 || position >= getData().size()) {
             return 0;
         }
         return getData().get(position).id;

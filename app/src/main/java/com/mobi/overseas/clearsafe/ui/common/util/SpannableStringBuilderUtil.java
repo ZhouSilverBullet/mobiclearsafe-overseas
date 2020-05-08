@@ -27,9 +27,9 @@ public class SpannableStringBuilderUtil {
 
     public static SpannableStringBuilder getSafeDayStr(int count) {
         //已获得红包：130 金币
-        String startStr = "快清理已守护您";
+        String startStr = MyApplication.getResString(R.string.cleanProtectedYouFor);
         String centerStr = String.valueOf(count);
-        String endStr = "天";
+        String endStr = MyApplication.getResString(R.string.days);
 
         SpannableStringBuilder ssb = new SpannableStringBuilder(startStr).append(centerStr).append(endStr);
         ForegroundColorSpan whiteSpan = new ForegroundColorSpan(grayColor);
