@@ -1,32 +1,17 @@
 package com.example.adtest.rewardvideo;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.bytedance.sdk.openadsdk.AdSlot;
-import com.bytedance.sdk.openadsdk.TTAdConstant;
-import com.bytedance.sdk.openadsdk.TTAdNative;
-import com.bytedance.sdk.openadsdk.TTRewardVideoAd;
 import com.example.adtest.bean.AdBean;
 import com.example.adtest.bean.ConfigItemBean;
 import com.example.adtest.config.TTAdManagerHolder;
 import com.example.adtest.manager.AdScenario;
 import com.example.adtest.manager.Constants;
 import com.example.adtest.manager.ScenarioEnum;
-import com.example.adtest.statistical.AdStatistical;
 import com.example.adtest.utils.SdkUtils;
-import com.mobi.adsdk.utils.ADError;
-import com.qq.e.ads.rewardvideo.RewardVideoAD;
-import com.qq.e.ads.rewardvideo.RewardVideoADListener;
-import com.qq.e.comm.util.AdError;
-import com.sigmob.windad.WindAdError;
-import com.sigmob.windad.rewardedVideo.WindRewardAdRequest;
-import com.sigmob.windad.rewardedVideo.WindRewardInfo;
-import com.sigmob.windad.rewardedVideo.WindRewardedVideoAd;
-import com.sigmob.windad.rewardedVideo.WindRewardedVideoAdListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,18 +29,18 @@ public class RewardVideoAd {
     private Context mContext;
     private boolean firstCome = false;//如果800毫秒以后 广告都未加载完 则启用先到先得
     private RewardVideoLoadListener mListener;
-    private TTAdNative mTTAdNative;
-    private TTRewardVideoAd mttRewardVideoAd;
+//    private TTAdNative mTTAdNative;
+//    private TTRewardVideoAd mttRewardVideoAd;
     private boolean mDeepLink;
-    private RewardVideoAD rewardVideoAD;//广点通
+//    private RewardVideoAD rewardVideoAD;//广点通
     // private IncentiveVideoAd rewardVideoAD;//valpub视频广告
     private boolean gdtAdLoaded;//广点通广告是否加载成功
     private boolean isShow = false;//是否已经显示过广告
     private ScenarioEnum scenario;
     private List<String> loadedList = new ArrayList<>();
     private ConfigItemBean bean;
-    private WindRewardedVideoAd windRewardedVideoAd;
-    private WindRewardAdRequest request;
+//    private WindRewardedVideoAd windRewardedVideoAd;
+//    private WindRewardAdRequest request;
     private Handler handler = new Handler();
     private Runnable handlerRun = new Runnable() {
         @Override
@@ -72,7 +57,7 @@ public class RewardVideoAd {
         }
     };
     //自有视频
-    private com.mobi.adsdk.rewardvideo.RewardVideoAD mobiReward;
+//    private com.mobi.adsdk.rewardvideo.RewardVideoAD mobiReward;
     private boolean mobiAdLoaded;
 
 
@@ -94,32 +79,28 @@ public class RewardVideoAd {
 //            bean = Constants.getAdItem(POS_ID, mContext);
 //        }
         Log.e(TAG, "使用的POSID:" + POS_ID);
-        if (bean == null) {
-            if (mListener != null) {
-                mListener.onLoadFaild("", -100, "");
-            }
-            Log.e(TAG, "广告相关数据缺失，请先调用SDKManager.init()");
-            return;
+        if (mListener != null) {
+            mListener.onLoadFaild("", -100, "");
         }
-        if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
-            loadAdForService();
-        } else {
-            SortLoad();
-            if (handler != null && handlerRun != null) {
-                handler.postDelayed(handlerRun, Constants.bean.getAd_adk_req_timeout());
-            }
-            if (bean.getSort_type() == Constants.SORT_TYPE_ORDER) {
-
-            } else if (bean.getSort_type() == Constants.SORT_TYPE_PRICE) {
-                firstCome = true;
-            } else if (bean.getSort_type() == Constants.SORT_TYPE_ORDER__PRICE) {
-                firstCome = true;
-            } else if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
-
-            } else {
-                firstCome = true;
-            }
-        }
+//        if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
+//            loadAdForService();
+//        } else {
+//            SortLoad();
+//            if (handler != null && handlerRun != null) {
+//                handler.postDelayed(handlerRun, Constants.bean.getAd_adk_req_timeout());
+//            }
+//            if (bean.getSort_type() == Constants.SORT_TYPE_ORDER) {
+//
+//            } else if (bean.getSort_type() == Constants.SORT_TYPE_PRICE) {
+//                firstCome = true;
+//            } else if (bean.getSort_type() == Constants.SORT_TYPE_ORDER__PRICE) {
+//                firstCome = true;
+//            } else if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
+//
+//            } else {
+//                firstCome = true;
+//            }
+//        }
     }
 
     /**
@@ -222,27 +203,27 @@ public class RewardVideoAd {
         List<AdBean> netList = bean.getNetwork();
         int size = netList.size();
         for (int i = 0; i < size; i++) {
-            AdBean item = netList.get(i);
-            if (item.getSdk().equals(Constants.TT_KEY) && mttRewardVideoAd != null) {
-                showTTVideo();
-                break;
-            }
-            if (item.getSdk().equals(Constants.GDT_KEY) && rewardVideoAD != null && gdtAdLoaded) {
-                showGDTVideo();
-                break;
-            }
-            if (item.getSdk().equals(Constants.SIGMOB) && windRewardedVideoAd != null && request != null) {
-                showSigmob();
-                break;
-            }
-            if (item.getSdk().equals(Constants.MOBI_KEY) && mobiReward != null && mobiAdLoaded) {
-                if (showMobiVideo()) {
-                    break;
-                }
-            }
-            if (i >= size - 1) {
-                firstCome = true;
-            }
+//            AdBean item = netList.get(i);
+//            if (item.getSdk().equals(Constants.TT_KEY) && mttRewardVideoAd != null) {
+//                showTTVideo();
+//                break;
+//            }
+//            if (item.getSdk().equals(Constants.GDT_KEY) && rewardVideoAD != null && gdtAdLoaded) {
+//                showGDTVideo();
+//                break;
+//            }
+//            if (item.getSdk().equals(Constants.SIGMOB) && windRewardedVideoAd != null && request != null) {
+//                showSigmob();
+//                break;
+//            }
+//            if (item.getSdk().equals(Constants.MOBI_KEY) && mobiReward != null && mobiAdLoaded) {
+//                if (showMobiVideo()) {
+//                    break;
+//                }
+//            }
+//            if (i >= size - 1) {
+//                firstCome = true;
+//            }
         }
     }
 
@@ -253,99 +234,99 @@ public class RewardVideoAd {
      * 加载穿山甲激励视频广告
      */
     private void loadTTRewardViewAd(String CODE_ID) {
-        mTTAdNative = TTAdManagerHolder.get().createAdNative(mContext.getApplicationContext());
-        AdSlot adSlot = new AdSlot.Builder()
-                .setImageAcceptedSize(1080, 1920)
-                .setCodeId(CODE_ID)
-                .setSupportDeepLink(mDeepLink)
-                .setRewardName("")
-                .setRewardAmount(10)
-                .setUserID("")
-                .setMediaExtra("media-extra")
-                .setOrientation(TTAdConstant.VERTICAL)
-                .build();
-        mTTAdNative.loadRewardVideoAd(adSlot, new TTAdNative.RewardVideoAdListener() {
-            @Override
-            public void onError(int i, String s) {
-                AdStatistical.trackAD(mContext, Constants.TT_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
-                //加载错误
-                if (mListener != null) {
-                    mListener.onLoadFaild(Constants.TT_KEY, i, s);
-                    // mListener.onAdClose(Constants.TT_KEY);
-                }
-            }
-
-            @Override
-            public void onRewardVideoAdLoad(TTRewardVideoAd ad) {
-                //加载成功
-                mttRewardVideoAd = ad;
-                mttRewardVideoAd.setRewardAdInteractionListener(new TTRewardVideoAd.RewardAdInteractionListener() {
-                    @Override
-                    public void onAdShow() {
-                        //显示广告
-                        if (mListener != null) {
-                            mListener.onAdShow(Constants.TT_KEY);
-                        }
-                    }
-
-                    @Override
-                    public void onAdVideoBarClick() {
-                        if (mListener != null) {
-                            mListener.onAdClick(Constants.TT_KEY);
-                        }
-                        AdStatistical.trackAD(mContext, Constants.TT_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
-                    }
-
-                    @Override
-                    public void onAdClose() {
-                        //广告关闭
-                        if (mListener != null) {
-                            mListener.onAdClose(Constants.TT_KEY);
-                        }
-                    }
-
-                    @Override
-                    public void onVideoComplete() {
-                        //播放完成
-                        if (mListener != null) {
-                            mListener.onVideoComplete(Constants.TT_KEY);
-                        }
-                    }
-
-                    @Override
-                    public void onVideoError() {
-                        //播放错误
-                        if (mListener != null) {
-                            //  mListener.onAdClose(Constants.TT_KEY);
-                        }
-                    }
-
-                    @Override
-                    public void onRewardVerify(boolean b, int i, String s) {
-                        //视频播放完成，奖励回调验证
-                    }
-
-                    @Override
-                    public void onSkippedVideo() {
-                        //跳过广告
-                    }
-                });
-                if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
-                    showTTVideo();
-                } else {
-                    recordRenderSuccess(Constants.TT_KEY);
-                    if (firstCome) {
-                        showTTVideo();
-                        firstCome = false;
-                    }
-                }
-            }
-
-            @Override
-            public void onRewardVideoCached() {
-                //缓存在了本地
-            }
-        });
+//        mTTAdNative = TTAdManagerHolder.get().createAdNative(mContext.getApplicationContext());
+//        AdSlot adSlot = new AdSlot.Builder()
+//                .setImageAcceptedSize(1080, 1920)
+//                .setCodeId(CODE_ID)
+//                .setSupportDeepLink(mDeepLink)
+//                .setRewardName("")
+//                .setRewardAmount(10)
+//                .setUserID("")
+//                .setMediaExtra("media-extra")
+//                .setOrientation(TTAdConstant.VERTICAL)
+//                .build();
+//        mTTAdNative.loadRewardVideoAd(adSlot, new TTAdNative.RewardVideoAdListener() {
+//            @Override
+//            public void onError(int i, String s) {
+//                AdStatistical.trackAD(mContext, Constants.TT_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
+//                //加载错误
+//                if (mListener != null) {
+//                    mListener.onLoadFaild(Constants.TT_KEY, i, s);
+//                    // mListener.onAdClose(Constants.TT_KEY);
+//                }
+//            }
+//
+//            @Override
+//            public void onRewardVideoAdLoad(TTRewardVideoAd ad) {
+//                //加载成功
+//                mttRewardVideoAd = ad;
+//                mttRewardVideoAd.setRewardAdInteractionListener(new TTRewardVideoAd.RewardAdInteractionListener() {
+//                    @Override
+//                    public void onAdShow() {
+//                        //显示广告
+//                        if (mListener != null) {
+//                            mListener.onAdShow(Constants.TT_KEY);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onAdVideoBarClick() {
+//                        if (mListener != null) {
+//                            mListener.onAdClick(Constants.TT_KEY);
+//                        }
+//                        AdStatistical.trackAD(mContext, Constants.TT_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
+//                    }
+//
+//                    @Override
+//                    public void onAdClose() {
+//                        //广告关闭
+//                        if (mListener != null) {
+//                            mListener.onAdClose(Constants.TT_KEY);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onVideoComplete() {
+//                        //播放完成
+//                        if (mListener != null) {
+//                            mListener.onVideoComplete(Constants.TT_KEY);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onVideoError() {
+//                        //播放错误
+//                        if (mListener != null) {
+//                            //  mListener.onAdClose(Constants.TT_KEY);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onRewardVerify(boolean b, int i, String s) {
+//                        //视频播放完成，奖励回调验证
+//                    }
+//
+//                    @Override
+//                    public void onSkippedVideo() {
+//                        //跳过广告
+//                    }
+//                });
+//                if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
+//                    showTTVideo();
+//                } else {
+//                    recordRenderSuccess(Constants.TT_KEY);
+//                    if (firstCome) {
+//                        showTTVideo();
+//                        firstCome = false;
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onRewardVideoCached() {
+//                //缓存在了本地
+//            }
+//        });
     }
 
     /**
@@ -353,13 +334,13 @@ public class RewardVideoAd {
      */
     private void showTTVideo() {
         if (isShow) return;
-        if (mttRewardVideoAd != null) {
-            mttRewardVideoAd.showRewardVideoAd((Activity) mContext);
-            mttRewardVideoAd = null;
-            isShow = true;
-            AdStatistical.trackAD(mContext, Constants.TT_KEY, POS_ID, Constants.STATUS_CODE_TRUE, Constants.STATUS_CODE_FALSE);
-            destory();
-        }
+//        if (mttRewardVideoAd != null) {
+//            mttRewardVideoAd.showRewardVideoAd((Activity) mContext);
+//            mttRewardVideoAd = null;
+//            isShow = true;
+//            AdStatistical.trackAD(mContext, Constants.TT_KEY, POS_ID, Constants.STATUS_CODE_TRUE, Constants.STATUS_CODE_FALSE);
+//            destory();
+//        }
     }
     //加载穿山甲激励视频广告-----------------end------------------
 
@@ -449,83 +430,83 @@ public class RewardVideoAd {
 //        });
 //        // 3. 加载激励视频广告
 //        rewardVideoAD.load();
-        rewardVideoAD = new RewardVideoAD(mContext, APP_ID, POSID,
-                new RewardVideoADListener() {
-                    @Override
-                    public void onADLoad() {
-                        Log.e("加载成功", "加载成功");
-                        //广告加载成功
-                        if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
-                            showGDTVideo();
-                        } else {
-                            gdtAdLoaded = true;
-                            recordRenderSuccess(Constants.GDT_KEY);
-                            if (firstCome) {
-                                showGDTVideo();
-                                firstCome = false;
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onVideoCached() {
-                        //广告缓存在本地
-                    }
-
-                    @Override
-                    public void onADShow() {
-                        //广告已经显示
-                        if (mListener != null) {
-                            mListener.onAdShow(Constants.GDT_KEY);
-                        }
-                    }
-
-                    @Override
-                    public void onADExpose() {
-                        //广告曝光
-                    }
-
-                    @Override
-                    public void onReward() {
-                        //激励视频出发奖励
-                    }
-
-                    @Override
-                    public void onADClick() {
-                        //广告被点击
-                        if (mListener != null) {
-                            mListener.onAdClick(Constants.GDT_KEY);
-                        }
-                        AdStatistical.trackAD(mContext, Constants.GDT_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
-                    }
-
-                    @Override
-                    public void onVideoComplete() {
-                        //激励视频播放完毕
-                        if (mListener != null) {
-                            mListener.onVideoComplete(Constants.GDT_KEY);
-                        }
-                    }
-
-                    @Override
-                    public void onADClose() {
-                        //广告被关闭
-                        if (mListener != null) {
-                            mListener.onAdClose(Constants.GDT_KEY);
-                        }
-                    }
-
-                    @Override
-                    public void onError(AdError adError) {
-                        AdStatistical.trackAD(mContext, Constants.GDT_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
-                        //加载错误
-                        if (mListener != null) {
-                            mListener.onLoadFaild(Constants.GDT_KEY, adError.getErrorCode(), adError.getErrorMsg());
-                            mListener.onAdClose(Constants.GDT_KEY);
-                        }
-                    }
-                });
-        rewardVideoAD.loadAD();
+//        rewardVideoAD = new RewardVideoAD(mContext, APP_ID, POSID,
+//                new RewardVideoADListener() {
+//                    @Override
+//                    public void onADLoad() {
+//                        Log.e("加载成功", "加载成功");
+//                        //广告加载成功
+//                        if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
+//                            showGDTVideo();
+//                        } else {
+//                            gdtAdLoaded = true;
+//                            recordRenderSuccess(Constants.GDT_KEY);
+//                            if (firstCome) {
+//                                showGDTVideo();
+//                                firstCome = false;
+//                            }
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onVideoCached() {
+//                        //广告缓存在本地
+//                    }
+//
+//                    @Override
+//                    public void onADShow() {
+//                        //广告已经显示
+//                        if (mListener != null) {
+//                            mListener.onAdShow(Constants.GDT_KEY);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onADExpose() {
+//                        //广告曝光
+//                    }
+//
+//                    @Override
+//                    public void onReward() {
+//                        //激励视频出发奖励
+//                    }
+//
+//                    @Override
+//                    public void onADClick() {
+//                        //广告被点击
+//                        if (mListener != null) {
+//                            mListener.onAdClick(Constants.GDT_KEY);
+//                        }
+//                        AdStatistical.trackAD(mContext, Constants.GDT_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
+//                    }
+//
+//                    @Override
+//                    public void onVideoComplete() {
+//                        //激励视频播放完毕
+//                        if (mListener != null) {
+//                            mListener.onVideoComplete(Constants.GDT_KEY);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onADClose() {
+//                        //广告被关闭
+//                        if (mListener != null) {
+//                            mListener.onAdClose(Constants.GDT_KEY);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onError(AdError adError) {
+//                        AdStatistical.trackAD(mContext, Constants.GDT_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
+//                        //加载错误
+//                        if (mListener != null) {
+//                            mListener.onLoadFaild(Constants.GDT_KEY, adError.getErrorCode(), adError.getErrorMsg());
+//                            mListener.onAdClose(Constants.GDT_KEY);
+//                        }
+//                    }
+//                });
+//        rewardVideoAD.loadAD();
     }
 
     /**
@@ -534,13 +515,13 @@ public class RewardVideoAd {
     private void showGDTVideo() {
         Log.e("显示广告", "显示广告");
         if (isShow) return;
-        if (rewardVideoAD != null) {
-            rewardVideoAD.showAD();
-            rewardVideoAD = null;
-            isShow = true;
-            AdStatistical.trackAD(mContext, Constants.GDT_KEY, POS_ID, Constants.STATUS_CODE_TRUE, Constants.STATUS_CODE_FALSE);
-            destory();
-        }
+//        if (rewardVideoAD != null) {
+//            rewardVideoAD.showAD();
+//            rewardVideoAD = null;
+//            isShow = true;
+//            AdStatistical.trackAD(mContext, Constants.GDT_KEY, POS_ID, Constants.STATUS_CODE_TRUE, Constants.STATUS_CODE_FALSE);
+//            destory();
+//        }
     }
     //加载广点通激励视频广告-----------------end------------------
 
@@ -548,78 +529,78 @@ public class RewardVideoAd {
 
     private void loadMobi(String APPID, String POSID) {
         mobiAdLoaded = false;
-        mobiReward = new com.mobi.adsdk.rewardvideo.RewardVideoAD(mContext, APPID, POSID, new com.mobi.adsdk.rewardvideo.RewardVideoADListener() {
-            @Override
-            public void onADLoad() {
-                //广告加载成功
-                if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
-                    showMobiVideo();
-                } else {
-                    mobiAdLoaded = true;
-                    recordRenderSuccess(Constants.MOBI_KEY);
-                    if (firstCome) {
-                        showMobiVideo();
-                        firstCome = false;
-                    }
-                }
-            }
-
-            @Override
-            public void onVideoCached() {
-
-            }
-
-            @Override
-            public void onADShow() {
-                if (mListener != null) {
-                    mListener.onAdShow(Constants.MOBI_KEY);
-                }
-            }
-
-            @Override
-            public void onADClick() {
-                AdStatistical.trackAD(mContext, Constants.MOBI_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
-                if (mListener != null) {
-                    mListener.onAdClick(Constants.MOBI_KEY);
-                }
-            }
-
-            @Override
-            public void onVideoComplete() {
-                if (mListener != null) {
-                    mListener.onVideoComplete(Constants.MOBI_KEY);
-                }
-            }
-
-            @Override
-            public void onADClose() {
-                if (mListener != null) {
-                    mListener.onAdClose(Constants.MOBI_KEY);
-                }
-            }
-
-            @Override
-            public void onError(ADError adError) {
-                AdStatistical.trackAD(mContext, Constants.MOBI_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
-                if (mListener != null) {
-                    mListener.onLoadFaild(Constants.MOBI_KEY, adError.getEcode(), adError.geteMsg());
+//        mobiReward = new com.mobi.adsdk.rewardvideo.RewardVideoAD(mContext, APPID, POSID, new com.mobi.adsdk.rewardvideo.RewardVideoADListener() {
+//            @Override
+//            public void onADLoad() {
+//                //广告加载成功
+//                if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
+//                    showMobiVideo();
+//                } else {
+//                    mobiAdLoaded = true;
+//                    recordRenderSuccess(Constants.MOBI_KEY);
+//                    if (firstCome) {
+//                        showMobiVideo();
+//                        firstCome = false;
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onVideoCached() {
+//
+//            }
+//
+//            @Override
+//            public void onADShow() {
+//                if (mListener != null) {
+//                    mListener.onAdShow(Constants.MOBI_KEY);
+//                }
+//            }
+//
+//            @Override
+//            public void onADClick() {
+//                AdStatistical.trackAD(mContext, Constants.MOBI_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
+//                if (mListener != null) {
+//                    mListener.onAdClick(Constants.MOBI_KEY);
+//                }
+//            }
+//
+//            @Override
+//            public void onVideoComplete() {
+//                if (mListener != null) {
+//                    mListener.onVideoComplete(Constants.MOBI_KEY);
+//                }
+//            }
+//
+//            @Override
+//            public void onADClose() {
+//                if (mListener != null) {
 //                    mListener.onAdClose(Constants.MOBI_KEY);
-                }
-                ErrorTODO(Constants.MOBI_KEY);
-            }
-        });
-        mobiReward.load();
+//                }
+//            }
+//
+//            @Override
+//            public void onError(ADError adError) {
+//                AdStatistical.trackAD(mContext, Constants.MOBI_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
+//                if (mListener != null) {
+//                    mListener.onLoadFaild(Constants.MOBI_KEY, adError.getEcode(), adError.geteMsg());
+////                    mListener.onAdClose(Constants.MOBI_KEY);
+//                }
+//                ErrorTODO(Constants.MOBI_KEY);
+//            }
+//        });
+//        mobiReward.load();
     }
 
     private boolean showMobiVideo() {
         if (isShow) return true;
-        if (mobiReward != null) {
-            mobiReward.showRewardVideo();
-            isShow = true;
-            AdStatistical.trackAD(mContext, Constants.MOBI_KEY, POS_ID, Constants.STATUS_CODE_TRUE, Constants.STATUS_CODE_FALSE);
-            destory();
-            return true;
-        }
+//        if (mobiReward != null) {
+//            mobiReward.showRewardVideo();
+//            isShow = true;
+//            AdStatistical.trackAD(mContext, Constants.MOBI_KEY, POS_ID, Constants.STATUS_CODE_TRUE, Constants.STATUS_CODE_FALSE);
+//            destory();
+//            return true;
+//        }
         return false;
     }
 
@@ -646,109 +627,109 @@ public class RewardVideoAd {
 
 
     private void loadSigmob(String posId) {
-        windRewardedVideoAd = WindRewardedVideoAd.sharedInstance();
-        //placementId 必填,USER_ID,OPTIONS可不填，
-        request = new WindRewardAdRequest(posId, "", null);
-        windRewardedVideoAd.loadAd(request);
-        windRewardedVideoAd.setWindRewardedVideoAdListener(new WindRewardedVideoAdListener() {
-
-            //仅sigmob渠道有回调，聚合其他平台无次回调
-            @Override
-            public void onVideoAdPreLoadSuccess(String placementId) {
-                Log.e(TAG, "sigmob激励视频广告数据返回成功");
-            }
-
-            //仅sigmob渠道有回调，聚合其他平台无次回调
-            @Override
-            public void onVideoAdPreLoadFail(String placementId) {
-                Log.e(TAG, "sigmob激励视频广告数据返回失败");
-            }
-
-            @Override
-            public void onVideoAdLoadSuccess(String placementId) {
-                Log.e(TAG, "sigmob激励视频广告缓存加载成功");
-                if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
-                    showSigmob();
-                } else {
-                    recordRenderSuccess(Constants.SIGMOB);
-                    if (firstCome) {
-                        showSigmob();
-                        firstCome = false;
-                    }
-                }
-            }
-
-            @Override
-            public void onVideoAdPlayStart(String placementId) {
-                Log.e(TAG, "sigmob激励视频广告播放开始");
-                //广告已经显示
-                if (mListener != null) {
-                    mListener.onAdShow(Constants.SIGMOB);
-                }
-            }
-
-            @Override
-            public void onVideoAdPlayEnd(String s) {
-                Log.e(TAG, "sigmob激励视频广告播放结束");
-                //激励视频播放完毕
-                if (mListener != null) {
-                    mListener.onVideoComplete(Constants.SIGMOB);
-                }
-
-            }
-
-            @Override
-            public void onVideoAdClicked(String placementId) {
-                Log.e(TAG, "sigmob激励视频广告CTA点击事件监听");
-                //广告被点击
-                if (mListener != null) {
-                    mListener.onAdClick(Constants.SIGMOB);
-                }
-                AdStatistical.trackAD(mContext, Constants.SIGMOB, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
-            }
-
-            //WindRewardInfo中isComplete方法返回是否完整播放
-            @Override
-            public void onVideoAdClosed(WindRewardInfo windRewardInfo, String placementId) {
-                if (windRewardInfo.isComplete()) {
-                    Log.e(TAG, "sigmob激励视频广告完整播放");
-                    //广告被关闭
-                    if (mListener != null) {
-                        mListener.onAdClose(Constants.SIGMOB);
-                    }
-                } else {
-                    Log.e(TAG, "sigmob激励视频广告关闭");
-                }
-            }
-
-            /**
-             * 加载广告错误回调
-             * WindAdError 激励视频错误内容
-             * placementId 广告位
-             */
-            @Override
-            public void onVideoAdLoadError(WindAdError windAdError, String placementId) {
-                Log.e(TAG, "sigmob激励视频加载广告错误" + windAdError.getMessage());
-                AdStatistical.trackAD(mContext, Constants.SIGMOB, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
-                //加载错误
-                if (mListener != null) {
-                    mListener.onLoadFaild(Constants.SIGMOB, windAdError.getErrorCode(), windAdError.getMessage());
-                    //  mListener.onAdClose(Constants.SIGMOB);
-                }
-            }
-
-
-            /**
-             * 播放错误回调
-             * WindAdError 激励视频错误内容
-             * placementId 广告位
-             */
-            @Override
-            public void onVideoAdPlayError(WindAdError windAdError, String placementId) {
-                Log.e(TAG, "sigmob激励视频加载广告错误" + windAdError.getMessage());
-            }
-
-        });
+//        windRewardedVideoAd = WindRewardedVideoAd.sharedInstance();
+//        //placementId 必填,USER_ID,OPTIONS可不填，
+//        request = new WindRewardAdRequest(posId, "", null);
+//        windRewardedVideoAd.loadAd(request);
+//        windRewardedVideoAd.setWindRewardedVideoAdListener(new WindRewardedVideoAdListener() {
+//
+//            //仅sigmob渠道有回调，聚合其他平台无次回调
+//            @Override
+//            public void onVideoAdPreLoadSuccess(String placementId) {
+//                Log.e(TAG, "sigmob激励视频广告数据返回成功");
+//            }
+//
+//            //仅sigmob渠道有回调，聚合其他平台无次回调
+//            @Override
+//            public void onVideoAdPreLoadFail(String placementId) {
+//                Log.e(TAG, "sigmob激励视频广告数据返回失败");
+//            }
+//
+//            @Override
+//            public void onVideoAdLoadSuccess(String placementId) {
+//                Log.e(TAG, "sigmob激励视频广告缓存加载成功");
+//                if (bean.getSort_type() == Constants.SORT_TYPE_SERVICE_ORDER) {
+//                    showSigmob();
+//                } else {
+//                    recordRenderSuccess(Constants.SIGMOB);
+//                    if (firstCome) {
+//                        showSigmob();
+//                        firstCome = false;
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onVideoAdPlayStart(String placementId) {
+//                Log.e(TAG, "sigmob激励视频广告播放开始");
+//                //广告已经显示
+//                if (mListener != null) {
+//                    mListener.onAdShow(Constants.SIGMOB);
+//                }
+//            }
+//
+//            @Override
+//            public void onVideoAdPlayEnd(String s) {
+//                Log.e(TAG, "sigmob激励视频广告播放结束");
+//                //激励视频播放完毕
+//                if (mListener != null) {
+//                    mListener.onVideoComplete(Constants.SIGMOB);
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onVideoAdClicked(String placementId) {
+//                Log.e(TAG, "sigmob激励视频广告CTA点击事件监听");
+//                //广告被点击
+//                if (mListener != null) {
+//                    mListener.onAdClick(Constants.SIGMOB);
+//                }
+//                AdStatistical.trackAD(mContext, Constants.SIGMOB, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
+//            }
+//
+//            //WindRewardInfo中isComplete方法返回是否完整播放
+//            @Override
+//            public void onVideoAdClosed(WindRewardInfo windRewardInfo, String placementId) {
+//                if (windRewardInfo.isComplete()) {
+//                    Log.e(TAG, "sigmob激励视频广告完整播放");
+//                    //广告被关闭
+//                    if (mListener != null) {
+//                        mListener.onAdClose(Constants.SIGMOB);
+//                    }
+//                } else {
+//                    Log.e(TAG, "sigmob激励视频广告关闭");
+//                }
+//            }
+//
+//            /**
+//             * 加载广告错误回调
+//             * WindAdError 激励视频错误内容
+//             * placementId 广告位
+//             */
+//            @Override
+//            public void onVideoAdLoadError(WindAdError windAdError, String placementId) {
+//                Log.e(TAG, "sigmob激励视频加载广告错误" + windAdError.getMessage());
+//                AdStatistical.trackAD(mContext, Constants.SIGMOB, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
+//                //加载错误
+//                if (mListener != null) {
+//                    mListener.onLoadFaild(Constants.SIGMOB, windAdError.getErrorCode(), windAdError.getMessage());
+//                    //  mListener.onAdClose(Constants.SIGMOB);
+//                }
+//            }
+//
+//
+//            /**
+//             * 播放错误回调
+//             * WindAdError 激励视频错误内容
+//             * placementId 广告位
+//             */
+//            @Override
+//            public void onVideoAdPlayError(WindAdError windAdError, String placementId) {
+//                Log.e(TAG, "sigmob激励视频加载广告错误" + windAdError.getMessage());
+//            }
+//
+//        });
 
 
     }
@@ -757,21 +738,21 @@ public class RewardVideoAd {
     //展示sigmob广告
     private void showSigmob() {
         if (isShow) return;
-        if (windRewardedVideoAd != null) {
-            try {
-                //检查广告是否准备完毕
-                if (windRewardedVideoAd.isReady(request.getPlacementId())) {
-                    //广告播放
-                    windRewardedVideoAd.show((Activity) mContext, request);
-                    windRewardedVideoAd = null;
-                    isShow = true;
-                    AdStatistical.trackAD(mContext, Constants.SIGMOB, POS_ID, Constants.STATUS_CODE_TRUE, Constants.STATUS_CODE_FALSE);
-                    destory();
-                }
-            } catch (IllegalArgumentException e) {
-                e.printStackTrace();
-            }
-        }
+//        if (windRewardedVideoAd != null) {
+//            try {
+//                //检查广告是否准备完毕
+//                if (windRewardedVideoAd.isReady(request.getPlacementId())) {
+//                    //广告播放
+//                    windRewardedVideoAd.show((Activity) mContext, request);
+//                    windRewardedVideoAd = null;
+//                    isShow = true;
+//                    AdStatistical.trackAD(mContext, Constants.SIGMOB, POS_ID, Constants.STATUS_CODE_TRUE, Constants.STATUS_CODE_FALSE);
+//                    destory();
+//                }
+//            } catch (IllegalArgumentException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 
     //sigmob激励视频广告----------------end-----------------
@@ -781,18 +762,18 @@ public class RewardVideoAd {
      * 销毁
      */
     public void destory() {
-        if (rewardVideoAD != null) {
-            rewardVideoAD = null;
-        }
-        if (mttRewardVideoAd != null) {
-            mttRewardVideoAd = null;
-        }
-        if (windRewardedVideoAd != null) {
-            windRewardedVideoAd = null;
-        }
-        if (mobiReward != null) {
-            mobiReward = null;
-        }
+//        if (rewardVideoAD != null) {
+//            rewardVideoAD = null;
+//        }
+//        if (mttRewardVideoAd != null) {
+//            mttRewardVideoAd = null;
+//        }
+//        if (windRewardedVideoAd != null) {
+//            windRewardedVideoAd = null;
+//        }
+//        if (mobiReward != null) {
+//            mobiReward = null;
+//        }
     }
 
     /**

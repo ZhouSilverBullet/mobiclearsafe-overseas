@@ -9,7 +9,7 @@
         android:layout_width="34dp"
         android:layout_height="23dp"
         android:layout_centerInParent="true"
-        android:background="@color/tt_white"
+        android:background="#ffffff"
         android:text="关闭"
         android:gravity="center"
         android:textColor="#666666"

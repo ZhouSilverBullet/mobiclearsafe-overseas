@@ -2,9 +2,6 @@ package com.example.adtest.cache;
 
 import android.content.Context;
 
-import com.bytedance.sdk.openadsdk.AdSlot;
-import com.bytedance.sdk.openadsdk.TTAdNative;
-import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
 import com.example.adtest.bean.AdBean;
 import com.example.adtest.bean.CacheGDTBean;
 import com.example.adtest.bean.CacheMobiBean;
@@ -12,19 +9,8 @@ import com.example.adtest.bean.CacheTTBean;
 import com.example.adtest.bean.ConfigItemBean;
 import com.example.adtest.config.TTAdManagerHolder;
 import com.example.adtest.manager.Constants;
-import com.example.adtest.statistical.AdStatistical;
 import com.example.adtest.utils.DateUtils;
-import com.mobi.adsdk.nativeexpress.MobiAdSize;
-import com.mobi.adsdk.nativeexpress.MobiNativeExpressAd;
-import com.mobi.adsdk.nativeexpress.MobiNativeExpressAdView;
-import com.mobi.adsdk.utils.ADError;
-import com.qq.e.ads.cfg.VideoOption;
-import com.qq.e.ads.nativ.ADSize;
-import com.qq.e.ads.nativ.NativeExpressAD;
-import com.qq.e.ads.nativ.NativeExpressADView;
-import com.qq.e.comm.util.AdError;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -137,22 +123,22 @@ public class NativeExpressCache {
     }
 
 
-    /**
-     * 得到穿山甲 广告缓存列表
-     *
-     * @param POSID 广告平台生成的POSID
-     * @return
-     */
-    public static TTNativeExpressAd getTTNative(String POSID) {
-
-        List<CacheTTBean> mList = mTTMap.get(POSID);
-        if (mList == null || mList.size() <= 0) {
-            return null;
-        }
-        TTNativeExpressAd ad = mList.get(0).mNative;
-        mList.remove(0);
-        return ad;
-    }
+//    /**
+//     * 得到穿山甲 广告缓存列表
+//     *
+//     * @param POSID 广告平台生成的POSID
+//     * @return
+//     */
+//    public static TTNativeExpressAd getTTNative(String POSID) {
+//
+//        List<CacheTTBean> mList = mTTMap.get(POSID);
+//        if (mList == null || mList.size() <= 0) {
+//            return null;
+//        }
+//        TTNativeExpressAd ad = mList.get(0).mNative;
+//        mList.remove(0);
+//        return ad;
+//    }
 
 
     /**
@@ -165,19 +151,19 @@ public class NativeExpressCache {
         mTTMap.put(TTPosID, list);
     }
 
-    /**
-     * 得到广点通广告缓存列表
-     *
-     * @param GDTPosID
-     * @return
-     */
-    public static NativeExpressADView getGDTNative(String GDTPosID) {
-        List<CacheGDTBean> mList = mGDTMap.get(GDTPosID);
-        if (mList == null || mList.size() <= 0) {
-            return null;
-        }
-        return mList.get(0).mNative;
-    }
+//    /**
+//     * 得到广点通广告缓存列表
+//     *
+//     * @param GDTPosID
+//     * @return
+//     */
+//    public static NativeExpressADView getGDTNative(String GDTPosID) {
+//        List<CacheGDTBean> mList = mGDTMap.get(GDTPosID);
+//        if (mList == null || mList.size() <= 0) {
+//            return null;
+//        }
+//        return mList.get(0).mNative;
+//    }
 
     /**
      * 设置广点通广告缓存列表
@@ -189,21 +175,21 @@ public class NativeExpressCache {
         mGDTMap.put(GDTPosID, list);
     }
 
-    /**
-     * 得到mobi广告缓存列表
-     *
-     * @param MobiPosID
-     * @return
-     */
-    public static MobiNativeExpressAdView getMobiNative(String MobiPosID) {
-        List<CacheMobiBean> mList = mMobiMap.get(MobiPosID);
-        if (mList == null || mList.size() <= 0) {
-            return null;
-        }
-        MobiNativeExpressAdView mobiNativeExpressAdView = mList.get(0).mobiNativeExpressAdView;
-        mList.remove(0);
-        return mobiNativeExpressAdView;
-    }
+//    /**
+//     * 得到mobi广告缓存列表
+//     *
+//     * @param MobiPosID
+//     * @return
+//     */
+//    public static MobiNativeExpressAdView getMobiNative(String MobiPosID) {
+//        List<CacheMobiBean> mList = mMobiMap.get(MobiPosID);
+//        if (mList == null || mList.size() <= 0) {
+//            return null;
+//        }
+//        MobiNativeExpressAdView mobiNativeExpressAdView = mList.get(0).mobiNativeExpressAdView;
+//        mList.remove(0);
+//        return mobiNativeExpressAdView;
+//    }
 
 
     /**
@@ -230,62 +216,62 @@ public class NativeExpressCache {
                 }
             }
 
-            TTAdNative mTTAdNative = TTAdManagerHolder.get().createAdNative(mContext);
-
-            AdSlot adSlot = new AdSlot.Builder()
-                    .setCodeId(CodeID)
-                    .setSupportDeepLink(true)
-                    .setAdCount(count)
-                    .setExpressViewAcceptedSize(338, 0)
-                    .setImageAcceptedSize(640, 320)
-                    .build();
-            final int finalCount = count;
-            mTTAdNative.loadNativeExpressAd(adSlot, new TTAdNative.NativeExpressAdListener() {
-                //加载失败
-                @Override
-                public void onError(int i, String s) {
-                    // Log.e("ADLoad穿山甲", "广告加载失败" + i + s);
-                    AdStatistical.trackAD(mContext, Constants.TT_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
-//                mBearingView.removeAllViews();
-//                if (mListener != null) {
-//                    mListener.onLoadFaild(Constants.TT_KEY, i, s);
+//            TTAdNative mTTAdNative = TTAdManagerHolder.get().createAdNative(mContext);
+//
+//            AdSlot adSlot = new AdSlot.Builder()
+//                    .setCodeId(CodeID)
+//                    .setSupportDeepLink(true)
+//                    .setAdCount(count)
+//                    .setExpressViewAcceptedSize(338, 0)
+//                    .setImageAcceptedSize(640, 320)
+//                    .build();
+//            final int finalCount = count;
+//            mTTAdNative.loadNativeExpressAd(adSlot, new TTAdNative.NativeExpressAdListener() {
+//                //加载失败
+//                @Override
+//                public void onError(int i, String s) {
+//                    // Log.e("ADLoad穿山甲", "广告加载失败" + i + s);
+//                    AdStatistical.trackAD(mContext, Constants.TT_KEY, POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
+////                mBearingView.removeAllViews();
+////                if (mListener != null) {
+////                    mListener.onLoadFaild(Constants.TT_KEY, i, s);
+////                }
 //                }
-                }
-
-                //加载成功
-                @Override
-                public void onNativeExpressAdLoad(List<TTNativeExpressAd> list) {
-                    if (list == null || list.size() <= 0) {
-                        return;
-                    }
-                    //    Log.e("ADLoad穿山甲", "广告加载成功");
-                    if (finalCount >= 2 && list.size() >= 2) {
-                        List<TTNativeExpressAd> mList = list;
-                        List<CacheTTBean> ttList = new ArrayList<>();
-                        for (int i = 0; i < mList.size(); i++) {
-                            CacheTTBean bean = new CacheTTBean();
-                            bean.mNative = mList.get(i);
-                            ttList.add(bean);
-                        }
-                        mTTMap.put(CodeID, ttList);
-                        return;
-                    }
-                    if (finalCount == 1 && list.size() == 1) {
-                        List<CacheTTBean> mList = mTTMap.get(CodeID);
-                        if (mList == null) {
-                            mList = new ArrayList<>();
-                        }
-                        CacheTTBean bean = new CacheTTBean();
-                        bean.mNative = list.get(0);
-                        mList.add(0, bean);
-                        mTTMap.put(CodeID, mList);
-                    }
-//                mTTAd = list.get(0);
-//                bindTTAdListener(mTTAd);
-//                mTTAd.render();
-//                recordRenderSuccess(Constants.TT_KEY);
-                }
-            });
+//
+//                //加载成功
+//                @Override
+//                public void onNativeExpressAdLoad(List<TTNativeExpressAd> list) {
+//                    if (list == null || list.size() <= 0) {
+//                        return;
+//                    }
+//                    //    Log.e("ADLoad穿山甲", "广告加载成功");
+//                    if (finalCount >= 2 && list.size() >= 2) {
+//                        List<TTNativeExpressAd> mList = list;
+//                        List<CacheTTBean> ttList = new ArrayList<>();
+//                        for (int i = 0; i < mList.size(); i++) {
+//                            CacheTTBean bean = new CacheTTBean();
+//                            bean.mNative = mList.get(i);
+//                            ttList.add(bean);
+//                        }
+//                        mTTMap.put(CodeID, ttList);
+//                        return;
+//                    }
+//                    if (finalCount == 1 && list.size() == 1) {
+//                        List<CacheTTBean> mList = mTTMap.get(CodeID);
+//                        if (mList == null) {
+//                            mList = new ArrayList<>();
+//                        }
+//                        CacheTTBean bean = new CacheTTBean();
+//                        bean.mNative = list.get(0);
+//                        mList.add(0, bean);
+//                        mTTMap.put(CodeID, mList);
+//                    }
+////                mTTAd = list.get(0);
+////                bindTTAdListener(mTTAd);
+////                mTTAd.render();
+////                recordRenderSuccess(Constants.TT_KEY);
+//                }
+//            });
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -314,135 +300,135 @@ public class NativeExpressCache {
         }
 
         final int finalCount = count;
-        NativeExpressAD nativeExpressAD = new NativeExpressAD(mContext, getADSize(), APPID, POSID,
-                new NativeExpressAD.NativeExpressADListener() {
-                    @Override
-                    public void onADLoaded(List<NativeExpressADView> list) {
-                        //加载广告成功
-//                        if (nativeExpressADView != null) {
-//                            nativeExpressADView.destroy();
+//        NativeExpressAD nativeExpressAD = new NativeExpressAD(mContext, getADSize(), APPID, POSID,
+//                new NativeExpressAD.NativeExpressADListener() {
+//                    @Override
+//                    public void onADLoaded(List<NativeExpressADView> list) {
+//                        //加载广告成功
+////                        if (nativeExpressADView != null) {
+////                            nativeExpressADView.destroy();
+////                        }
+//                        if (list == null || list.size() <= 0) {
+//                            return;
 //                        }
-                        if (list == null || list.size() <= 0) {
-                            return;
-                        }
-                        //      Log.e("ADLoad广点通", "广告加载成功");
-                        if (finalCount >= 2 && list.size() >= 2) {
-                            List<NativeExpressADView> mList = list;
-                            List<CacheGDTBean> gdtList = new ArrayList<>();
-                            for (int i = 0; i < mList.size(); i++) {
-                                CacheGDTBean bean = new CacheGDTBean();
-                                bean.mNative = mList.get(i);
-                                gdtList.add(bean);
-                            }
-                            mGDTMap.put(POSID, gdtList);
-                            return;
-                        }
-                        if (finalCount == 1 && list.size() == 1) {
-                            List<CacheGDTBean> mList = mGDTMap.get(POSID);
-                            if (mList == null) {
-                                mList = new ArrayList<>();
-                            }
-                            CacheGDTBean bean = new CacheGDTBean();
-                            bean.mNative = list.get(0);
-                            mList.add(0, bean);
-                            mGDTMap.put(POSID, mList);
-                        }
-//                        if (list != null && list.size() > 0) {
-//                            nativeExpressADView = list.get(0);
-//                        }
-//                        if (nativeExpressADView != null) {
-//                            if (nativeExpressADView.getBoundData().getAdPatternType() == AdPatternType.NATIVE_VIDEO) {
-//                                //如果是视频广告 可添加视频播放监听
-//                                nativeExpressADView.setMediaListener(listener);
+//                        //      Log.e("ADLoad广点通", "广告加载成功");
+//                        if (finalCount >= 2 && list.size() >= 2) {
+//                            List<NativeExpressADView> mList = list;
+//                            List<CacheGDTBean> gdtList = new ArrayList<>();
+//                            for (int i = 0; i < mList.size(); i++) {
+//                                CacheGDTBean bean = new CacheGDTBean();
+//                                bean.mNative = mList.get(i);
+//                                gdtList.add(bean);
 //                            }
+//                            mGDTMap.put(POSID, gdtList);
+//                            return;
 //                        }
-//                        nativeExpressADView.render();
-//                        recordRenderSuccess(Constants.GDT_KEY);
-                    }
-
-                    @Override
-                    public void onRenderFail(NativeExpressADView nativeExpressADView) {
-                        //广告渲染失败
-                    }
-
-                    @Override
-                    public void onRenderSuccess(NativeExpressADView nativeExpressADView) {
-                        //广告渲染成功
-//                        if (firstCome) {
-//                            renderGDTAD();
-//                            firstCome = false;
+//                        if (finalCount == 1 && list.size() == 1) {
+//                            List<CacheGDTBean> mList = mGDTMap.get(POSID);
+//                            if (mList == null) {
+//                                mList = new ArrayList<>();
+//                            }
+//                            CacheGDTBean bean = new CacheGDTBean();
+//                            bean.mNative = list.get(0);
+//                            mList.add(0, bean);
+//                            mGDTMap.put(POSID, mList);
 //                        }
-//                        if (mListener != null) {
-//                            mListener.onAdRenderSuccess(Constants.GDT_KEY);
-//                        }
-                    }
-
-                    @Override
-                    public void onADExposure(NativeExpressADView nativeExpressADView) {
-                        //广告曝光
-//                        if (mListener != null) {
-//                            mListener.onAdShow(Constants.GDT_KEY);
-//                        }
-                    }
-
-                    @Override
-                    public void onADClicked(NativeExpressADView nativeExpressADView) {
-                        //广告被点击
-//                        if (mListener != null) {
-//                            mListener.onAdClick(Constants.GDT_KEY);
-//                        }
-                        AdStatistical.trackAD(mContext, Constants.GDT_KEY, SELF_POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
-                    }
-
-                    @Override
-                    public void onADClosed(NativeExpressADView nativeExpressADView) {
-                        //广告关闭
-//                        if (mBearingView != null && mBearingView.getChildCount() > 0) {
-//                            mBearingView.removeAllViews();
-//                            mBearingView.setVisibility(View.GONE);
-//                        }
-//                        if (mListener != null) {
-//                            mListener.onAdDismissed(Constants.GDT_KEY);
-//                        }
-                    }
-
-                    @Override
-                    public void onADLeftApplication(NativeExpressADView nativeExpressADView) {
-
-                    }
-
-                    @Override
-                    public void onADOpenOverlay(NativeExpressADView nativeExpressADView) {
-
-                    }
-
-                    @Override
-                    public void onADCloseOverlay(NativeExpressADView nativeExpressADView) {
-
-                    }
-
-                    @Override
-                    public void onNoAD(AdError adError) {
-                        //  Log.e("ADLoad广点通", "广告加载失败" + adError.getErrorCode() + adError.getErrorMsg());
-                        AdStatistical.trackAD(mContext, Constants.GDT_KEY, SELF_POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
-                        //加载失败
-//                        if (mListener != null) {
-//                            mListener.onLoadFaild(Constants.GDT_KEY, adError.getErrorCode(), adError.getErrorMsg());
-//                        }
-                    }
-                });
-        nativeExpressAD.setVideoOption(new VideoOption.Builder()
-                .setAutoPlayPolicy(VideoOption.AutoPlayPolicy.ALWAYS)//设置什么网络情况下可以自动播放视频
-                .setAutoPlayMuted(true)//设置自动播放视频时是否静音
-                .build());
-//        nativeExpressAD.setMaxVideoDuration(15);//设置视频最大时长
-        nativeExpressAD.setVideoPlayPolicy(VideoOption.VideoPlayPolicy.AUTO);
-        nativeExpressAD.loadAD(count);
+////                        if (list != null && list.size() > 0) {
+////                            nativeExpressADView = list.get(0);
+////                        }
+////                        if (nativeExpressADView != null) {
+////                            if (nativeExpressADView.getBoundData().getAdPatternType() == AdPatternType.NATIVE_VIDEO) {
+////                                //如果是视频广告 可添加视频播放监听
+////                                nativeExpressADView.setMediaListener(listener);
+////                            }
+////                        }
+////                        nativeExpressADView.render();
+////                        recordRenderSuccess(Constants.GDT_KEY);
+//                    }
+//
+//                    @Override
+//                    public void onRenderFail(NativeExpressADView nativeExpressADView) {
+//                        //广告渲染失败
+//                    }
+//
+//                    @Override
+//                    public void onRenderSuccess(NativeExpressADView nativeExpressADView) {
+//                        //广告渲染成功
+////                        if (firstCome) {
+////                            renderGDTAD();
+////                            firstCome = false;
+////                        }
+////                        if (mListener != null) {
+////                            mListener.onAdRenderSuccess(Constants.GDT_KEY);
+////                        }
+//                    }
+//
+//                    @Override
+//                    public void onADExposure(NativeExpressADView nativeExpressADView) {
+//                        //广告曝光
+////                        if (mListener != null) {
+////                            mListener.onAdShow(Constants.GDT_KEY);
+////                        }
+//                    }
+//
+//                    @Override
+//                    public void onADClicked(NativeExpressADView nativeExpressADView) {
+//                        //广告被点击
+////                        if (mListener != null) {
+////                            mListener.onAdClick(Constants.GDT_KEY);
+////                        }
+//                        AdStatistical.trackAD(mContext, Constants.GDT_KEY, SELF_POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
+//                    }
+//
+//                    @Override
+//                    public void onADClosed(NativeExpressADView nativeExpressADView) {
+//                        //广告关闭
+////                        if (mBearingView != null && mBearingView.getChildCount() > 0) {
+////                            mBearingView.removeAllViews();
+////                            mBearingView.setVisibility(View.GONE);
+////                        }
+////                        if (mListener != null) {
+////                            mListener.onAdDismissed(Constants.GDT_KEY);
+////                        }
+//                    }
+//
+//                    @Override
+//                    public void onADLeftApplication(NativeExpressADView nativeExpressADView) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onADOpenOverlay(NativeExpressADView nativeExpressADView) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onADCloseOverlay(NativeExpressADView nativeExpressADView) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNoAD(AdError adError) {
+//                        //  Log.e("ADLoad广点通", "广告加载失败" + adError.getErrorCode() + adError.getErrorMsg());
+//                        AdStatistical.trackAD(mContext, Constants.GDT_KEY, SELF_POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
+//                        //加载失败
+////                        if (mListener != null) {
+////                            mListener.onLoadFaild(Constants.GDT_KEY, adError.getErrorCode(), adError.getErrorMsg());
+////                        }
+//                    }
+//                });
+//        nativeExpressAD.setVideoOption(new VideoOption.Builder()
+//                .setAutoPlayPolicy(VideoOption.AutoPlayPolicy.ALWAYS)//设置什么网络情况下可以自动播放视频
+//                .setAutoPlayMuted(true)//设置自动播放视频时是否静音
+//                .build());
+////        nativeExpressAD.setMaxVideoDuration(15);//设置视频最大时长
+//        nativeExpressAD.setVideoPlayPolicy(VideoOption.VideoPlayPolicy.AUTO);
+//        nativeExpressAD.loadAD(count);
     }
 
-    private static ADSize getADSize() {
-        return new ADSize(ADSize.FULL_WIDTH, ADSize.AUTO_HEIGHT);
-    }
+//    private static ADSize getADSize() {
+//        return new ADSize(ADSize.FULL_WIDTH, ADSize.AUTO_HEIGHT);
+//    }
 
     public static void loadMobiExpress(String APPID, final String POSID, final Context mContext,
                                        final String SELF_POS_ID) {
@@ -458,70 +444,70 @@ public class NativeExpressCache {
                 }
             }
         }
-        MobiNativeExpressAd mobiNativeExpressAd = new MobiNativeExpressAd(mContext, APPID, POSID, getMobiADSize(),
-                new MobiNativeExpressAd.MobiNativeExpressAdListener() {
-                    @Override
-                    public void onADLoaded(List<MobiNativeExpressAdView> list) {
-                        if (list == null || list.size() <= 0) {
-                            return;
-                        }
-                        if (list.size() >= 2) {
-                            List<MobiNativeExpressAdView> mList = list;
-                            List<CacheMobiBean> mobiList = new ArrayList<>();
-                            for (int i = 0; i < mList.size(); i++) {
-                                CacheMobiBean bean = new CacheMobiBean();
-                                bean.mobiNativeExpressAdView = mList.get(i);
-                                mobiList.add(bean);
-                            }
-                            mMobiMap.put(POSID, mobiList);
-                        } else {
-                            List<CacheMobiBean> mList = mMobiMap.get(POSID);
-                            if (mList == null) {
-                                mList = new ArrayList<>();
-                            }
-                            CacheMobiBean bean = new CacheMobiBean();
-                            bean.mobiNativeExpressAdView = list.get(0);
-                            mList.add(0, bean);
-                            mMobiMap.put(POSID, mList);
-                        }
-
-
-                    }
-
-                    @Override
-                    public void onRenderFail(MobiNativeExpressAdView mobiNativeExpressAdView) {
-
-                    }
-
-                    @Override
-                    public void onRenderSuccess(MobiNativeExpressAdView mobiNativeExpressAdView) {
-
-                    }
-
-                    @Override
-                    public void onADExposure(MobiNativeExpressAdView mobiNativeExpressAdView) {
-
-                    }
-
-                    @Override
-                    public void onADClicked(MobiNativeExpressAdView mobiNativeExpressAdView) {
-                        AdStatistical.trackAD(mContext, Constants.MOBI_KEY, SELF_POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
-                    }
-
-                    @Override
-                    public void onADClosed(MobiNativeExpressAdView mobiNativeExpressAdView) {
-
-                    }
-
-                    @Override
-                    public void onNoAD(ADError adError) {
-                        AdStatistical.trackAD(mContext, Constants.MOBI_KEY, SELF_POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
-                    }
-                });
-        mobiNativeExpressAd.loadAD(count);
+//        MobiNativeExpressAd mobiNativeExpressAd = new MobiNativeExpressAd(mContext, APPID, POSID, getMobiADSize(),
+//                new MobiNativeExpressAd.MobiNativeExpressAdListener() {
+//                    @Override
+//                    public void onADLoaded(List<MobiNativeExpressAdView> list) {
+//                        if (list == null || list.size() <= 0) {
+//                            return;
+//                        }
+//                        if (list.size() >= 2) {
+//                            List<MobiNativeExpressAdView> mList = list;
+//                            List<CacheMobiBean> mobiList = new ArrayList<>();
+//                            for (int i = 0; i < mList.size(); i++) {
+//                                CacheMobiBean bean = new CacheMobiBean();
+//                                bean.mobiNativeExpressAdView = mList.get(i);
+//                                mobiList.add(bean);
+//                            }
+//                            mMobiMap.put(POSID, mobiList);
+//                        } else {
+//                            List<CacheMobiBean> mList = mMobiMap.get(POSID);
+//                            if (mList == null) {
+//                                mList = new ArrayList<>();
+//                            }
+//                            CacheMobiBean bean = new CacheMobiBean();
+//                            bean.mobiNativeExpressAdView = list.get(0);
+//                            mList.add(0, bean);
+//                            mMobiMap.put(POSID, mList);
+//                        }
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void onRenderFail(MobiNativeExpressAdView mobiNativeExpressAdView) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onRenderSuccess(MobiNativeExpressAdView mobiNativeExpressAdView) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onADExposure(MobiNativeExpressAdView mobiNativeExpressAdView) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onADClicked(MobiNativeExpressAdView mobiNativeExpressAdView) {
+//                        AdStatistical.trackAD(mContext, Constants.MOBI_KEY, SELF_POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
+//                    }
+//
+//                    @Override
+//                    public void onADClosed(MobiNativeExpressAdView mobiNativeExpressAdView) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNoAD(ADError adError) {
+//                        AdStatistical.trackAD(mContext, Constants.MOBI_KEY, SELF_POS_ID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
+//                    }
+//                });
+//        mobiNativeExpressAd.loadAD(count);
     }
 
-    private static MobiAdSize getMobiADSize() {
-        return new MobiAdSize(MobiAdSize.FULL_WIDTH, MobiAdSize.AUTO_HEIGHT);
-    }
+//    private static MobiAdSize getMobiADSize() {
+//        return new MobiAdSize(MobiAdSize.FULL_WIDTH, MobiAdSize.AUTO_HEIGHT);
+//    }
 }

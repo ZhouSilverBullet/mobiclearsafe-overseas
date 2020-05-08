@@ -1,6 +1,5 @@
 package com.example.adtest.bean;
 
-import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
 import com.example.adtest.utils.DateUtils;
 
 import java.io.Serializable;
@@ -11,6 +10,6 @@ import java.io.Serializable;
  */
 public class CacheTTBean implements Serializable {
 
-    public TTNativeExpressAd mNative;
+//    public TTNativeExpressAd mNative;
     public long create_time = DateUtils.getNowTimeLong();
 }

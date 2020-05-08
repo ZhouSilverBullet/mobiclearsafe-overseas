@@ -46,14 +46,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation(name: 'open_ad_sdk', ext: 'aar')
-    implementation (name:'mobi_sdk', ext:'aar')
+//    implementation(name: 'open_ad_sdk', ext: 'aar')
+//    implementation (name:'mobi_sdk', ext:'aar')
 //    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
     //noinspection GradleCompatible
     implementation 'com.android.support:support-v4:28.0.0'
-    implementation (name:'GDTSDK.unionNormal.4.176.1046', ext:'aar')
+//    implementation (name:'GDTSDK.unionNormal.4.176.1046', ext:'aar')
    // implementation (name:'valpubsdk-1.1.4-healthtree-20200312', ext:'aar')
-    implementation (name:'windAd-2.15.4', ext:'aar')
+//    implementation (name:'windAd-2.15.4', ext:'aar')
 //    implementation 'com.tencent.bugly:crashreport:latest.release'
 //    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
 //    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'

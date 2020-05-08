@@ -1,17 +1,10 @@
 package com.example.adtest.cache;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.adtest.bean.SinceCacheGDTBean;
 import com.example.adtest.utils.DateUtils;
-import com.qq.e.ads.cfg.VideoOption;
-import com.qq.e.ads.nativ.NativeADUnifiedListener;
-import com.qq.e.ads.nativ.NativeUnifiedAD;
-import com.qq.e.ads.nativ.NativeUnifiedADData;
-import com.qq.e.comm.util.AdError;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,61 +53,61 @@ public class SinceRenderCache {
         }
 
         final int finalCount = count;
-        NativeUnifiedAD mAdManager = new NativeUnifiedAD(context, APPID, POSID, new NativeADUnifiedListener() {
-            @Override
-            public void onADLoaded(List<NativeUnifiedADData> list) {
-                if (list == null || list.size() <= 0) {
-                    return;
-                }
-
-                if (finalCount >= 2 && list.size() >= 2) {
-                    List<SinceCacheGDTBean> gdtList = new ArrayList<>();
-                    for (int i = 0; i < list.size(); i++) {
-                        SinceCacheGDTBean bean = new SinceCacheGDTBean();
-                        bean.mAdData = list.get(i);
-                        gdtList.add(bean);
-                    }
-                    mGDTMap.put(POSID, gdtList);
-                    return;
-                }
-                if (finalCount < 2 && list.size() < 2) {
-                    List<SinceCacheGDTBean> gdtList = mGDTMap.get(POSID);
-                    if (gdtList == null) {
-                        gdtList = new ArrayList<>();
-                    }
-                    SinceCacheGDTBean bean = new SinceCacheGDTBean();
-                    bean.mAdData = list.get(0);
-                    gdtList.add(bean);
-                    mGDTMap.put(POSID, gdtList);
-                }
-            }
-
-            @Override
-            public void onNoAD(AdError adError) {
-                Log.e("自渲染广告失败","失败"+adError.getErrorCode()+adError.getErrorMsg());
-            }
-        });
-//        mAdManager.setVideoPlayPolicy(VideoOption.VideoPlayPolicy.AUTO); // 本次拉回的视频广告，从用户的角度看是自动播放的
-//        mAdManager.setVideoADContainerRender(VideoOption.VideoADContainerRender.SDK); // 视频播放前，用户看到的广告容器是由SDK渲染的
-//        mAdManager.setMaxVideoDuration(10);
-        mAdManager.loadData(count);
+//        NativeUnifiedAD mAdManager = new NativeUnifiedAD(context, APPID, POSID, new NativeADUnifiedListener() {
+//            @Override
+//            public void onADLoaded(List<NativeUnifiedADData> list) {
+//                if (list == null || list.size() <= 0) {
+//                    return;
+//                }
+//
+//                if (finalCount >= 2 && list.size() >= 2) {
+//                    List<SinceCacheGDTBean> gdtList = new ArrayList<>();
+//                    for (int i = 0; i < list.size(); i++) {
+//                        SinceCacheGDTBean bean = new SinceCacheGDTBean();
+//                        bean.mAdData = list.get(i);
+//                        gdtList.add(bean);
+//                    }
+//                    mGDTMap.put(POSID, gdtList);
+//                    return;
+//                }
+//                if (finalCount < 2 && list.size() < 2) {
+//                    List<SinceCacheGDTBean> gdtList = mGDTMap.get(POSID);
+//                    if (gdtList == null) {
+//                        gdtList = new ArrayList<>();
+//                    }
+//                    SinceCacheGDTBean bean = new SinceCacheGDTBean();
+//                    bean.mAdData = list.get(0);
+//                    gdtList.add(bean);
+//                    mGDTMap.put(POSID, gdtList);
+//                }
+//            }
+//
+//            @Override
+//            public void onNoAD(AdError adError) {
+//                Log.e("自渲染广告失败","失败"+adError.getErrorCode()+adError.getErrorMsg());
+//            }
+//        });
+////        mAdManager.setVideoPlayPolicy(VideoOption.VideoPlayPolicy.AUTO); // 本次拉回的视频广告，从用户的角度看是自动播放的
+////        mAdManager.setVideoADContainerRender(VideoOption.VideoADContainerRender.SDK); // 视频播放前，用户看到的广告容器是由SDK渲染的
+////        mAdManager.setMaxVideoDuration(10);
+//        mAdManager.loadData(count);
     }
 
 
-    /**
-     * 获取广点通自渲染缓存数据
-     *
-     * @param POSID 对应的广告平台的POSID
-     * @return
-     */
-    public static NativeUnifiedADData getGDTAdData(String POSID) {
-        List<SinceCacheGDTBean> list = mGDTMap.get(POSID);
-        if (list == null || list.size() <= 0) {
-            return null;
-        }
-        NativeUnifiedADData bean = list.get(0).mAdData;
-        list.remove(0);
-        mGDTMap.put(POSID, list);
-        return bean;
-    }
+//    /**
+//     * 获取广点通自渲染缓存数据
+//     *
+//     * @param POSID 对应的广告平台的POSID
+//     * @return
+//     */
+//    public static NativeUnifiedADData getGDTAdData(String POSID) {
+//        List<SinceCacheGDTBean> list = mGDTMap.get(POSID);
+//        if (list == null || list.size() <= 0) {
+//            return null;
+//        }
+//        NativeUnifiedADData bean = list.get(0).mAdData;
+//        list.remove(0);
+//        mGDTMap.put(POSID, list);
+//        return bean;
+//    }
 }

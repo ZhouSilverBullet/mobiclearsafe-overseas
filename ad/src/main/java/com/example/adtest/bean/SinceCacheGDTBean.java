@@ -1,7 +1,6 @@
 package com.example.adtest.bean;
 
 import com.example.adtest.utils.DateUtils;
-import com.qq.e.ads.nativ.NativeUnifiedADData;
 
 import java.io.Serializable;
 
@@ -11,7 +10,6 @@ import java.io.Serializable;
  */
 public class SinceCacheGDTBean implements Serializable {
 
-    public NativeUnifiedADData mAdData;
     public long create_time = DateUtils.getNowTimeLong();
 
 }

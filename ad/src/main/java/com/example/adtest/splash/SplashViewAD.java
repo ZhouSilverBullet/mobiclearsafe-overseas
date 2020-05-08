@@ -3,16 +3,8 @@ package com.example.adtest.splash;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
 import android.view.ViewGroup;
 
-import com.bytedance.sdk.openadsdk.AdSlot;
-import com.bytedance.sdk.openadsdk.TTAdConstant;
-import com.bytedance.sdk.openadsdk.TTAdManager;
-import com.bytedance.sdk.openadsdk.TTAdNative;
-import com.bytedance.sdk.openadsdk.TTAdSdk;
-import com.bytedance.sdk.openadsdk.TTAppDownloadListener;
-import com.bytedance.sdk.openadsdk.TTSplashAd;
 import com.example.adtest.bean.AdBean;
 import com.example.adtest.bean.ConfigItemBean;
 import com.example.adtest.config.TTAdManagerHolder;
@@ -35,8 +27,8 @@ public class SplashViewAD {
     private int width, height;
     private static final int AD_TIME_OUT = 3000;
     private String mPOSID = "";
-    private TTAdNative mTTadNative;
-    private TTSplashAd mTTSplashAd;//穿山甲开屏广告
+//    private TTAdNative mTTadNative;
+//    private TTSplashAd mTTSplashAd;//穿山甲开屏广告
     private ScenarioEnum scenario;
     private ConfigItemBean bean;
     private SplashViewADLoadListener mListener;
@@ -60,16 +52,10 @@ public class SplashViewAD {
 //            mPOSID = Constants.default_native_posid;
 //        }
         bean = Constants.getAdItem(mPOSID, mContext);
-        if (bean == null) {
-            Log.e(TAG, "广告相关数据缺失，请先调用SDKManager.init()");
-            if (mListener!=null){
-                mListener.LoadError(Constants.TT_KEY,1028001,"未找到广告位ID");
-                AdStatistical.trackAD(mContext, Constants.TT_KEY, mPOSID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
-            }
-            return;
+        if (mListener!=null){
+            mListener.LoadError(Constants.TT_KEY,1028001,"未找到广告位ID");
+            AdStatistical.trackAD(mContext, Constants.TT_KEY, mPOSID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
         }
-//        loadTTSplash("836888844");
-        sortLoad();
     }
 
     private void sortLoad(){
@@ -94,132 +80,132 @@ public class SplashViewAD {
      * 加载穿山甲开屏广告
      */
     private void loadTTSplash(String POSID) {
-        mTTadNative = TTAdManagerHolder.get().createAdNative(mContext);
-        AdSlot adSlot = new AdSlot.Builder()
-                .setCodeId(POSID)
-                .setSupportDeepLink(mDeepLink)
-                .setImageAcceptedSize(width, height)
-                .build();
-        mTTadNative.loadSplashAd(adSlot, new TTAdNative.SplashAdListener() {
-            @Override
-            public void onError(int i, String s) {
-                //加载失败
-                if (mListener!=null){
-                    mListener.LoadError(Constants.TT_KEY,i,s);
-                }
-                AdStatistical.trackAD(mContext, Constants.TT_KEY, mPOSID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
-            }
-
-            @Override
-            public void onTimeout() {
-                //加载超时
-                if (mListener!=null){
-                    mListener.onTimeout(Constants.TT_KEY);
-                }
-                AdStatistical.trackAD(mContext, Constants.TT_KEY, mPOSID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
-            }
-
-            @Override
-            public void onSplashAdLoad(TTSplashAd ad) {
-                // 请求成功
-                if (ad == null) {
-                    if (mListener!=null){
-                        mListener.LoadError(Constants.TT_KEY,1028001,"未拉取到广告");
-                    }
-                    return;
-                }
-                if (mListener!=null){
-                    mListener.onSplashAdLoad(Constants.TT_KEY);
-                }
-                mTTSplashAd = ad;
-                addTTSplashToView();
-            }
-        }, AD_TIME_OUT);
+//        mTTadNative = TTAdManagerHolder.get().createAdNative(mContext);
+//        AdSlot adSlot = new AdSlot.Builder()
+//                .setCodeId(POSID)
+//                .setSupportDeepLink(mDeepLink)
+//                .setImageAcceptedSize(width, height)
+//                .build();
+//        mTTadNative.loadSplashAd(adSlot, new TTAdNative.SplashAdListener() {
+//            @Override
+//            public void onError(int i, String s) {
+//                //加载失败
+//                if (mListener!=null){
+//                    mListener.LoadError(Constants.TT_KEY,i,s);
+//                }
+//                AdStatistical.trackAD(mContext, Constants.TT_KEY, mPOSID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
+//            }
+//
+//            @Override
+//            public void onTimeout() {
+//                //加载超时
+//                if (mListener!=null){
+//                    mListener.onTimeout(Constants.TT_KEY);
+//                }
+//                AdStatistical.trackAD(mContext, Constants.TT_KEY, mPOSID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_FALSE);
+//            }
+//
+//            @Override
+//            public void onSplashAdLoad(TTSplashAd ad) {
+//                // 请求成功
+//                if (ad == null) {
+//                    if (mListener!=null){
+//                        mListener.LoadError(Constants.TT_KEY,1028001,"未拉取到广告");
+//                    }
+//                    return;
+//                }
+//                if (mListener!=null){
+//                    mListener.onSplashAdLoad(Constants.TT_KEY);
+//                }
+//                mTTSplashAd = ad;
+//                addTTSplashToView();
+//            }
+//        }, AD_TIME_OUT);
     }
 
     /**
      * 添加穿山甲开屏广告到view中
      */
     private void addTTSplashToView() {
-        if (mTTSplashAd == null) {
-            return;
-        }
-        if (mBearingView == null) {
-            return;
-        }
-        mBearingView.removeAllViews();
-        mBearingView.addView(mTTSplashAd.getSplashView());
-        if (NotSdkCountDown) {
-            mTTSplashAd.setNotAllowSdkCountdown();
-        }
-        mTTSplashAd.setSplashInteractionListener(new TTSplashAd.AdInteractionListener() {
-            @Override
-            public void onAdClicked(View view, int i) {
-                //广告被点击
-                if (mListener!=null){
-                    mListener.onAdClicked(Constants.TT_KEY);
-                }
-                AdStatistical.trackAD(mContext, Constants.TT_KEY, mPOSID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
-            }
-
-            @Override
-            public void onAdShow(View view, int i) {
-                //广告展示
-                if (mListener!=null){
-                    mListener.onAdShow(Constants.TT_KEY);
-                }
-                AdStatistical.trackAD(mContext, Constants.TT_KEY, mPOSID, Constants.STATUS_CODE_TRUE, Constants.STATUS_CODE_FALSE);
-            }
-
-            @Override
-            public void onAdSkip() {
-                // 广告跳过
-                if (mListener != null) {
-                    mListener.onAdSkip(Constants.TT_KEY);
-                }
-            }
-
-            @Override
-            public void onAdTimeOver() {
-                //广告倒计时结束
-                if (mListener != null) {
-                    mListener.onAdTimeOver();
-                }
-            }
-        });
-        if (mTTSplashAd.getInteractionType() == TTAdConstant.INTERACTION_TYPE_DOWNLOAD) {
-            mTTSplashAd.setDownloadListener(new TTAppDownloadListener() {
-                @Override
-                public void onIdle() {
-
-                }
-
-                @Override
-                public void onDownloadActive(long l, long l1, String s, String s1) {
-
-                }
-
-                @Override
-                public void onDownloadPaused(long l, long l1, String s, String s1) {
-
-                }
-
-                @Override
-                public void onDownloadFailed(long l, long l1, String s, String s1) {
-
-                }
-
-                @Override
-                public void onDownloadFinished(long l, String s, String s1) {
-
-                }
-
-                @Override
-                public void onInstalled(String s, String s1) {
-
-                }
-            });
-        }
+//        if (mTTSplashAd == null) {
+//            return;
+//        }
+//        if (mBearingView == null) {
+//            return;
+//        }
+//        mBearingView.removeAllViews();
+//        mBearingView.addView(mTTSplashAd.getSplashView());
+//        if (NotSdkCountDown) {
+//            mTTSplashAd.setNotAllowSdkCountdown();
+//        }
+//        mTTSplashAd.setSplashInteractionListener(new TTSplashAd.AdInteractionListener() {
+//            @Override
+//            public void onAdClicked(View view, int i) {
+//                //广告被点击
+//                if (mListener!=null){
+//                    mListener.onAdClicked(Constants.TT_KEY);
+//                }
+//                AdStatistical.trackAD(mContext, Constants.TT_KEY, mPOSID, Constants.STATUS_CODE_FALSE, Constants.STATUS_CODE_TRUE);
+//            }
+//
+//            @Override
+//            public void onAdShow(View view, int i) {
+//                //广告展示
+//                if (mListener!=null){
+//                    mListener.onAdShow(Constants.TT_KEY);
+//                }
+//                AdStatistical.trackAD(mContext, Constants.TT_KEY, mPOSID, Constants.STATUS_CODE_TRUE, Constants.STATUS_CODE_FALSE);
+//            }
+//
+//            @Override
+//            public void onAdSkip() {
+//                // 广告跳过
+//                if (mListener != null) {
+//                    mListener.onAdSkip(Constants.TT_KEY);
+//                }
+//            }
+//
+//            @Override
+//            public void onAdTimeOver() {
+//                //广告倒计时结束
+//                if (mListener != null) {
+//                    mListener.onAdTimeOver();
+//                }
+//            }
+//        });
+//        if (mTTSplashAd.getInteractionType() == TTAdConstant.INTERACTION_TYPE_DOWNLOAD) {
+//            mTTSplashAd.setDownloadListener(new TTAppDownloadListener() {
+//                @Override
+//                public void onIdle() {
+//
+//                }
+//
+//                @Override
+//                public void onDownloadActive(long l, long l1, String s, String s1) {
+//
+//                }
+//
+//                @Override
+//                public void onDownloadPaused(long l, long l1, String s, String s1) {
+//
+//                }
+//
+//                @Override
+//                public void onDownloadFailed(long l, long l1, String s, String s1) {
+//
+//                }
+//
+//                @Override
+//                public void onDownloadFinished(long l, String s, String s1) {
+//
+//                }
+//
+//                @Override
+//                public void onInstalled(String s, String s1) {
+//
+//                }
+//            });
+//        }
     }
 
     public static class Builder {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.qq.e.ads.nativ.widget.NativeAdContainer xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/native_ad_container"
     android:layout_width="match_parent"
@@ -77,4 +77,4 @@
     <!--</com.qq.e.ads.nativ.widget.NativeAdContainer>-->
 
 
-</com.qq.e.ads.nativ.widget.NativeAdContainer>
+</LinearLayout>

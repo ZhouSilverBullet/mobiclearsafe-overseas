@@ -35,67 +35,67 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
         <!-- 声明SDK所需要的组件 -->
-        <service
-            android:name="com.qq.e.comm.DownloadService"
-            android:exported="false" />
-        <!-- 请开发者注意字母的大小写，ADActivity，而不是AdActivity -->
-        <activity
-            android:name="com.qq.e.ads.ADActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
-        <activity
-            android:name="com.qq.e.ads.PortraitADActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.qq.e.ads.LandscapeADActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
+<!--        <service-->
+<!--            android:name="com.qq.e.comm.DownloadService"-->
+<!--            android:exported="false" />-->
+<!--        &lt;!&ndash; 请开发者注意字母的大小写，ADActivity，而不是AdActivity &ndash;&gt;-->
+<!--        <activity-->
+<!--            android:name="com.qq.e.ads.ADActivity"-->
+<!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />-->
+<!--        <activity-->
+<!--            android:name="com.qq.e.ads.PortraitADActivity"-->
+<!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"-->
+<!--            android:screenOrientation="portrait" />-->
+<!--        <activity-->
+<!--            android:name="com.qq.e.ads.LandscapeADActivity"-->
+<!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"-->
+<!--            android:screenOrientation="landscape" />-->
 
-        <provider
-            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
-            android:authorities="com.mobi.overseas.clearsafe.TTFileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true"
-            tools:ignore="WrongManifestParent">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
-        <provider
-            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
-            android:authorities="com.mobi.overseas.clearsafe.TTMultiProvider"
-            android:exported="false"
-            tools:ignore="WrongManifestParent" />
-        <!--广点通-->
-        <service
-            android:name="com.qq.e.comm.DownloadService"
-            android:exported="false" />
+<!--        <provider-->
+<!--            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"-->
+<!--            android:authorities="com.mobi.overseas.clearsafe.TTFileProvider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true"-->
+<!--            tools:ignore="WrongManifestParent">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/file_paths" />-->
+<!--        </provider>-->
+<!--        <provider-->
+<!--            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"-->
+<!--            android:authorities="com.mobi.overseas.clearsafe.TTMultiProvider"-->
+<!--            android:exported="false"-->
+<!--            tools:ignore="WrongManifestParent" />-->
+<!--        &lt;!&ndash;广点通&ndash;&gt;-->
+<!--        <service-->
+<!--            android:name="com.qq.e.comm.DownloadService"-->
+<!--            android:exported="false" />-->
 
-        <activity
-            android:name="com.qq.e.ads.ADActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name="com.qq.e.ads.PortraitADActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
-            tools:ignore="DuplicateActivity" />
-        <activity
-            android:name="com.qq.e.ads.LandscapeADActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"
-            tools:ignore="DuplicateActivity" />
+<!--        <activity-->
+<!--            android:name="com.qq.e.ads.ADActivity"-->
+<!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"-->
+<!--            tools:ignore="DuplicateActivity" />-->
+<!--        <activity-->
+<!--            android:name="com.qq.e.ads.PortraitADActivity"-->
+<!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            tools:ignore="DuplicateActivity" />-->
+<!--        <activity-->
+<!--            android:name="com.qq.e.ads.LandscapeADActivity"-->
+<!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"-->
+<!--            android:screenOrientation="landscape"-->
+<!--            tools:ignore="DuplicateActivity" />-->
 
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.mobi.overseas.clearsafe.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true"
-            tools:ignore="WrongManifestParent">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/gdt_file_path" />
-        </provider>
+<!--        <provider-->
+<!--            android:name="android.support.v4.content.FileProvider"-->
+<!--            android:authorities="com.mobi.overseas.clearsafe.fileprovider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true"-->
+<!--            tools:ignore="WrongManifestParent">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/gdt_file_path" />-->
+<!--        </provider>-->
         <!--<provider-->
         <!--android:name="com.mintegral.msdk.base.utils.MTGFileProvider"-->
         <!--android:authorities="com.mobi.overseas.clearsafe.mtgFileProvider"-->
@@ -109,43 +109,43 @@
         <activity android:name=".activity.FeedNative2FullScreenActivity" />
 
 
-        <provider
-            android:name="com.sigmob.sdk.SigmobFileProvider"
-            android:authorities="com.mobi.overseas.clearsafe.sigprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/sigmob_provider_paths"/>
-        </provider>
-        <activity android:name="com.sigmob.sdk.base.common.AdActivity"
-            android:theme="@android:style/Theme.DeviceDefault"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+<!--        <provider-->
+<!--            android:name="com.sigmob.sdk.SigmobFileProvider"-->
+<!--            android:authorities="com.mobi.overseas.clearsafe.sigprovider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/sigmob_provider_paths"/>-->
+<!--        </provider>-->
+<!--        <activity android:name="com.sigmob.sdk.base.common.AdActivity"-->
+<!--            android:theme="@android:style/Theme.DeviceDefault"-->
+<!--            android:configChanges="keyboardHidden|orientation|screenSize" />-->
 
-        <!--自有sdk-->
-        <provider
-            android:name="com.mobi.adsdk.down.fileprovider.MobiFileProvider"
-            android:authorities="com.mobi.overseas.clearsafe.MobiFileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true"
-            tools:ignore="WrongManifestParent">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/mobi_file_paths" />
-        </provider>
-        <service android:name="com.mobi.adsdk.down.service.DownloadService" />
-        <receiver android:name="com.mobi.adsdk.down.receiver.DownLoadReceiver">
-            <intent-filter>
-                <action android:name="action_update" />
-                <action android:name="ACTION_INSTALL" />
-                <action android:name="ACTION_DOWNLOAD_FINISH" />
-            </intent-filter>
-        </receiver>
-        <activity
-            android:name="com.mobi.adsdk.rewardvideo.RewardVideoActivity"
-            android:configChanges="keyboard|orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+<!--        &lt;!&ndash;自有sdk&ndash;&gt;-->
+<!--        <provider-->
+<!--            android:name="com.mobi.adsdk.down.fileprovider.MobiFileProvider"-->
+<!--            android:authorities="com.mobi.overseas.clearsafe.MobiFileProvider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true"-->
+<!--            tools:ignore="WrongManifestParent">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/mobi_file_paths" />-->
+<!--        </provider>-->
+<!--        <service android:name="com.mobi.adsdk.down.service.DownloadService" />-->
+<!--        <receiver android:name="com.mobi.adsdk.down.receiver.DownLoadReceiver">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="action_update" />-->
+<!--                <action android:name="ACTION_INSTALL" />-->
+<!--                <action android:name="ACTION_DOWNLOAD_FINISH" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+<!--        <activity-->
+<!--            android:name="com.mobi.adsdk.rewardvideo.RewardVideoActivity"-->
+<!--            android:configChanges="keyboard|orientation|screenSize"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />-->
     </application>
 
 
