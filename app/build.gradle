@@ -10,8 +10,8 @@ android {
         applicationId "com.mobi.overseas.clearsafe"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 10006
-        versionName "1.0.6"
+        versionCode 10007
+        versionName "1.0.7"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         repositories {
             flatDir {
@@ -19,7 +19,7 @@ android {
             }
         }
         multiDexEnabled true
-        ndk { abiFilters 'armeabi-v7a'/*, 'x86', 'arm64-v8a', 'x86_64', 'armeabi'*/ }
+        ndk { abiFilters 'armeabi-v7a', 'arm64-v8a'/*, 'x86', 'x86_64', 'armeabi'*/ }
         manifestPlaceholders = [UMENG_CHANNEL_VALUE: "umeng"]//添加一个默认渠道号
         flavorDimensions "versionCode"
     }
@@ -252,7 +252,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation "com.android.support:recyclerview-v7:28+"
+    implementation "com.android.support:recyclerview-v7:+"
 //    implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
     testImplementation 'junit:junit:4.12'
